@@ -1,0 +1,16 @@
+.hiddenRow {
+    padding: 0 !important;
+}
+
+.custom-td-name{
+	width: 40%;
+}
+
+.custom-td-type{
+	width: 15%;	
+}
+
+.custom-td-format{
+	width: 15%;
+}
+
