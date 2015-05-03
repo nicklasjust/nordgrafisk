@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Nord Grafisk</title>
+ 
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/customstyle.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+ 
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+	<div class="container bs-docs-container">
+
+
+		<div class="row">
+		  <div class="col-xs-10">
+		    <img alt="Nord Grafisk" src="images/Logo.png">
+		  </div>
+		  <div class="col-xs-2">
+		    
+		    <!-- Button trigger modal -->
+				<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#login">
+				  Log ind
+				</button>
+				
+				<!-- Modal -->
+				<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title" id="loginLabel">Login-oplysninger</h4>
+				      </div>
+				      <div class="modal-body">
+				        <form class="form-horizontal">
+						  <div class="form-group">
+						    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+						    <div class="col-sm-10">
+						      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+						    <div class="col-sm-10">
+						      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+						    </div>
+						  </div>
+						</form>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Annullér</button>
+				        <button type="button" class="btn btn-primary">Log ind</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				
+		  </div>
+		</div>
+
+
+		<h1>Personinformation</h1>
+
+		<form>
+			<div class="col-md-6">
+		  		<div class= "form-group">
+		    		<label class="sr-only" for="inputNavn">Navn</label>
+		    		<input type="text" class="form-control" id="inputName" placeholder="Navn">
+		  		</div>
+		  		
+		  		<div class="form-group">
+		    		<label class="sr-only" for="inputAdresse">Adresse</label>
+		    		<input type="text" class="form-control" id="inputAdresse" placeholder="Adresse">
+		  		</div>
+		  		
+		  		<div class="form-group">
+				    <label class="sr-only" for="inputBy">By</label>
+				    <input type="text" class="form-control" id="inputBy" placeholder="By">
+				</div>
+				
+			    <div class="form-group">
+			      	<label class="sr-only" for="inputPostnummer">Postnr.</label>
+			      	<input type="text" class="form-control" id="inputPostnummer" placeholder="Postnummer">
+			    </div>
+			    
+				<div class="form-group">
+				  	<label class="sr-only" for="exampleInputTelephone">Telefonnr.</label>
+				  	<input type="tel" class="form-control" id="exampleInputTelephone" placeholder="Telefonnummer">
+				</div>
+	  		</div>
+	  		<div class="col-md-6">
+		  		<div class="form-group">
+				    <label class="sr-only" for="inputEmail1">Email address</label>
+				    <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+				</div>
+				<div>
+					<h4>Faktureringsoplysninger <small>(hvis anderledes)</small></h4>
+					
+					<div class="form-group">
+			    		<label class="sr-only" for="inputAdresse">Adresse</label>
+			    		<input type="text" class="form-control" id="inputFakAdresse" placeholder="Adresse">
+			  		</div>
+			  		
+			  		<div class="form-group">
+					    <label class="sr-only" for="inputBy">By</label>
+					    <input type="text" class="form-control" id="inputFakBy" placeholder="By">
+					</div>
+					
+				    <div class="form-group">
+				      	<label class="sr-only" for="inputPostnummer">Postnr.</label>
+				      	<input type="text" class="form-control" id="inputFakPostnummer" placeholder="Postnummer">
+				    </div>
+				</div>
+		  		
+	  		</div>
+		</form>
+	</div>
+	
+		<div class="container bs-docs-container">
+		
+			<h1>Ordreinformation</h1>
+		          	
+			<div role="tabpanel">
+				
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#produktType" aria-controls="produktType" role="tab" data-toggle="tab">Produkttype</a></li>
+				    <li role="presentation"><a href="#medie" aria-controls="medie" role="tab" data-toggle="tab">Medie</a></li>
+				    <li role="presentation"><a href="#antal" aria-controls="antal" role="tab" data-toggle="tab">Antal</a></li>
+				    <li role="presentation"><a href="#brug" aria-controls="brug" role="tab" data-toggle="tab">Brug</a></li>
+				    <li role="presentation"><a href="#beskaering" aria-controls="beskaering" role="tab" data-toggle="tab">Beskæring</a></li>
+				    <li role="presentation"><a href="#upload" aria-controls="upload" role="tab" data-toggle="tab">Upload fil</a></li>
+				</ul>
+				
+				<!-- Tab panes -->
+				<div class="tab-content">
+				    <div role="tabpanel" class="tab-pane active" id="produktType">
+				    	Produkter
+				    </div>
+				
+				    <div role="tabpanel" class="tab-pane" id="medie">
+				    	Medier
+				    </div>
+				
+				    <div role="tabpanel" class="tab-pane" id="antal">
+				    	Antal
+				    </div>
+				
+				    <div role="tabpanel" class="tab-pane" id="brug">
+				    	Brug
+				    </div>
+				
+				    <div role="tabpanel" class="tab-pane" id="beskaering">
+				    	Beskæring
+				    </div>
+				
+				    <div role="tabpanel" class="tab-pane" id="upload">
+				    	Upload for yu
+				    </div>
+				</div>
+				
+			</div>
+		
+		</div>
+
+		<div class="container bs-docs-container">
+
+			<h4>Kommentarer til ordren</h4>
+			
+			<textarea class="form-control" rows="4" placeholder="Skriv eventuelle kommentarer her"></textarea>
+						
+			<button type="button" class="btn btn-default btn-lg">
+				  Send ordre
+			</button>
+				
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		</div>
+	</body>
+</html>
