@@ -1,6 +1,13 @@
 .tab-pane{
-	height: 350px;
+	height: 400px;
 	overflow: auto;
-	padding: 20px;
+	padding: 25px;
 	overflow-x: none;
+	border-bottom: solid;
+	border-bottom-width: 1px;
+}
+
+#kommentar{
+	margin-top: 20px;
+	margin-bottom: 25px;
 }
