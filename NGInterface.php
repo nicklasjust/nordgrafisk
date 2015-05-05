@@ -41,7 +41,7 @@
   									.......................<br>
 
 
-  									<button type="button" class="btn btn-default btn-lg pull-right">
+  									<button type="button" class="btn btn-default btn-lg pull-right btn-declineorder">
 				  						Afvis ordre
 									</button>
 									<button type="button" class="btn btn-default btn-lg pull-right btn-acceptorder">

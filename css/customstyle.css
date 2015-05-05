@@ -17,6 +17,10 @@ tr.accordion-toggle{
 	margin-right: 10px; 
 }
 
+.btn-declineorder{
+	margin-right: 10px;
+}
+
 .custom-th-order{
 	width: 30%;
 }
