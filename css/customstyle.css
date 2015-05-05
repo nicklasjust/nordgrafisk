@@ -1,16 +1,24 @@
-tbody tr td.hiddenRow {
+tbody tr td.hiddenRow{
 	border: none;
     padding: 0;
 }
 
+.bs-callout{
+	overflow: hidden;
+}
+
 tr.accordion-toggle{
-	cursor: pointer;
+	cursor: pointer;	
 	-webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.btn-acceptorder{
+	margin-right: 10px; 
 }
 
 .custom-th-order{

@@ -48,8 +48,25 @@
 							<div class="accordian-body collapse" id="collapsableContent-9434"> 
 								<div class="bs-callout bs-callout-warning">
   									<h4>Ordre 9434</h4>
-  									Info
-									</div>
+  									.......................<br>
+  									.......................<br>
+  									.......................<br>
+  									.......................<br>
+  									.......................<br>
+  									.......................<br>
+  									.......................<br>
+  									.......................<br>
+  									.......................<br>
+  									.......................<br>
+
+
+  									<button type="button" class="btn btn-default btn-lg pull-right">
+				  						Afvis ordre
+									</button>
+									<button type="button" class="btn btn-default btn-lg pull-right btn-acceptorder">
+				  						Godkend ordre
+									</button>
+								</div>
 							</div> 
 						</td>
 					</tr>
