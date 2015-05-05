@@ -1,4 +1,6 @@
-.produktTab{
+.tab-pane{
 	height: 350px;
 	overflow: auto;
+	padding: 20px;
+	overflow-x: none;
 }
