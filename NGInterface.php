@@ -1,6 +1,5 @@
 <?php require 'header.php'; ?>
 
-
 	<body>
 	<div class="container bs-docs-container">
 
