@@ -3,10 +3,6 @@ tbody tr td.hiddenRow{
     padding: 0;
 }
 
-.bs-callout{
-	overflow: hidden;
-}
-
 tr.accordion-toggle{
 	cursor: pointer;	
 	-webkit-touch-callout: none;
@@ -43,6 +39,7 @@ tr.accordion-toggle{
     border: 1px solid #eee;
     border-left-width: 5px;
     border-radius: 3px;
+    overflow: hidden;
 }
 .bs-callout h4 {
     margin-top: 0;
