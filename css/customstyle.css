@@ -13,12 +13,20 @@ tr.accordion-toggle{
     user-select: none;
 }
 
-.btn-acceptorder{
+.declineorder-btn{
+	margin-top: 10px;
+	margin-right: 10px; 
+	
+}
+
+.acceptorder-btn{
+	margin-top: 10px;
 	margin-right: 10px; 
 }
 
-.btn-declineorder{
-	margin-right: 10px;
+.contactcustomer-btn{
+	margin-top: 10px;
+	margin-right: 10px; 
 }
 
 .custom-th-order{
@@ -45,10 +53,19 @@ tr.accordion-toggle{
     border-radius: 3px;
     overflow: hidden;
 }
-.bs-callout h4 {
-    margin-top: 0;
+.bs-callout h3 {
+    margin-top: -10px;
     margin-bottom: 5px;
 }
+
+.bs-callout h4 {
+    margin-top: 20px;
+}
+
+.bs-callout h5 {
+    margin-left: 20px;
+}
+
 .bs-callout p:last-child {
     margin-bottom: 0;
 }
@@ -61,36 +78,36 @@ tr.accordion-toggle{
 .bs-callout-default {
     border-left-color: #777;
 }
-.bs-callout-default h4 {
+.bs-callout-default h3 {
     color: #777;
 }
 .bs-callout-primary {
     border-left-color: #428bca;
 }
-.bs-callout-primary h4 {
+.bs-callout-primary h3 {
     color: #428bca;
 }
 .bs-callout-success {
     border-left-color: #5cb85c;
 }
-.bs-callout-success h4 {
+.bs-callout-success h3 {
     color: #5cb85c;
 }
 .bs-callout-danger {
     border-left-color: #d9534f;
 }
-.bs-callout-danger h4 {
+.bs-callout-danger h3 {
     color: #d9534f;
 }
 .bs-callout-warning {
     border-left-color: #f0ad4e;
 }
-.bs-callout-warning h4 {
+.bs-callout-warning h3 {
     color: #f0ad4e;
 }
 .bs-callout-info {
     border-left-color: #5bc0de;
 }
-.bs-callout-info h4 {
+.bs-callout-info h3 {
     color: #5bc0de;
 }
