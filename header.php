@@ -12,6 +12,7 @@
 		<link href="css/upload-fane-style.css" rel="stylesheet">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="js/script.js"></script>
 
  		<script src="js/upload-script.js" type="text/javascript"></script>
