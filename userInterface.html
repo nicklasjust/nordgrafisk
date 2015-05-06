@@ -11,6 +11,7 @@
 		<link href="css/customstyle.css" rel="stylesheet">
 		<link href="css/userinterfacestyle.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="js/imageclicker.js"></script>
  
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -157,79 +158,79 @@
 					    	
 					    	<div class="row" id="firstRow">
 					    		<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/1.png" alt="Poster" class="img-rounded">
 					   			</div>
 					   			
 					   			<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/2.png" alt="Poster" class="img-rounded">
 					   			</div>
 					   			
 					   			<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/3.png" alt="Poster" class="img-rounded">
 					   			</div>
 					   			
 					   			<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/4.png" alt="Poster" class="img-rounded">
 					   			</div>
 					   			
 					   			<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/5.png" alt="Poster" class="img-rounded">
 					   			</div>
 					   			
 					   			<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/6.png" alt="Poster" class="img-rounded">
 					   			</div>
 					    	</div>
 					    	
 					    	<div class="row" id="secondRow">
 					    		<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/7.png" alt="Poster" class="img-rounded">
 					   			</div>
 					   			
 					   			<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/8.png" alt="Poster" class="img-rounded">
 					   			</div>
 					   			
 					   			<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/9.png" alt="Poster" class="img-rounded">
 					   			</div>
 					   			
 					   			<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/1.png" alt="Poster" class="img-rounded">
 					   			</div>
 					   			
 					   			<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/2.png" alt="Poster" class="img-rounded">
 					   			</div>
 					   			
 					   			<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/3.png" alt="Poster" class="img-rounded">
 					   			</div>
 					    	</div>
 					   		
 					   		<div class="row" id="thirdRow">
 					    		<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/4.png" alt="Poster" class="img-rounded">
 					   			</div>
 					   			
 					   			<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/5.png" alt="Poster" class="img-rounded">
 					   			</div>
 					   			
 					   			<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/6.png" alt="Poster" class="img-rounded">
 					   			</div>
 					   			
 					   			<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/7.png" alt="Poster" class="img-rounded">
 					   			</div>
 					   			
 					   			<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/8.png" alt="Poster" class="img-rounded">
 					   			</div>
 					   			
 					   			<div class="col-md-2">
-					   				<img src="images/poster.png" alt="Poster" class="img-rounded">
+					   				<img src="images/9.png" alt="Poster" class="img-rounded">
 					   			</div>
 					    	</div>
 				    	
@@ -273,8 +274,19 @@
 			<h3>Kommentarer til ordren</h3>
 			
 			<textarea class="form-control" id="kommentar" rows="4" placeholder="Skriv eventuelle kommentarer her"></textarea>
+			
+			<form class="form-inline" id="antaldato">
+				<div class="form-group">
+			    	<label for="antal">Antal: </label>
+			    	<input type="number" class="form-control" id="antal" value="1" name="quantity" min="0" max="1000">
+			  	</div>
+			  	<div class="form-group">
+			    	<label for="leveringsdato">Ønsket leveringsdato: </label>
+			    	<input type="date" class="form-control" id="leveringsdato">
+			  	</div>
+			</form>
 						
-			<button type="button" class="btn btn-default btn-lg">
+			<button type="button" class="btn btn-default btn-lg" id="send">
 				  Send ordre
 			</button>
 				

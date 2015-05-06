@@ -1,13 +1,29 @@
 .tab-pane{
-	height: 400px;
+	height: 450px;
 	overflow: auto;
 	padding: 25px;
 	overflow-x: none;
-	border-bottom: solid;
-	border-bottom-width: 1px;
+	border-bottom: solid #ddd 1px; 
+}
+
+.tab-pane img{
+	height: 120px;
+	width: 120px;	
 }
 
 #kommentar{
 	margin-top: 20px;
 	margin-bottom: 25px;
+}
+
+#antaldato{
+	margin-bottom: 20px;
+}
+
+#antal{
+	margin-right: 20px;
+}
+
+#send{
+	margin-bottom: 20px;
 }
