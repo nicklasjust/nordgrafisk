@@ -3,9 +3,10 @@ $(document).ready(function()
 
 	$('form.file-upload input[name="file"]').on('change', function(event)
 	{
-		var files = $(this)[0].files;
+		// var files = $(this)[0].files;
 		var tmppath = URL.createObjectURL(event.target.files[0]);
 		console.log(tmppath);
+		console.log(event.target.files[0]);
 	});
 
 	$('form.file-upload').on('submit', function(event)
