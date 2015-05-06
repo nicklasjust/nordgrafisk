@@ -87,7 +87,7 @@
 					<tr data-toggle="collapse" data-target="#collapsableContent-9435" class="accordion-toggle warning">
 
 						<th scope="row">#9435</th>
-						<td class="custom-td-name">Tyndskid Kyllingelår</td>
+						<td class="custom-td-name">Rasmus Kjeldgaard</td>
 						<td class="custom-td-type">Plakat</td>
 						<td class="custom-td-format">A2</td>
 						<td><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></td>
@@ -238,7 +238,7 @@
 					<tr data-toggle="collapse" data-target="#collapsableContent-9429" class="accordion-toggle success">
 
 						<th scope="row">#9429</th>
-						<td class="custom-td-name">Ransi Kjeldnerseer</td>
+						<td class="custom-td-name">Rasmus Kjeldgaard</td>
 						<td class="custom-td-type">Banner</td>
 						<td class="custom-td-format">600 x 110 cm</td>
 						<td><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></td>
@@ -388,7 +388,7 @@
 					<tr data-toggle="collapse" data-target="#collapsableContent-9436" class="accordion-toggle danger">
 		
 						<th scope="row">#9436</th>
-						<td class="custom-td-name">Rasmus Korsgaard Kjeldgaard</td>
+						<td class="custom-td-name">Rasmus Kjeldgaard</td>
 						<td class="custom-td-type">Plakat</td>
 						<td class="custom-td-format">A1</td>
 						<td><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></td>
@@ -456,7 +456,7 @@
 					<tr data-toggle="collapse" data-target="#collapsableContent-9437" class="accordion-toggle danger">
 
 						<th scope="row">#9437</th>
-						<td class="custom-td-name">Korskjeld Gaardgaard</td>
+						<td class="custom-td-name">Rasmus Kjeldgaard</td>
 						<td class="custom-td-type">Banner</td>
 						<td class="custom-td-format">600 x 130 cm</td>
 						<td><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></td>
