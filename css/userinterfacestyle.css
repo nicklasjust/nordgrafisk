@@ -1,12 +1,16 @@
 .tab-pane{
-	height: 450px;
+	height: 550px;
 	overflow: auto;
 	padding: 25px;
 	overflow-x: none;
 	border-bottom: solid #ddd 1px; 
 }
 
-.tab-pane img{
+.tab-pane#upload img {
+	max-width: 100%;
+}
+
+.tab-pane .produktTab img{
 	height: 120px;
 	width: 120px;	
 }
