@@ -15,6 +15,10 @@
 	width: 120px;	
 }
 
+.selected{
+	border: solid 2px blue;
+}
+
 #kommentar{
 	margin-top: 20px;
 	margin-bottom: 25px;
