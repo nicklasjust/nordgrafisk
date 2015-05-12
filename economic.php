@@ -5,14 +5,11 @@
 	$client = new SoapClient($wsdlUrl, array("trace" => 1, "exceptions" => 1));    		
 	$client->ConnectWithToken(
 		array(
-			'token' 	=> $_REQUEST['token'],
-			'appToken'  => '9fvq9KzQuegRUXO1SAQ053byEAj7L4OnolyYqC9hXX81'
+			'token' 	=> 'nsfG0GFUMWUr10gt-_9v3wyKrxVpEcXxe2mDFHgHPus1',
+			'appToken'  => 'dciTAm_Tp-pPujYOxcNhhB9QJin7ZtB3rd6qGH2-b6Q1'
 		)
 	);
 
-appId: "z5D_fdywpE3eTjq5R9yUqWabK5BKaq_lxaDp2ksMIA81",
-accessId: "9fvq9KzQuegRUXO1SAQ053byEAj7L4OnolyYqC9hXX81",
-accept: "application/json"
 ?>
 
 <!DOCTYPE html>
@@ -27,8 +24,8 @@ accept: "application/json"
 
 		<script type="text/javascript">
 
-			$(document).ready(function()
-			{
+			// $(document).ready(function()
+			// {
 			// 	$.ajax({
 			// 		url: "https://restapi.e-conomic.com/PAYMENT-TERMS",
 			// 		dataType: "json",
