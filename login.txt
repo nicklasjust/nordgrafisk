@@ -1,1 +1,22 @@
-Bruger-ID: Tob
+User login:
+Agreement no.: 1053926
+User ID: Tob
+Password: 8tg3hzjw
+
+
+Developer login:
+Agreement no.: 1055513
+User ID: Dev 
+Password: xw9esytm
+
+
+Developer forum:
+Email: tobiasharbo@gmail.com
+Password: 8½løgiposen
+
+App:
+Name: Idyia
+Public app ID: sCj4W5102DJgLR6MQ5GJzTSydRsemPBsykMUU496P0c1
+Private app ID: dciTAm_Tp-pPujYOxcNhhB9QJin7ZtB3rd6qGH2-b6Q1
+
+App token: RtZQFEDC6cZHNmb0xgiDzTUO7utCaGSzxMZiwSeJz401

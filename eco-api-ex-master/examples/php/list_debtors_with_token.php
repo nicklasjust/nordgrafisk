@@ -81,18 +81,11 @@ try
 
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['action'] == 'create_debtor')
-
 	{
-
 		try
-
 		{
-
 			$debtorGroupHandles = $client->debtorGroup_GetAll()->DebtorGroup_GetAllResult->DebtorGroupHandle;
-
 			$firstDebtorGroup = $debtorGroupHandles[0];
-
-
 
 			$newDebtorHandle = $client->Debtor_Create(array(
 
@@ -103,7 +96,6 @@ try
 				'name'              => $_POST['debtor_name'],
 
 				'vatZone'           => 'EU'))->Debtor_CreateResult;
-
 
 
 			$client->Debtor_SetAddress(array(

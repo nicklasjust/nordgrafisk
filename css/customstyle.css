@@ -1,3 +1,10 @@
+div.container.bs-docs-container
+{
+    margin-top: 80px;
+    position: relative;
+}
+
+
 tbody tr td.hiddenRow{
 	border: none;
     padding: 0;
@@ -110,4 +117,34 @@ tr.accordion-toggle{
 }
 .bs-callout-info h3 {
     color: #5bc0de;
+}
+
+/*******************
+        CART
+********************/
+
+div.shopping-cart{
+    margin-top: 10px;
+    position: fixed;
+    top: 0;
+    width: 300px;
+    z-index: 1;
+}
+
+div.shopping-cart a{
+    cursor: pointer;
+}
+
+div.shopping-cart div.panel-heading{
+    padding: 0;
+}
+
+div.shopping-cart div.panel-body{
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+div.shopping-cart div.panel-heading a{
+    display: block;
+    padding: 10px 15px;
 }

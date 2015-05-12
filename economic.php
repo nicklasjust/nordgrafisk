@@ -10,6 +10,11 @@
 		)
 	);
 
+	$productGroup = $client->ProductGroup_GetAll()->ProductGroup_GetAllResult->ProductGroupHandle;
+
+	echo "<pre>";
+	print_r($productGroup);
+	echo "</pre>";
 ?>
 
 <!DOCTYPE html>
