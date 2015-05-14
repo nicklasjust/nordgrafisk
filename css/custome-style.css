@@ -1,10 +1,35 @@
 /* Table of Content
 ==================================================
+	# HEADER
 	# PRODUCT INFOMATION FLOW
 	#
 	#
 	#
 	*/
+
+/* # HEADER
+================================================== */
+	
+	header.primary{
+		padding: 16px 0;
+	}
+
+	header.primary h1.logo{
+		margin: 0;
+		padding: 0;
+	}
+
+	header.primary h1.logo a{
+		background: url(../images/logo.png) no-repeat;
+		color: transparent;
+		display:block;
+		font: 0/0 a;
+		height:104px;
+		margin:0;
+		padding:0;
+		text-shadow: none;
+		width:259px;
+	}
 
 
 /* # PRODUCT INFOMATION FLOW
@@ -34,8 +59,8 @@
 		border: #337ab7 4px solid;
 		border-radius: 100px;
 		display: inline-block;
-		text-decoration: none;
 		padding: 12px;
+		text-decoration: none;
 		width: 100px;
 		-webkit-transition: all ease-out 0.2s;
 		-moz-transition: all ease-out 0.2s;
