@@ -1,0 +1,101 @@
+/* Table of Content
+==================================================
+	# PRODUCT INFOMATION FLOW
+	#
+	#
+	#
+	*/
+
+
+/* # PRODUCT INFOMATION FLOW
+================================================== */
+	
+	div.band.product-infomation header.flow-overview{
+		position: relative;
+		overflow: hidden;
+		padding: 16px;
+	}
+
+	div.band.product-infomation header.flow-overview hr{
+		display: block;
+		position: absolute;
+		border: #337ab7 4px solid;
+		margin: 22px 0;
+		width: 100%;
+	}
+
+	div.band.product-infomation header.flow-overview > div{
+		text-align: center;
+	}
+
+	div.band.product-infomation header.flow-overview > div a{
+		cursor: pointer;
+		background-color: #fff;
+		border: #337ab7 4px solid;
+		border-radius: 100px;
+		display: inline-block;
+		text-decoration: none;
+		padding: 12px;
+		width: 100px;
+		-webkit-transition: all ease-out 0.2s;
+		-moz-transition: all ease-out 0.2s;
+		-o-transition: all ease-out 0.2s;
+		transition: all ease-out 0.2s;
+	}
+
+	div.band.product-infomation header.flow-overview > div a.focus{
+		background-color: #337ab7;
+		color: #fff;
+		font-weight: bold;
+	}
+
+	div.band.product-infomation div.product-flow div.steps{
+		position: relative;
+		height: 400px;
+	}
+
+	div.band.product-infomation div.product-flow div.steps div.step{
+		position: absolute;
+		height: 400px;
+		opacity: 0;
+		width: 100%;
+		z-index: -1;
+		-webkit-transition: all ease-out 0.2s;
+		-moz-transition: all ease-out 0.2s;
+		-o-transition: all ease-out 0.2s;
+		transition: all ease-out 0.2s;
+	}
+
+	div.band.product-infomation div.product-flow div.steps div.step.show{
+		opacity: 1;
+		z-index: 1;
+	}
+
+	div.band.product-infomation footer{
+		position: relative;
+	}
+
+	div.band.product-infomation footer button{
+		position: relative;
+		opacity: 1;
+		z-index: 1;
+		-webkit-transition: all ease-out 0.2s;
+		-moz-transition: all ease-out 0.2s;
+		-o-transition: all ease-out 0.2s;
+		transition: all ease-out 0.2s;
+	}
+
+	div.band.product-infomation footer button[data-flow-action="add-to-cart"]{
+		display: block;
+		margin: 0 auto;
+	}
+
+	div.band.product-infomation[data-show-step-no="1"] footer button[data-flow-action="back"]{
+		opacity: 0;
+		z-index: -1;
+	}
+
+	div.band.product-infomation[data-show-step-no="4"] footer button[data-flow-action="next"]{
+		opacity: 0;
+		z-index: -1;
+	}
