@@ -124,10 +124,11 @@ tr.accordion-toggle{
 ********************/
 
 div.shopping-cart{
-    margin-top: 10px;
+    margin: 10px;
     position: fixed;
     top: 0;
-    width: 300px;
+    right: 0;
+    width: 200px;
     z-index: 1;
 }
 
