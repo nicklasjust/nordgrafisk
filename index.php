@@ -4,8 +4,30 @@
 
 		<div class="container">
 
-			header
-			
+			<header class="primary">
+				
+				<div class="col-md-8">
+
+					<h1 class="logo">
+						<a href="http://www.nord-grafisk.dk/">Nord Grafisk</a>
+					</h1>
+
+				</div>
+
+				<div class="col-md-4">
+
+					<div class="col-md-6">
+						<button type="button" class="btn btn-default">Indhent tilbud</button>
+					</div>
+
+					<div class="col-md-6">
+						<button type="button" class="btn btn-default">Log ind</button>
+					</div>
+				
+				</div>
+	
+			</header>
+	
 		</div>
 
 	</div>
