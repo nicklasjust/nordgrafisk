@@ -2,7 +2,7 @@ $(document).ready(function()
 {
 	function setVisibleStep(stepNumber)
 	{
-		var productInfomationFlow = $('div.band.product-infomation');
+		var productInfomationFlow = $('div.band.product-information');
 
 		productInfomationFlow.attr('data-show-step-no', stepNumber);
 		productInfomationFlow.find('header.flow-overview div a').removeClass('focus');
@@ -12,7 +12,7 @@ $(document).ready(function()
 		productInfomationFlow.find('div.steps div.step:nth-child('+ stepNumber +')').addClass('show');
 	}
 
-	$('div.band.product-infomation header.flow-overview div a')
+	$('div.band.product-information header.flow-overview div a')
 		.on('click', function(event)
 		{	
 			event.preventDefault();
@@ -21,12 +21,12 @@ $(document).ready(function()
 			setVisibleStep(stepNumber);
 		});
 
-	$('div.band.product-infomation footer button:not([type="submit"])')
+	$('div.band.product-information footer button:not([type="submit"])')
 		.on('click', function(event)
 		{
 			event.preventDefault();
 			
-			var productInfomationFlow = $('div.band.product-infomation');
+			var productInfomationFlow = $('div.band.product-information');
 
 			var action 			= $(this).attr('data-flow-action');
 			var numberOfSteps 	= productInfomationFlow.find('div.steps div.step').length;
@@ -63,7 +63,7 @@ $(document).ready(function()
 		console.log('submit');
 	});
 
-	$('div.band.product-infomation div.step-2 select[name="size"]')
+	$('div.band.product-information div.step-2 select[name="size"]')
 		.on('change', function()
 		{	
 			var value = $(this).val();
