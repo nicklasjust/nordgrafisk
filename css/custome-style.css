@@ -97,6 +97,7 @@
 
 	div.band.product-infomation div.product-flow div.steps div.step.show{
 		opacity: 1;
+		z-index: 1;
 	}
 
 	div.band.product-infomation footer{
@@ -132,6 +133,11 @@
 
 	/* # - format
 	================================================== */
+
+		/*div.size.hide-other div.other{
+			opacity: 0;
+			z-index: -1;
+		}*/
 
 	/* # - brug
 	================================================== */

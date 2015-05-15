@@ -62,4 +62,18 @@ $(document).ready(function()
 		
 		console.log('submit');
 	});
+
+	// $('div.band.product-infomation div.step-2 select[name="size"]')
+	// 	.on('change', function(event)
+	// 	{	
+	// 		var value = $(this).val();
+
+	// 		if(value == "Andet"){
+	// 			$(this).parent().removeClass('hide-other');
+	// 		}
+	// 		else
+	// 		{
+	// 			$(this).parent().addClass('hide-other');	
+	// 		}
+	// 	});
 });
