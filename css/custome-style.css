@@ -133,11 +133,19 @@
 
 	/* # - format
 	================================================== */
+		div.size div.other{
+			padding-top: 12px;
+		}
 
-		/*div.size.hide-other div.other{
+		div.size div.other input{
+			width: 80px;
+			display: inline-block;
+		}
+		
+		div.size.hide-other div.other{
 			opacity: 0;
 			z-index: -1;
-		}*/
+		}
 
 	/* # - brug
 	================================================== */
