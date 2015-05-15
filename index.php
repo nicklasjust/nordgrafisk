@@ -222,6 +222,7 @@
 						</div> <!--- end of steps -->
 
 						<footer>
+
 							<div class="col-md-4">
 
 								<button type="button" class="btn btn-default pull-left" data-flow-action="back">
@@ -260,5 +261,49 @@
 		</div> <!-- end of band product-infomation-->
 
 	</form>
+
+	<div class="band footer">
+		
+		<div class="container">
+
+			<div class="row">
+		
+				<div class="col-md-8">
+					
+				</div>
+
+				<div class="col-md-4">
+
+					<aside class="contact-direct">
+						
+						contact direct
+
+					</aside>
+					
+				</div>
+
+			</div>
+
+			<div class="row">
+		
+				<div class="col-md-8">
+					
+				</div>
+
+				<div class="col-md-4">
+
+					<aside class="shopping-cart">
+						
+						cart
+
+					</aside>
+					
+				</div>
+
+			</div>
+
+		</div>
+
+	</div> <!-- end of footer -->
 
 <?php require 'footer.php'; ?>

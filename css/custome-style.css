@@ -2,9 +2,13 @@
 ==================================================
 	# HEADER
 	# PRODUCT INFOMATION FLOW
-	#
-	#
-	#
+	# - type
+	# - format
+	# - brug
+	# - upload fil
+	# FOOTER
+	# CONTACT DIRECT
+	# SHOPPING CART
 	*/
 
 /* # HEADER
@@ -93,7 +97,6 @@
 
 	div.band.product-infomation div.product-flow div.steps div.step.show{
 		opacity: 1;
-		z-index: 1;
 	}
 
 	div.band.product-infomation footer{
@@ -103,7 +106,6 @@
 	div.band.product-infomation footer button{
 		position: relative;
 		opacity: 1;
-		z-index: 1;
 		-webkit-transition: all ease-out 0.2s;
 		-moz-transition: all ease-out 0.2s;
 		-o-transition: all ease-out 0.2s;
@@ -124,3 +126,46 @@
 		opacity: 0;
 		z-index: -1;
 	}
+
+	/* # - type
+	================================================== */
+
+	/* # - format
+	================================================== */
+
+	/* # - brug
+	================================================== */
+
+	/* # - upload fil
+	================================================== */
+
+
+/* # FOOTER
+================================================== */
+	
+	div.band.footer{
+		padding: 32px 0;
+	}
+
+	aside.contact-direct,
+	aside.shopping-cart{
+		display: block;
+		height: 250px;
+		position: fixed;
+	}
+
+
+/* # CONTACT DIRECT
+================================================== */
+	
+	aside.contact-direct{
+		top: 50px;
+	}
+
+/* # SHOPPING CART
+================================================== */
+	
+	aside.shopping-cart{
+		top: 300px;
+	}	
+	
