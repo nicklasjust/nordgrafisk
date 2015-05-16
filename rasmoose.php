@@ -34,7 +34,7 @@
 
 	<form action="#" method="post">
 
-		<div class="band customer-infomation">
+		<div class="band customer-information">
 
 			<div class="container">
 
@@ -115,9 +115,9 @@
 
 			</div> <!-- end of container -->
 
-		</div> <!-- end of band customer-infomation -->
+		</div> <!-- end of band customer-information -->
 
-		<div class="band product-infomation" data-show-step-no="1">
+		<div class="band product-information" data-show-step-no="1">
 
 			<div class="container">
 
@@ -189,7 +189,7 @@
 
 									<div class="col-md-4">
 										
-										<div class="size">
+										<div class="size hide-other">
 									
 											<h4>Størrelse:</h4>
 
@@ -217,14 +217,35 @@
 												X
 												<input type="text" class="form-control" placeholder="Bredde">
 												mm 
+
 											</div>
 
 										</div>
 									
 									</div>
 
+									<div class="col-md-4">
+									
+									</div>
+
+									<div class="col-md-4">
+									
+										<h4>Type:</h4>
+
+											<select name="type" class="form-control">
+										
+												<option>Farve</option>
+												<option>Farve m. gloss</option>
+												<option>Sort/Hvid</option>
+											 	<option>Sort/Hvid m. gloss</option>
+											
+											</select>
+
+									</div>
+
 								</div>
 
+							<textarea class="form-control" rows="10" placeholder="Skriv kommentarer til format her."></textarea>
 
 							</div> <!-- end of step 2 -->
 
@@ -290,7 +311,7 @@
 				
 			</div> <!-- end of container -->
 		
-		</div> <!-- end of band product-infomation-->
+		</div> <!-- end of band product-information-->
 
 	</form>
 
