@@ -229,7 +229,7 @@
 						
 												<h4>Anbefalede materialer:</h4>
 						
-												<div class="row product poster"> <!-- step 3 - Brug - Poster-->
+												<div class="row product ind poster"> <!-- step 3 - Brug - Poster - Ind-->
 												
 													<div class="col-md-4">
 														
@@ -333,7 +333,7 @@
 												
 												</div>
 												
-												<div class="row product banner"> <!-- step 3 - Brug - Banner-->
+												<div class="row product ind banner"> <!-- step 3 - Brug - Banner-->
 												
 													<div class="col-md-4">
 														
@@ -437,7 +437,7 @@
 												
 												</div>
 												
-												<div class="row product roll-up"> <!-- step 3 - Brug - Roll-up-->
+												<div class="row product ind roll-up"> <!-- step 3 - Brug - Roll-up-->
 												
 													<div class="col-md-4">
 														
@@ -570,8 +570,8 @@
 						
 												<h4>Anbefalede materialer</h4>
 							
-												<div class="row">
-						
+												<div class="row product ud poster"> <!-- step 3 - Brug - Poster - Ud-->
+												
 													<div class="col-md-4">
 														
 														<p>
@@ -671,7 +671,216 @@
 														</p>
 						
 													</div>
+												
+												</div>
+												
+												<div class="row product ud banner"> <!-- step 3 - Brug - Banner - Ud-->
+												
+													<div class="col-md-4">
+														
+														<p>
 						
+															<label>
+											
+																<input type="checkbox">
+																Materiale 1
+														
+															</label>
+						
+														</p>
+						
+														<p>
+						
+															<label>
+											
+																<input type="checkbox">
+																Materiale 2
+														
+															</label>
+						
+														</p>
+						
+														<p>
+						
+															<label>
+											
+																<input type="checkbox">
+																Materiale 3
+														
+															</label>
+						
+														</p>
+						
+													</div>
+													
+													<div class="col-md-4">
+														
+														<p>
+						
+															<label>
+											
+																<input type="checkbox">
+																Materiale 4
+														
+															</label>
+						
+														</p>
+						
+														<p>
+						
+															<label>
+											
+																<input type="checkbox">
+																Materiale 5
+														
+															</label>
+						
+														</p>
+						
+														<p>
+						
+															<label>
+											
+																<input type="checkbox">
+																Materiale 6
+														
+															</label>
+						
+														</p>
+						
+													</div>
+													
+													<div class="col-md-4">
+														
+														<p>
+						
+															<label>
+											
+																<input type="checkbox">
+																Materiale 7
+														
+															</label>
+						
+														</p>
+						
+														<p>
+						
+															<label>
+											
+																<input type="checkbox">
+																Materiale 8
+														
+															</label>
+						
+														</p>
+						
+													</div>
+												
+												</div>
+												
+												
+												<div class="row product ud roll-up"> <!-- step 3 - Brug - Roll-up - Ud-->
+												
+													<div class="col-md-4">
+														
+														<p>
+						
+															<label>
+											
+																<input type="checkbox">
+																Materiale 1
+														
+															</label>
+						
+														</p>
+						
+														<p>
+						
+															<label>
+											
+																<input type="checkbox">
+																Materiale 2
+														
+															</label>
+						
+														</p>
+						
+														<p>
+						
+															<label>
+											
+																<input type="checkbox">
+																Materiale 3
+														
+															</label>
+						
+														</p>
+						
+													</div>
+													
+													<div class="col-md-4">
+														
+														<p>
+						
+															<label>
+											
+																<input type="checkbox">
+																Materiale 4
+														
+															</label>
+						
+														</p>
+						
+														<p>
+						
+															<label>
+											
+																<input type="checkbox">
+																Materiale 5
+														
+															</label>
+						
+														</p>
+						
+														<p>
+						
+															<label>
+											
+																<input type="checkbox">
+																Materiale 6
+														
+															</label>
+						
+														</p>
+						
+													</div>
+													
+													<div class="col-md-4">
+														
+														<p>
+						
+															<label>
+											
+																<input type="checkbox">
+																Materiale 7
+														
+															</label>
+						
+														</p>
+						
+														<p>
+						
+															<label>
+											
+																<input type="checkbox">
+																Materiale 8
+														
+															</label>
+						
+														</p>
+						
+													</div>
+												
 												</div>
 						
 											</div>
