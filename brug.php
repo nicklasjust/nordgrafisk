@@ -642,7 +642,7 @@
 						
 											<div class="panel-body">
 						
-												<h4>Anbefalede materialer</h4>
+												<h4>Anbefalede materialer:</h4>
 							
 												<div class="row product ud poster"> <!-- step 3 - Brug - Poster - Ud-->
 												
