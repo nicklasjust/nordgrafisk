@@ -131,6 +131,16 @@
 	/* # - type
 	================================================== */
 
+	.img-rounded {
+		height: 120px;
+		width: 120px;
+		border-radius: 6px;
+	}
+
+	.selected {
+		border: solid 2px blue;
+	}
+
 	/* # - format
 	================================================== */
 		div.size div.other{

@@ -79,4 +79,11 @@ $(document).ready(function()
 				$(this).parent().addClass('hide-other');	
 			}
 		});
+
+	
+	$( ".img-rounded" ).click(function() {
+  		$(".img-rounded").removeClass("selected");
+       $(this).addClass("selected");
+	});
+
 });
