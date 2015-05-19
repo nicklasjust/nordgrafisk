@@ -87,8 +87,8 @@ $(document).ready(function()
 
        	var alt = $(this).attr('alt');
        	console.log(alt);
-		$('.steps').data('product', alt);
-		$('.steps').attr('product', alt);
+		//$('.steps').data('product', alt);
+		$('.steps').attr('data-product', alt);
 	});
 
 });

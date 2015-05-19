@@ -80,7 +80,7 @@
 
 	div.band.product-information div.product-flow div.steps{
 		position: relative;
-		height: 400px;
+		height: 500px;
 	}
 
 	div.band.product-information div.product-flow div.steps div.step{
@@ -161,10 +161,30 @@
 
 	/* # - brug
 	================================================== */
+		.panel-body.ind{
+			position: relative;
+			height: 160px;
+		}
+		
+		.panel-body.ud{
+			position: relative;
+			height: 160px;
+		}
+		
 		.row.product{
 			opacity: 0;
 			z-index: -1;
 			position: absolute;
+		}
+		
+		div.steps[data-product="Poster"] div.row.product.ind.poster,
+		div.steps[data-product="Poster"] div.row.product.ud.poster,
+		div.steps[data-product="Roll-up"] div.row.product.ind.roll-up,
+		div.steps[data-product="Roll-up"] div.row.product.ud.roll-up,
+		div.steps[data-product="Andet"] div.row.product.ind.banner,
+		div.steps[data-product="Andet"] div.row.product.ind.banner{
+			opacity: 1;
+            z-index: 1;
 		}
 	
 

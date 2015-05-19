@@ -408,7 +408,7 @@
 						
 										<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 						
-											<div class="panel-body">
+											<div class="panel-body ind">
 						
 												<h4>Anbefalede materialer:</h4>
 						
@@ -749,7 +749,7 @@
 						
 										<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 						
-											<div class="panel-body">
+											<div class="panel-body ud">
 						
 												<h4>Anbefalede materialer:</h4>
 							
