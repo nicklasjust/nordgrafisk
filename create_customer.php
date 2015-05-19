@@ -1,9 +1,5 @@
 
 <?php
-	
-	echo "lol";
-	exit;
-	
 	$wsdlUrl = 'https://api.e-conomic.com/secure/api1/EconomicWebservice.asmx?WSDL';
 
 	$client = new SoapClient($wsdlUrl, array("trace" => 1, "exceptions" => 1));    		
@@ -14,16 +10,74 @@
 		)
 	);
 
-	$debtorHandle = $client->Debtor_Create(array(
-		'number' => '1',
-		'debtorGroupHandle' => array(
-			'Number' => 1
-			),
-		'name' => 'Nicklas',
-		'vatZone' => 'EU'
-		));
-	echo '<pre>';
-	print_r($debtorHandle);
-	echo '</pre>';
+	// $debtorHandle = $client->Debtor_Create(array(
+	// 	'number' => '100',
+	// 	'debtorGroupHandle' => array(
+	// 		'Number' => 2
+	// 		),
+	// 	'name' => 'Nicklas',
+	// 	'vatZone' => 'EU'
+	// 	));
+	// echo '<pre>';
+	// print_r($debtorHandle);
+	// echo '</pre>';
 
+	// $debtorHandle = array(
+	// 		'Number' => 34
+	// 	);
+
+	// $client->Debtor_SetAddress(array(
+	// 	'debtorHandle' => $debtorHandle,
+	// 	'value' => 'Kappelvænget 12 st. 3'
+	// 	));
+
+	// $client->Debtor_SetCity(array(
+	// 	'debtorHandle' => $debtorHandle,
+	// 	'value' => 'Aarhus V'
+	// 	));
+
+	// $client->Debtor_SetPostalCode(array(
+	// 	'debtorHandle' => $debtorHandle,
+	// 	'value' => '8210'
+	// 	));
+
+	// $client->Debtor_SetCountry(array(
+	// 	'debtorHandle' => $debtorHandle,
+	// 	'value' => 'Danmark'
+	// 	));
+
+	// $client->Debtor_SetEmail(array(
+	// 	'debtorHandle' => $debtorHandle,
+	// 	'value' => 'nicklas_just2@hotmail.com'
+	// 	));
+
+	// $client->Debtor_SetEan(array(
+	// 	'debtorHandle' => $debtorHandle,
+	// 	'value' => '1234567891231'
+	// 	));
+
+	$Delivery_Location = array(
+		'Id' => 1
+		);
+
+	$client->DeliveryLocation_SetAddress(array(
+		'deliveryLocationHandle' => $Delivery_Location,
+		'value' => 'Kappelvænget 12 st. 3'
+		));
+
+	$client->DeliveryLocation_SetPostalCode(array(
+		'deliveryLocationHandle' => $Delivery_Location,
+		'value' => '8210'
+		));
+
+
+	$client->DeliveryLocation_SetCity(array(
+		'deliveryLocationHandle' => $Delivery_Location,
+		'value' => 'Aarhus V'
+		));
+
+	$client->DeliveryLocation_SetCountry(array(
+		'deliveryLocationHandle' => $Delivery_Location,
+		'value' => 'Danmark'
+		));
 ?>
