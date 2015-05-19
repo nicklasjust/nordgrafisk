@@ -56,28 +56,34 @@
 	// 	'value' => '1234567891231'
 	// 	));
 
-	$Delivery_Location = array(
-		'Id' => 1
-		);
+	// $Delivery_Location = array(
+	// 	'Id' => 1
+	// 	);
 
-	$client->DeliveryLocation_SetAddress(array(
-		'deliveryLocationHandle' => $Delivery_Location,
-		'value' => 'Kappelvænget 12 st. 3'
-		));
+	// $client->DeliveryLocation_SetAddress(array(
+	// 	'deliveryLocationHandle' => $Delivery_Location,
+	// 	'value' => 'Kappelvænget 12 st. 3'
+	// 	));
 
-	$client->DeliveryLocation_SetPostalCode(array(
-		'deliveryLocationHandle' => $Delivery_Location,
-		'value' => '8210'
-		));
+	// $client->DeliveryLocation_SetPostalCode(array(
+	// 	'deliveryLocationHandle' => $Delivery_Location,
+	// 	'value' => '8210'
+	// 	));
 
 
-	$client->DeliveryLocation_SetCity(array(
-		'deliveryLocationHandle' => $Delivery_Location,
-		'value' => 'Aarhus V'
-		));
+	// $client->DeliveryLocation_SetCity(array(
+	// 	'deliveryLocationHandle' => $Delivery_Location,
+	// 	'value' => 'Aarhus V'
+	// 	));
 
-	$client->DeliveryLocation_SetCountry(array(
-		'deliveryLocationHandle' => $Delivery_Location,
-		'value' => 'Danmark'
-		));
+	// $client->DeliveryLocation_SetCountry(array(
+	// 	'deliveryLocationHandle' => $Delivery_Location,
+	// 	'value' => 'Danmark'
+	// 	));
+
+	// $found_by_number = $client->Debtor_FindByTelephoneAndFaxNumber(array(
+	// 	'telephoneAndFaxNumber' => '28125239'
+	// 	));
+
+	
 ?>
