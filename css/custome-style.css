@@ -226,6 +226,20 @@
 		width: 300px;
 	}
 
+	div.contact-form a{
+		cursor: pointer;
+	}
+
+	div.contact-form div.panel-heading{
+		padding: 0;
+	}
+
+	div.contact-form div.panel-heading a{
+		display: block;
+		padding: 10px 15px;
+		text-decoration: none;
+	}
+
 
 /* # SHOPPING CART
 ================================================== */
@@ -239,7 +253,7 @@
 	}	
 
 	div.shopping-cart{
-			width: 300px;
+		width: 300px;
 	}
 
 	div.shopping-cart a{
