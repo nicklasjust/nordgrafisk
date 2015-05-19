@@ -182,7 +182,7 @@
 		div.steps[data-product="Roll-up"] div.row.product.ind.roll-up,
 		div.steps[data-product="Roll-up"] div.row.product.ud.roll-up,
 		div.steps[data-product="Andet"] div.row.product.ind.banner,
-		div.steps[data-product="Andet"] div.row.product.ind.banner{
+		div.steps[data-product="Andet"] div.row.product.ud.banner{
 			opacity: 1;
             z-index: 1;
 		}
