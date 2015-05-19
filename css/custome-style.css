@@ -208,4 +208,26 @@
 	aside.shopping-cart{
 		top: 300px;
 	}	
+
+	div.shopping-cart{
+			width: 300px;
+	}
+
+	div.shopping-cart a{
+		cursor: pointer;
+	}
+
+	div.shopping-cart div.panel-heading{
+		padding: 0;
+	}
+
+	div.shopping-cart div.panel-body{
+		max-height: 200px;
+		overflow-y: auto;
+	}
+
+	div.shopping-cart div.panel-heading a{
+		display: block;
+		padding: 10px 15px;
+	}
 	
