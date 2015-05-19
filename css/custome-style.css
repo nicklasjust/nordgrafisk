@@ -143,6 +143,24 @@
 
 	/* # - format
 	================================================== */
+		.row.parent_format{
+			position: relative;
+			padding-bottom: 135px;
+		}
+		
+		.row.format{
+			opacity: 0;
+			z-index: -1;
+			position: absolute;
+		}
+		
+		div.steps[data-product="Poster"] div.row.format.poster,
+		div.steps[data-product="Roll-up"] div.row.format.roll-up,
+		div.steps[data-product="Andet"] div.row.format.banner{
+			opacity: 1;
+            z-index: 1;
+		}
+		
 		div.size div.other{
 			padding-top: 12px;
 			padding-bottom: 12px;
