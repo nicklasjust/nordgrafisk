@@ -10,62 +10,67 @@
 		)
 	);
 
-	// $productGroup = $client->ProductGroup_GetAll()->ProductGroup_GetAllResult->ProductGroupHandle;
+	$debtorNumber = '1';
+
+	// $orderHandle = $client->Order_Create(array(
+	// 		'debtorHandle' => array(
+	// 			'Number' => $debtorNumber
+	// 			)
+	// 	))->Order_CreateResult;
 
 	// echo "<pre>";
-	// print_r($productGroup);
+	// print_r($orderHandle);
 	// echo "</pre>";
 
-	// $productGroupHandles = $client->ProductGroup_GetName(array(
-	// 	'productGroupHandle' => array(
-	// 						'Number' => 2
-	// 						)
-	// 	));
+	$orderHandle = array(
+			'Id' => '47'
+		);
+
+	$client->Order_SetDeliveryDate(array(
+			'orderHandle' 	=> $orderHandle,
+			'value' 		=> '2002-05-30T09:30:10+06:00'
+		));
+
+	$client->Order_SetDeliveryAddress(array(
+			'orderHandle' 	=> $orderHandle,
+			'value' 		=> 'Lolvej 45'
+		));
+
+	$client->Order_SetDeliveryCity(array(
+			'orderHandle'	=> $orderHandle,
+			'value'			=> 'Lolby'
+		));
+
+	$client->Order_SetDeliveryCountry(array(
+			'orderHandle'	=> $orderHandle,
+			'value'			=> 'Lolland'
+		));
+
+	// $orderLineHandle = $client->OrderLine_Create(array(
+	// 		'orderHandle' => $orderHandle
+	// 	))->OrderLine_CreateResult;
 
 	// echo "<pre>";
-	// print_r($productGroupHandles);
+	// print_r($orderLineHandle);
 	// echo "</pre>";
 
-	//exit;
+	$orderLineHandle = array(
+			'Id' => '47',
+			'Number' => '1'
+		);
 
-	$debtorGroupHandles = $client->debtorGroup_GetAll()->DebtorGroup_GetAllResult->DebtorGroupHandle;
-
-	$client->Order_Create(array(
-			'debtorHandle' => array(
+	$client->OrderLine_SetProduct(array(
+			'orderLineHandle' 	=> $orderLineHandle,
+			'valueHandle' 		=> array(
 				'Number' => '1'
 				)
 		));
 
-	// $newDebtorHandle = $client->Debtor_Create(array(
+	$client->OrderLine_SetDescription(array(
+			'orderLineHandle' 	=> $orderLineHandle,
+			'value' 			=> 'Bananas'
+		));
 
-	// 	'number'            => '20',
-	// 	'debtorGroupHandle' => $debtorGroupHandles,
-	// 	'name'              => 'Leif',
-	// 	'vatZone'           => 'EU'))->Debtor_CreateResult;
-
-	// exit;
-
-	$productGroupHandles = $client->productGroup_GetAll()->ProductGroup_GetAllResult->ProductGroupHandle;
-	$firstProductGroup = $productGroupHandles[0];
-
-	echo "<pre>";
-	print_r($firstProductGroup);
-	echo "</pre>";
-
-	// exit;
-	$arg = array(
-		'number' 	=> '109',
-		'productGroupHandle' => array(
-							'Number' => $firstProductGroup->Number
-							),
-		'name' 		=> 'Bananer'
-		);
-
-	$createProduct = $client->Product_Create($arg)->Product_CreateResult;
-
-	echo "<pre>";
-	print_r($createProduct);
-	echo "</pre>";
 ?>
 
 <!DOCTYPE html>
