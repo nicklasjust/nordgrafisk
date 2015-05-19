@@ -248,7 +248,9 @@
 							<div class="step show"> <!-- step 1 -->
 
 								<div class="produktTab">
-				    	
+									
+									<h3>Vælg din ønskede produkttype</h3>				    	
+				
 							    	<p>
 								    	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 								    	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -313,6 +315,11 @@
 							</div> <!-- end of step 1 -->
 
 							<div class="step step-2"> <!-- step 2 -->
+								
+								<h3>Ønskede egenskaber</h3>
+								
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+								   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>	
 
 								<div class="row">
 
