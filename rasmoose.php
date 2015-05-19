@@ -1198,7 +1198,7 @@
 
 									</div>
 
-									<div id="shopping-cart" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+									<div id="shopping-cart" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 
 										<div class="panel-body">
 											
@@ -1234,6 +1234,11 @@
 										</div>
 
 									</div>
+									
+									<button class="btn btn-default custom-btn pull-left" type="submit">Ordreoversigt</button>
+
+									<button class="btn btn-primary custom-btn pull-right" type="submit">Send Ordre</button>
+
 
 								</div>
 
