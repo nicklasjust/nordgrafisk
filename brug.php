@@ -247,25 +247,133 @@
 							
 							<div class="step show"> <!-- step 1 -->
 
-								Step 1
-
-								<!--
-
-									Rip your farts here
-
-								-->	
+								<div class="produktTab">
+				    	
+							    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+							    	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+							    	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+							    	Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							    	
+							    	<h4>Produkttyper</h4>
+							    	
+							    	<div class="row" id="firstRow">
+							    		<div class="col-md-2">
+							   				<img src="images/poster_icon.png" alt="Poster" class="img-rounded">
+							   			</div>
+							   			
+							   			<div class="col-md-2">
+							   				<img src="images/rollup_icon.jpg" alt="Roll-up" class="img-rounded">
+							   			</div>
+							   			
+							   			<div class="col-md-2">
+							   				<img src="images/1.png" alt="Poster" class="img-rounded">
+							   			</div>
+							   			
+							   			<div class="col-md-2">
+							   				<img src="images/1.png" alt="Poster" class="img-rounded">
+							   			</div>
+							   			
+							   			<div class="col-md-2">
+							   				<img src="images/1.png" alt="Poster" class="img-rounded">
+							   			</div>
+							   			
+							   			<div class="col-md-2">
+							   				<img src="images/1.png" alt="Poster" class="img-rounded">
+							   			</div>
+							    	</div>
+							    	
+							    	<div class="row" id="secondRow">
+							    		<div class="col-md-2">
+							   				<img src="images/1.png" alt="Poster" class="img-rounded">
+							   			</div>
+							   			
+							   			<div class="col-md-2">
+							   				<img src="images/1.png" alt="Poster" class="img-rounded">
+							   			</div>
+							   			
+							   			<div class="col-md-2">
+							   				<img src="images/1.png" alt="Poster" class="img-rounded">
+							   			</div>
+							   			
+							   			<div class="col-md-2">
+							   				<img src="images/1.png" alt="Poster" class="img-rounded">
+							   			</div>
+							   			
+							   			<div class="col-md-2">
+							   				<img src="images/1.png" alt="Poster" class="img-rounded">
+							   			</div>
+							   			
+							   			<div class="col-md-2">
+							   				<img src="images/1.png" alt="Poster" class="img-rounded">
+							   			</div>
+							   		</div>
+					    		</div>
 
 							</div> <!-- end of step 1 -->
 
-							<div class="step"> <!-- step 2 -->
+							<div class="step step-2"> <!-- step 2 -->
 
-								Step 2
+								<div class="row">
 
-								<!--
+									<div class="col-md-4">
+										
+										<div class="size hide-other">
+									
+											<h4>Størrelse:</h4>
 
-									Rip your farts here
+											<select name="size" class="form-control">
+										
+												<option>A0</option>
+												<option>A1</option>
+											 	<option>A2</option>
+											 	<option>A3</option>
+												<option>A4</option>
+												<option>A5</option>
+												<option>B0</option>
+												<option>B1</option>
+											 	<option>B2</option>
+											 	<option>B3</option>
+												<option>B4</option>
+												<option>B5</option>
+												<option>Andet</option>
+											
+											</select>
 
-								-->	
+											<div class="other">
+
+												<input type="text" class="form-control" placeholder="Længde">
+												X
+												<input type="text" class="form-control" placeholder="Bredde">
+												mm 
+
+											</div>
+
+										</div>
+									
+									</div>
+
+									<div class="col-md-4">
+									
+									</div>
+
+									<div class="col-md-4">
+									
+										<h4>Type:</h4>
+
+											<select name="type" class="form-control">
+										
+												<option>Farve</option>
+												<option>Farve m. gloss</option>
+												<option>Sort/Hvid</option>
+											 	<option>Sort/Hvid m. gloss</option>
+											
+											</select>
+
+									</div>
+
+								</div>
+
+							<textarea class="form-control" rows="10" placeholder="Skriv kommentarer til format her."></textarea>
 
 							</div> <!-- end of step 2 -->
 
@@ -1039,7 +1147,7 @@
 
 					<aside>
 						
-						<section class="contact-form">
+						<section class="contact-form"> <!-- copy from here -->
 							
 							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 								
@@ -1049,18 +1157,57 @@
 								
 										<h4 class="panel-title">
 								
-											<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-												Collapsible Group Item #1
+											<a data-toggle="collapse" data-parent="#accordion" href="#collapseThis" aria-expanded="true" aria-controls="collapseThis">
+												Kontakt
 											</a>
 								
 										</h4>
 								
 									</div>
 								
-									<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+									<div id="collapseThis" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 
 										<div class="panel-body">
-											<!-- Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. -->
+											
+											<div class="col-md-12">
+											
+												<div class="row">
+														
+														<h4>Henrik Fogh Andersen</h4>
+														<p>something@whatever.fart</p>
+														<p>Telefon: 88888888</p>
+														
+												</div>
+												
+												<div class="row">
+												
+													<form class="form-horizontal">
+														<div class="form-group">												 
+														    <div class="col-sm-3">
+														    	<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+														    </div>
+														</div>
+													  	<div class="form-group">											    
+													    	<div class="col-sm-3">
+													      		<input type="tel" class="form-control" id="inputTlf" placeholder="Telefonnr.">
+													    	</div>
+													  	</div>
+														<div class="form-group">
+															<div class="col-sm-3">
+																<textarea class="form-control" id="kommentar" rows="4" placeholder="Skriv til Henrik"></textarea>
+															</div>
+														</div>
+													  	<div class="form-group">
+													    	<div class="col-sm-10">
+													      		<button type="submit" class="btn btn-default">Send</button>
+													    	</div>
+													  	</div>
+													</form>
+												
+												</div>
+											
+											</div>
+		
 										</div>
 
 									</div>
@@ -1069,7 +1216,7 @@
 								
 							</div>
 
-						</section>
+						</section> <!-- copy to here -->
 
 						<section class="shopping-cart">
 							
