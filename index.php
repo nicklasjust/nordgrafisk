@@ -394,7 +394,7 @@
 
 								
 								
-								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+								<div class="panel-group usage-collapse" id="accordion" role="tablist" aria-multiselectable="true">
 
 									<div class="panel panel-default"> <!-- step 3 - Brug - Indendørs-->
 						
@@ -1154,7 +1154,7 @@
 						
 						<section class="contact-form">
 							
-							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+							<div class="panel-group contact-form" id="accordion" role="tablist" aria-multiselectable="true">
 								
 								<div class="panel panel-default">
 								
@@ -1281,7 +1281,21 @@
 
 									</div>
 									
-									<button class="btn btn-default custom-btn pull-left" type="submit">Ordreoversigt</button>
+									<div class="col-md-7">
+										
+										Leveringsdato: <input type="date" class="form-control">
+										
+									</div>
+
+									<div class="col-md-5">
+										
+										Tidspunkt: <input type="time" class="form-control">
+										
+									</div>
+
+									<br>
+									
+									<button class="btn btn-default custom-btn pull-left" type="submit">Anmod om tilbud</button>
 
 									<button class="btn btn-primary custom-btn pull-right" type="submit">Send Ordre</button>
 
