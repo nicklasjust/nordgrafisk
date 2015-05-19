@@ -1,5 +1,4 @@
 <?php
-	
 	if(empty($_FILES))
 	{
 		echo json_encode(array(

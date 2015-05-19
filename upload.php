@@ -1,16 +1,5 @@
 <?php
 ?>
-
-<!DOCTYPE html>
-<html lang="da">
-	
-	<head>
-
-		<meta charset="utf-8">
-		<title>Nord grafisk</title>
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
 		<style type="text/css">
 
 			div.upload-progress-bar{
@@ -22,12 +11,12 @@
 			}
 
 			div.upload-progress-bar span.progress{
-				background-image: url(img/progress.gif);
+				background-image: url(images/progress.gif);
 				display: block;
 				width: 0%;
 				-webkit-transition: width 8s; /* Safari */
-			    transition: width 8s;
-			    font-weight: bold;
+				transition: width 8s;
+				font-weight: bold;
 			}
 
 		</style>
@@ -36,7 +25,7 @@
 	
 	<body>
 
-		<form action="upload.php" method="post" class="file-upload" enctype="multipart/form-data">
+		<form action="#" method="post" class="file-upload" enctype="multipart/form-data">
 		
 			Select image to upload:
 			<input type="file" name="file" multiple>
@@ -54,6 +43,7 @@
 
 			$(document).ready(function()
 			{
+
 				$('form.file-upload input[name="file"]').on('change', function(event)
 				{
 					// var files = $(this)[0].files;
@@ -77,7 +67,7 @@
 
 				function FileChunkUploader(file)
 				{
-					this.chunkSize 		= 1900000;
+					this.chunkSize 		= 2000000;
 
 					this.fileReader 	= new FileReader();
 					this.file 			= file;
@@ -227,7 +217,7 @@
 						console.log('trying to upload chunk(' + cIndex + ')');
 
 						$.ajax({
-							url: 'upload.php',
+							url: 'upload-script.php',
 							type: 'POST',
 							data: formData,
 							processData: false,
