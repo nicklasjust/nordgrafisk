@@ -262,7 +262,7 @@
 							   			</label>
 							   			
 							   			<label class="col-md-2">
-							   				<img src="images/rollup_icon.jpg" alt="Roll-up" class="img-rounded">
+							   				<img src="images/rollup_icon.png" alt="Roll-up" class="img-rounded">
 							   			</label>
 
 							   			
