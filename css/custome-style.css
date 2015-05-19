@@ -186,7 +186,17 @@
 			opacity: 1;
             z-index: 1;
 		}
-	
+
+		div.usage-collapse div.panel-heading{
+			padding: 0;
+		}
+
+		div.usage-collapse div.panel-heading label{
+			display: block;
+			padding: 10px 15px;
+			text-decoration: none;
+			margin: 0;
+		}
 
 	/* # - upload fil
 	================================================== */
@@ -223,7 +233,7 @@
 	}
 
 	section.contact-form{
-		width: 300px;
+		width: 350px;
 	}
 
 	div.contact-form a{
@@ -253,7 +263,7 @@
 	}	
 
 	div.shopping-cart{
-		width: 300px;
+		width: 350px;
 	}
 
 	div.shopping-cart a{
@@ -275,7 +285,7 @@
 	}
 
 	div.shopping-cart button.custom-btn{
-		margin: 5px;
+		margin: 5px 15px;
 	}
 
 	div.panel{
