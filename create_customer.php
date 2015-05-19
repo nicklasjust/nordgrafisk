@@ -81,9 +81,18 @@
 	// 	'value' => 'Danmark'
 	// 	));
 
-	// $found_by_number = $client->Debtor_FindByTelephoneAndFaxNumber(array(
-	// 	'telephoneAndFaxNumber' => '28125239'
-	// 	));
+	$found_by_number = $client->Debtor_FindByTelephoneAndFaxNumber(array(
+		'telephoneAndFaxNumber' => '28125239'
+		));
 
-	
+	$attention = $client->Debtor_GetData(array(
+		'entityHandle' => array(
+			'Number' => $found_by_number->Debtor_FindByTelephoneAndFaxNumberResult->DebtorHandle->Number)
+		));
+	echo "<pre>";
+	print_r($attention);
+	echo "</pre>";
+
+
+
 ?>
