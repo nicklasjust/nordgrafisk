@@ -1181,17 +1181,17 @@
 												
 													<form class="form-horizontal">
 														<div class="form-group">												 
-														    <div class="col-sm-3">
+														    <div class="col-sm-12">
 														    	<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
 														    </div>
 														</div>
 													  	<div class="form-group">											    
-													    	<div class="col-sm-3">
+													    	<div class="col-sm-12">
 													      		<input type="tel" class="form-control" id="inputTlf" placeholder="Telefonnr.">
 													    	</div>
 													  	</div>
 														<div class="form-group">
-															<div class="col-sm-3">
+															<div class="col-sm-12">
 																<textarea class="form-control" id="kommentar" rows="4" placeholder="Skriv til Henrik"></textarea>
 															</div>
 														</div>
