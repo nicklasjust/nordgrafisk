@@ -257,15 +257,69 @@
 
 							</div> <!-- end of step 1 -->
 
-							<div class="step"> <!-- step 2 -->
+							<div class="step step-2"> <!-- step 2 -->
 
-								Step 2
+								<div class="row">
 
-								<!--
+									<div class="col-md-4">
+										
+										<div class="size hide-other">
+									
+											<h4>Størrelse:</h4>
 
-									Rip your farts here
+											<select name="size" class="form-control">
+										
+												<option>A0</option>
+												<option>A1</option>
+											 	<option>A2</option>
+											 	<option>A3</option>
+												<option>A4</option>
+												<option>A5</option>
+												<option>B0</option>
+												<option>B1</option>
+											 	<option>B2</option>
+											 	<option>B3</option>
+												<option>B4</option>
+												<option>B5</option>
+												<option>Andet</option>
+											
+											</select>
 
-								-->	
+											<div class="other">
+
+												<input type="text" class="form-control" placeholder="Længde">
+												X
+												<input type="text" class="form-control" placeholder="Bredde">
+												mm 
+
+											</div>
+
+										</div>
+									
+									</div>
+
+									<div class="col-md-4">
+									
+									</div>
+
+									<div class="col-md-4">
+									
+										<h4>Type:</h4>
+
+											<select name="type" class="form-control">
+										
+												<option>Farve</option>
+												<option>Farve m. gloss</option>
+												<option>Sort/Hvid</option>
+											 	<option>Sort/Hvid m. gloss</option>
+											
+											</select>
+
+									</div>
+
+								</div>
+
+							<textarea class="form-control" rows="10" placeholder="Skriv kommentarer til format her."></textarea>
 
 							</div> <!-- end of step 2 -->
 

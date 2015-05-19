@@ -145,6 +145,8 @@
 	================================================== */
 		div.size div.other{
 			padding-top: 12px;
+			padding-bottom: 12px;
+
 		}
 
 		div.size div.other input{
