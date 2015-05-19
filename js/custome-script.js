@@ -83,7 +83,12 @@ $(document).ready(function()
 	
 	$( ".img-rounded" ).click(function() {
   		$(".img-rounded").removeClass("selected");
-       $(this).addClass("selected");
+       	$(this).addClass("selected");
+
+       	var alt = $(this).attr('alt');
+       	console.log(alt);
+		$('.steps').data('product', alt);
+		$('.steps').attr('product', alt);
 	});
 
 });
