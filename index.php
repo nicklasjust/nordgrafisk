@@ -1218,7 +1218,70 @@
 
 						<section class="shopping-cart">
 							
-							Shopping cart
+							<div class="panel-group shopping-cart" id="accordion" role="tablist" aria-multiselectable="true">
+		
+								<div class="panel panel-default">
+
+									<div class="panel-heading" role="tab" id="headingOne">
+
+										<h4 class="panel-title">
+
+											<a data-toggle="collapse" data-parent="#accordion" href="#shopping-cart" aria-expanded="true" aria-controls="shopping-cart">
+
+												<span class="glyphicon glyphicon-shopping-cart"></span>
+												<span class="pull-right">6 elementer i kurven</span>
+
+											</a>
+
+										</h4>
+
+									</div>
+
+									<div id="shopping-cart" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+
+										<div class="panel-body">
+											
+											<div class="list-group">
+
+												<a class="list-group-item">
+													<span class="badge">2</span>
+													Plakat
+												</a>
+												<a class="list-group-item">
+													<span class="badge">250</span>
+													Visitkort
+												</a>
+												<a class="list-group-item">
+													<span class="badge">1</span>
+													Roll-up
+												</a>
+												<a class="list-group-item">
+													<span class="badge">14</span>
+													Lorem ipsum
+												</a>
+												<a class="list-group-item">
+													<span class="badge">3</span>
+													Nam congue 
+												</a>
+												<a class="list-group-item">
+													<span class="badge">43</span>
+													Cras justo odio
+												</a>
+											
+											</div>
+
+										</div>
+
+									</div>
+									
+									<button class="btn btn-default custom-btn pull-left" type="submit">Ordreoversigt</button>
+
+									<button class="btn btn-primary custom-btn pull-right" type="submit">Send Ordre</button>
+
+
+								</div>
+
+							</div>
 
 						</section>
 

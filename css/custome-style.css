@@ -205,6 +205,10 @@
 /* # SHOPPING CART
 ================================================== */
 	
+	div#shopping-cart{
+		border-bottom: 1px solid #ddd;
+	}
+
 	aside.shopping-cart{
 		top: 300px;
 	}	
@@ -222,12 +226,20 @@
 	}
 
 	div.shopping-cart div.panel-body{
-		max-height: 200px;
+		max-height: 400px;
 		overflow-y: auto;
 	}
 
 	div.shopping-cart div.panel-heading a{
 		display: block;
 		padding: 10px 15px;
+	}
+
+	div.shopping-cart button.custom-btn{
+		margin: 5px;
+	}
+
+	div.panel{
+		overflow: hidden;
 	}
 	
