@@ -170,6 +170,9 @@
 
 	/* # - upload fil
 	================================================== */
+		.cropping-modal h2{
+			margin-top: 0; 
+		}
 
 
 /* # FOOTER

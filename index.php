@@ -1080,13 +1080,10 @@
 
 							<div class="step"> <!-- step 4 -->
 
-								Step 4
-
-								<!--
-
-									Rip your farts here
-
-								-->	
+								<!-- Button trigger modal -->
+								<button type="button" class="btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#myModal">
+									Tryk her for beskæringsguide!
+								</button>
 
 							</div> <!-- end of step 4 -->
 
@@ -1194,5 +1191,105 @@
 		</div>
 
 	</div> <!-- end of footer -->
+
+	<!-- Modal vindue for uploadpage-->
+	<div class="modal fade cropping-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		
+		<div class="modal-dialog modal-lg">
+			
+			<div class="modal-content">
+					
+				<div class="modal-header">
+					
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						
+						<span aria-hidden="true">&times;</span>
+					
+					</button>
+					
+					<h4 class="modal-title" id="myModalLabel">Beskæringsguide</h4>
+
+				</div>
+
+				<div class="modal-body">
+					
+					<h2>Har du husket beskæring?</h2>
+
+					<div class="row">
+						
+						<div class="col-md-3">
+							
+							<p>
+								Lorem ipsum dolor sit amet, vel ultrices sapien mus pulvinar elit quis, libero bibendum urna vivamus
+								 consectetuer aliquam leo, amet ultrices tristique parturient tempus orci, mollis consectetuer pede. 
+								 Quam eget convallis. Justo ut faucibus consectetuer venenatis habitant libero, sit dui, cursus 
+								 adipiscing eu, sollicitudin enim reprehenderit mauris, blandit praesent ut mauris.
+							</p>
+
+							<p>
+								Morbi eget sed consectetuer, varius rhoncus sit mauris suscipit, diam semper vivamus dolor vero. 
+								Sit eros ac mattis mauris ac donec. Orci a lectus metus, dolor pellentesque wisi in mauris fermentum, 
+								pede amet tincidunt suscipit vestibulum vitae, in imperdiet sed purus, luctus erat congue nulla consectetur 
+								fringilla lacus. Vestibulum scelerisque et donec.
+							</p>
+
+						</div>
+							
+						<br>
+
+						<div class="col-md-9">
+
+							<img class="center-block" src="images/new-document-settings-indesign.png" alt="New document settings indesign" class="img-rounded">
+						
+						</div>
+					
+					</div>
+
+					<br>
+
+					<div class="row">
+						
+						
+						<div class="col-md-9">
+
+							<img class="center-block" src="images/bleed-edge.png" alt="Dokument bleed edge" class="img-rounded">
+						
+						</div>
+
+						<br>
+
+						<div class="col-md-3">
+							
+							<p>
+								Lorem ipsum dolor sit amet, vel ultrices sapien mus pulvinar elit quis, libero bibendum urna vivamus 
+								consectetuer aliquam leo, amet ultrices tristique parturient tempus orci, mollis consectetuer pede. 
+								Quam eget convallis. Justo ut faucibus consectetuer venenatis habitant libero, sit dui, cursus adipiscing 
+								eu, sollicitudin enim reprehenderit mauris, blandit praesent ut mauris.
+							</p>
+
+							<p>
+								Morbi eget sed consectetuer, varius rhoncus sit mauris suscipit, diam semper vivamus dolor vero. Sit eros 
+								ac mattis mauris ac donec. Orci a lectus metus, dolor pellentesque wisi in mauris fermentum, pede amet 
+								tincidunt suscipit vestibulum vitae, in imperdiet sed purus, luctus erat congue nulla consectetur fringilla 
+								lacus. Vestibulum scelerisque et donec.
+							</p>
+
+						</div>
+					
+					</div>
+
+				</div>
+
+				<div class="modal-footer">
+		        
+		        	<button type="submit" class="btn btn-primary" data-dismiss="modal">Annullér</button>
+
+				</div>
+			
+			</div>
+
+		</div>
+
+	</div>
 
 <?php require 'footer.php'; ?>
