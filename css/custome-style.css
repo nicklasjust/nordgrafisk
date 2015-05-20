@@ -80,7 +80,7 @@
 
 	div.band.product-information div.product-flow div.steps{
 		position: relative;
-		height: 500px;
+		height: 600px;
 	}
 
 	div.band.product-information div.product-flow div.steps div.step{
@@ -195,12 +195,9 @@
 			position: absolute;
 		}
 		
-		div.steps[data-product="Poster"] div.row.product.ind.poster,
-		div.steps[data-product="Poster"] div.row.product.ud.poster,
-		div.steps[data-product="Roll-up"] div.row.product.ind.roll-up,
-		div.steps[data-product="Roll-up"] div.row.product.ud.roll-up,
-		div.steps[data-product="Andet"] div.row.product.ind.banner,
-		div.steps[data-product="Andet"] div.row.product.ud.banner{
+		div.steps[data-product="Poster"] div.row.product.poster,
+		div.steps[data-product="Roll-up"] div.row.product.roll-up,
+		div.steps[data-product="Andet"] div.row.product.banner{
 			opacity: 1;
             z-index: 1;
 		}
@@ -218,8 +215,47 @@
 
 	/* # - upload fil
 	================================================== */
+
+		.step.step-4 input[type="file"]{
+			display: none;
+		}
+
 		.cropping-modal h2{
 			margin-top: 0; 
+		}
+
+		div.file-upload-preview{
+			overflow: hidden;
+			overflow-y: auto;
+			height: 240px;
+		}
+
+		div.file-upload-preview div.row{
+			margin-top: 24px;
+		}
+
+		div.file-upload-preview img{
+			max-width: 100%;
+			max-height: 130px;
+		}
+
+		div.upload-progress div.processing{
+			display: none;
+		}
+
+		div.upload-progress.processing div.processing{
+			display: block;
+		}
+
+		div.upload-progress .progress-bar{
+			-webkit-transition: width 8s; /* Safari */
+			transition: width 8s;
+
+			width: 0%;
+		}
+
+		div.upload-progress.processing .progress-bar{
+			display: none;
 		}
 
 
