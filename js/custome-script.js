@@ -96,9 +96,11 @@ $(document).ready(function()
 
 	var files = [];
 	var progressBars = [];
+	var allowedFileTypes = ['jpg', 'pdf', 'jpeg', 'gif', 'png'];
 
 	$('input#file-picker').on('change', function(event)
 	{
+		
 		files = event.target.files;
 		progressBars = [];
 
@@ -106,13 +108,22 @@ $(document).ready(function()
 
 		for (var i = 0; i < files.length; i++)
 		{
-			console.log(URL.createObjectURL(files[i]));
+			var type = files[i].type.split('/');
+
+			var typeFound = $.inArray(type[1], allowedFileTypes) > -1;
+
+			if(!typeFound)
+			{
+				$('div.file-upload-preview').append(
+					$('<h4 />').html('Du kan kun uploade filer af typen: ' + allowedFileTypes.join(', '))
+				);
+
+				return;
+			}
 
 			var tmpPath = URL.createObjectURL(event.target.files[i]);
 			
 			var name = files[i].name;
-
-			var type = files[i].type.split('/');
 
 			var sizeNotation 	= 'MB';
 			var size 			= files[i].size/1048576;
@@ -202,6 +213,16 @@ $(document).ready(function()
 
 		for (var i = files.length - 1; i >= 0; i--)
 		{
+			var typeFound = $.inArray((files[i].type.split('/'))[1], allowedFileTypes) > -1;
+
+			if(!typeFound)
+			{
+				$('div.file-upload-preview').append(
+					$('<h4 />').html('Du kan kun uploade filer af typen: ' + allowedFileTypes.join(', '))
+				);
+				return;
+			}
+
 			var file 			= files[i];
 			var chunkUploader 	= new FileChunkUploader(file, progressBars[i]);
 			chunkUploader.startUpload();
