@@ -131,9 +131,11 @@
 	/* # - type
 	================================================== */
 
-	.img-rounded {
-		height: 120px;
-		width: 120px;
+	div.produktTab div.products div.product input{
+		display: none;
+	}
+	div.produktTab div.products div.product img{
+		max-width: 100%;
 		border-radius: 6px;
 	}
 
