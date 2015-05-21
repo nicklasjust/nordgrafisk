@@ -8,13 +8,13 @@
 	
 	<div class="panel-group pending" id="accordion" role="tablist" aria-multiselectable="true">
 
-		<div class="panel panel-default">
+		<div class="panel panel-default" data-order-number="9434">
 
-	  		<div class="panel-heading" role="tab" id="pendingHeadingOne">
+	  		<div class="panel-heading" role="tab" id="order-number-9434">
 
 	  			<h4 class="panel-title">
 
-			        <a data-toggle="collapse" data-parent="#accordion" href="#pendingOne" aria-expanded="true" aria-controls="pendingOne">
+			        <a data-toggle="collapse" data-parent="#accordion" href="#order-9434" aria-expanded="true" aria-controls="order-number-9434">
 						<div class="row">	
 							<div class="col-md-3">
 								#9434
@@ -48,7 +48,7 @@
 
 	    	</div>
 
-	    	<div id="pendingOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="pendingHeadingOne">
+	    	<div id="order-9434" class="panel-collapse collapse" role="tabpanel" aria-labelledby="order-number-9434">
 
 	      		<div class="panel-body">
 
@@ -94,11 +94,11 @@
 
 					<div class="row">
 
-						<button type="button" class="btn btn-default btn-lg pull-right declineorder-btn">
+						<button type="button" data-order-number="9434" class="btn btn-default btn-lg pull-right declineorder-btn">
   							Afvis ordre
 						</button>
 
-						<button type="button" class="btn btn-default btn-lg pull-right acceptorder-btn">
+						<button type="button" data-order-number="9434" class="btn btn-default btn-lg pull-right acceptorder-btn">
 	  						Godkend ordre
 						</button>
 
