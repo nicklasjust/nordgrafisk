@@ -345,4 +345,44 @@
 	div.panel{
 		overflow: hidden;
 	}
+
+/* # NGInterface
+================================================== */
 	
+	div.panel-group div.panel-default > div.panel-heading{
+		padding: 0;
+		cursor: pointer;
+	}
+
+	div.panel-group div.panel-default > div.panel-heading a{
+		display: block;
+		padding: 10px 15px;
+		text-decoration: none;
+	}
+
+	div.panel-group.pending div.panel-default > div.panel-heading{
+		background-color: #fcf8e3;
+	}
+
+	div.panel-group.accepted div.panel-default > div.panel-heading{
+		background-color: #dff0d8;
+	}
+
+	div.panel-group.declined div.panel-default > div.panel-heading{
+		background-color: #f2dede;
+	}
+
+	.declineorder-btn{
+	margin-top: 10px;
+	margin-right: 10px; 
+	}
+
+	.acceptorder-btn{
+		margin-top: 10px;
+		margin-right: 10px; 
+	}
+
+	.contactcustomer-btn{
+		margin-top: 10px;
+		margin-right: 10px; 
+	}
