@@ -352,7 +352,7 @@ $(document).ready(function()
 			{
 				this_.chunksUploaded++;
 				this_.updatePrograssBar(this_.chunksUploaded, this_.chunkSize, this_.dataArray.length);
-				
+
 				console.log(data);
 				
 				var time = (this_.endTime - this_.startTime)/1000;
