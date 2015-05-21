@@ -94,6 +94,37 @@ $(document).ready(function()
 		$('.steps').attr('data-product', alt);
 	});
 
+
+	$('div.band.product-information header.flow-overview div a')
+		.on('click', function(event)
+		{	
+			event.preventDefault();
+			
+			var stepNumber = parseInt($(this).parent().index());
+			setVisibleStep(stepNumber);
+		});
+
+
+/* # NGInterface
+================================================== */
+	$('div.panel-group.pending button.acceptorder-btn')
+		.on('click', function(event)
+		{	
+			var orderNumber = $(this).attr('data-order-number');
+			var orderDOM 	= $('div.panel-group.pending div.panel.panel-default[data-order-number="'+orderNumber+'"');
+
+			orderDOM.remove();	
+			$('div.panel-group.accepted').prepend(orderDOM).hide().fadeIn(400);
+
+		});
+
+	$('div.panel-group.pending button.declineorder-btn')
+		.on('click', function(event)
+		{	
+			console.log('Click!');
+		});	
+
+
 /* # FILE UPLOAD
 ================================================== */
 
