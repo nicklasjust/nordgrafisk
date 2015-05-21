@@ -20,19 +20,16 @@
 	$customer_country = 'Danmark';
 	$customer_mailaddress = 'nicklas_just2@hotmail.com';
 	$customer_ean = '1234567891231';
+	$customer_phone_number = '28125239';
 
 	$create_customer = $client->Debtor_Create(array(
 		'number' => $next_customer_number,
 		'debtorGroupHandle' => array(
 			'Number' => 1
 			),
-		'name' => $create_customer,
+		'name' => $customer_name,
 		'vatZone' => $vat_zone
 		));
-
-	echo "<pre>";
-	print_r($create_customer);
-	echo "</pre>";
 
 	$debtor_handle = $create_customer->Debtor_CreateResult;
 
@@ -66,6 +63,11 @@
 		'value' => $customer_ean
 		));
 
+	$client->Debtor_SetTelephoneAndFaxNumber(array(
+		'debtorHandle' => $debtor_handle,
+		'value' => $customer_phone_number
+		));
+
 	$inserted_data = array(
 		'name' => $customer_name,
 		'vat_zone' => $vat_zone,
@@ -74,7 +76,8 @@
 		'postalcode' => $customer_postal_code,
 		'country' => $customer_country,
 		'mailaddress' => $customer_mailaddress,
-		'ean' => $customer_ean
+		'ean' => $customer_ean,
+		'phone_number' => $customer_phone_number
 		);
 
 	echo json_encode($inserted_data);
