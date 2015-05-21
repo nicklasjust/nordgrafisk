@@ -352,6 +352,7 @@ $(document).ready(function()
 			{
 				this_.chunksUploaded++;
 				this_.updatePrograssBar(this_.chunksUploaded, this_.chunkSize, this_.dataArray.length);
+				this_.progressBar.removeClass('progress-bar-striped');
 
 				console.log(data);
 				
