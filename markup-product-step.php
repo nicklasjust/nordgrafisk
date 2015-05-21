@@ -15,7 +15,7 @@
 			
 			<div class="product col col-md-2">
 
-				<input type="radio" id="product-poster" name="product" value="posters"/>
+				<input type="radio" id="product-poster" name="product" value="Poster"/>
 
 				<label for="product-poster">
 
@@ -34,7 +34,7 @@
 
 				</label>
 
-				<input type="radio" id="product-roll-up" name="product" value="roll-up"/>
+				<input type="radio" id="product-roll-up" name="product" value="Roll-up"/>
 
 			</div>
 				
@@ -46,7 +46,7 @@
 
 				</label>
 
-				<input type="radio" id="product-1" name="product" value="andet"/>
+				<input type="radio" id="product-1" name="product" value="Andet"/>
 
 			</div>
 
