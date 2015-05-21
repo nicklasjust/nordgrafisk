@@ -478,7 +478,7 @@
 									
 									<button class="btn btn-default custom-btn pull-left" type="submit">Anmod om tilbud</button>
 
-									<button class="btn btn-primary custom-btn pull-right" type="submit">Send Ordre</button>
+									<button class="btn btn-primary custom-btn pull-right submit-order" type="submit">Send Ordre</button>
 
 
 								</div>

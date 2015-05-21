@@ -432,4 +432,27 @@ $(document).ready(function()
 			});
 		}
 	}
+
+	$('.submit-order').click(function() {
+		$.ajax({
+				url: 'create_customer.php',
+				type: 'POST',
+				processData: false,
+				contentType: false,
+				dataType: 'json',
+				success: function(data, textStatus, jqXHR)
+				{
+					console.log(jqXHR.responseText);
+					console.log(data);
+					console.log(textStatus);
+					
+				},
+				error: function(jqXHR, textStatus, errorThrown)
+				{
+					console.log(jqXHR.responseText);
+					console.log(textStatus);
+					console.log(errorThrown);
+				}
+			});
+	});
 });

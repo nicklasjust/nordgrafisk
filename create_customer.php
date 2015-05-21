@@ -12,13 +12,22 @@
 	$next_number = $client->Debtor_GetNextAvailableNumber();
 	$next_customer_number = (string)$next_number->Debtor_GetNextAvailableNumberResult;
 
+	$customer_name = 'Nicklas Just Nielsen';
+	$vat_zone = 'EU';
+	$customer_address = 'Kappelvænget 12 st. 3';
+	$customer_city = 'Aarhus V';
+	$customer_postal_code = '8210';
+	$customer_country = 'Danmark';
+	$customer_mailaddress = 'nicklas_just2@hotmail.com';
+	$customer_ean = '1234567891231';
+
 	$create_customer = $client->Debtor_Create(array(
 		'number' => $next_customer_number,
 		'debtorGroupHandle' => array(
 			'Number' => 1
 			),
-		'name' => 'Nicklas',
-		'vatZone' => 'EU'
+		'name' => $create_customer,
+		'vatZone' => $vat_zone
 		));
 
 	echo "<pre>";
@@ -29,33 +38,46 @@
 
 	$client->Debtor_SetAddress(array(
 		'debtorHandle' => $debtor_handle,
-		'value' => 'Kappelvænget 12 st. 3'
+		'value' => $customer_address
 		));
 
 	$client->Debtor_SetCity(array(
 		'debtorHandle' => $debtor_handle,
-		'value' => 'Aarhus V'
+		'value' => $customer_city
 		));
 
 	$client->Debtor_SetPostalCode(array(
 		'debtorHandle' => $debtor_handle,
-		'value' => '8210'
+		'value' => $customer_postal_code
 		));
 
 	$client->Debtor_SetCountry(array(
 		'debtorHandle' => $debtor_handle,
-		'value' => 'Danmark'
+		'value' => $customer_country
 		));
 
 	$client->Debtor_SetEmail(array(
 		'debtorHandle' => $debtor_handle,
-		'value' => 'nicklas_just2@hotmail.com'
+		'value' => $customer_mailaddress
 		));
 
 	$client->Debtor_SetEan(array(
 		'debtorHandle' => $debtor_handle,
-		'value' => '1234567891231'
+		'value' => $customer_ean
 		));
+
+	$inserted_data = array(
+		'name' => $customer_name,
+		'vat_zone' => $vat_zone,
+		'address' => $customer_address,
+		'city' => $customer_city,
+		'postalcode' => $customer_postal_code,
+		'country' => $customer_country,
+		'mailaddress' => $customer_mailaddress,
+		'ean' => $customer_ean
+		);
+
+	echo json_encode($inserted_data);
 
 	// $Delivery_Location = array(
 	// 	'Id' => 1
