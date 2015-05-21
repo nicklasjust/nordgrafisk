@@ -1,7 +1,7 @@
 User login:
-Agreement no.: 1053926
-User ID: Tob
-Password: 8tg3hzjw
+Agreement no.: 1058146
+User ID: Nic
+Password: cnetqss9
 
 
 Developer login:
@@ -19,4 +19,4 @@ Name: Idyia
 Public app ID: sCj4W5102DJgLR6MQ5GJzTSydRsemPBsykMUU496P0c1
 Private app ID: dciTAm_Tp-pPujYOxcNhhB9QJin7ZtB3rd6qGH2-b6Q1
 
-App token: RtZQFEDC6cZHNmb0xgiDzTUO7utCaGSzxMZiwSeJz401
+App token: V17qsgk6uR-6MfrNkTdgRhydwNLTOkCXNcF7R588GMs1
