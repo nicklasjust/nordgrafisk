@@ -1,4 +1,3 @@
-
 <?php
 	$wsdlUrl = 'https://api.e-conomic.com/secure/api1/EconomicWebservice.asmx?WSDL';
 
@@ -10,51 +9,53 @@
 		)
 	);
 
-	// $debtorHandle = $client->Debtor_Create(array(
-	// 	'number' => '100',
-	// 	'debtorGroupHandle' => array(
-	// 		'Number' => 2
-	// 		),
-	// 	'name' => 'Nicklas',
-	// 	'vatZone' => 'EU'
-	// 	));
-	// echo '<pre>';
-	// print_r($debtorHandle);
-	// echo '</pre>';
+	$next_number = $client->Debtor_GetNextAvailableNumber();
+	$next_customer_number = (string)$next_number->Debtor_GetNextAvailableNumberResult;
 
-	// $debtorHandle = array(
-	// 		'Number' => 34
-	// 	);
+	$create_customer = $client->Debtor_Create(array(
+		'number' => $next_customer_number,
+		'debtorGroupHandle' => array(
+			'Number' => 1
+			),
+		'name' => 'Nicklas',
+		'vatZone' => 'EU'
+		));
 
-	// $client->Debtor_SetAddress(array(
-	// 	'debtorHandle' => $debtorHandle,
-	// 	'value' => 'Kappelvænget 12 st. 3'
-	// 	));
+	echo "<pre>";
+	print_r($create_customer);
+	echo "</pre>";
 
-	// $client->Debtor_SetCity(array(
-	// 	'debtorHandle' => $debtorHandle,
-	// 	'value' => 'Aarhus V'
-	// 	));
+	$debtor_handle = $create_customer->Debtor_CreateResult;
 
-	// $client->Debtor_SetPostalCode(array(
-	// 	'debtorHandle' => $debtorHandle,
-	// 	'value' => '8210'
-	// 	));
+	$client->Debtor_SetAddress(array(
+		'debtorHandle' => $debtor_handle,
+		'value' => 'Kappelvænget 12 st. 3'
+		));
 
-	// $client->Debtor_SetCountry(array(
-	// 	'debtorHandle' => $debtorHandle,
-	// 	'value' => 'Danmark'
-	// 	));
+	$client->Debtor_SetCity(array(
+		'debtorHandle' => $debtor_handle,
+		'value' => 'Aarhus V'
+		));
 
-	// $client->Debtor_SetEmail(array(
-	// 	'debtorHandle' => $debtorHandle,
-	// 	'value' => 'nicklas_just2@hotmail.com'
-	// 	));
+	$client->Debtor_SetPostalCode(array(
+		'debtorHandle' => $debtor_handle,
+		'value' => '8210'
+		));
 
-	// $client->Debtor_SetEan(array(
-	// 	'debtorHandle' => $debtorHandle,
-	// 	'value' => '1234567891231'
-	// 	));
+	$client->Debtor_SetCountry(array(
+		'debtorHandle' => $debtor_handle,
+		'value' => 'Danmark'
+		));
+
+	$client->Debtor_SetEmail(array(
+		'debtorHandle' => $debtor_handle,
+		'value' => 'nicklas_just2@hotmail.com'
+		));
+
+	$client->Debtor_SetEan(array(
+		'debtorHandle' => $debtor_handle,
+		'value' => '1234567891231'
+		));
 
 	// $Delivery_Location = array(
 	// 	'Id' => 1
@@ -92,13 +93,5 @@
 	// echo "<pre>";
 	// print_r($attention);
 	// echo "</pre>";
-
-	$next_number = $client->Debtor_GetNextAvailableNumber();
-
-	echo "<pre>";
-	print_r($next_number);
-	echo "</pre>";
-
-
 
 ?>
