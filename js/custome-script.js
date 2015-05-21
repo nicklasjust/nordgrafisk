@@ -60,9 +60,11 @@ $(document).ready(function()
 	{
 		event.preventDefault();
 		
+		var product = $(this).find('div.produktTab div.products div.product input:checked').val();
+		console.log(product);
 		console.log('submit');
 		
-		var newRow = jQuery('<a class="list-group-item"><span class="badge">2</span> Plakat </a>');
+		var newRow = jQuery('<a class="list-group-item"><span class="badge">1</span> '+product+' </a>');
     	jQuery('div.list-group.cart').append(newRow);
 	});
 
