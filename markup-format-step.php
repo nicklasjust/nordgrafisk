@@ -13,7 +13,7 @@
 			
 					<h4>Størrelse:</h4>
 
-					<select name="size" class="form-control">
+					<select name="size-poster" class="form-control">
 				
 						<option>A0</option>
 						<option>A1</option>
@@ -52,7 +52,7 @@
 			
 				<h4>Type:</h4>
 
-					<select name="type" class="form-control">
+					<select name="type-poster" class="form-control">
 				
 						<option>Farve</option>
 						<option>Farve m. gloss</option>
@@ -73,7 +73,7 @@
 			
 					<h4>Størrelse:</h4>
 
-					<select name="size" class="form-control">
+					<select name="size-roll-up" class="form-control">
 				
 						<option>80 x 220</option>
 						<option>85 x 250</option>
@@ -102,7 +102,7 @@
 			
 				<h4>Type:</h4>
 
-					<select name="type" class="form-control">
+					<select name="type-roll-up" class="form-control">
 				
 						<option>PVC m. block</option>
 						<option>ECO Tex Polyester</option>
@@ -122,7 +122,7 @@
 			
 					<h4>Størrelse:</h4>
 
-					<select name="size" class="form-control">
+					<select name="size-banner" class="form-control">
 				
 						<option>A0</option>
 						<option>A1</option>
@@ -161,7 +161,7 @@
 			
 				<h4>Type:</h4>
 
-					<select name="type" class="form-control">
+					<select name="type-banner" class="form-control">
 				
 						<option>Polyester 210g stofbanner</option>
 						<option>PVC 440g presenning</option>
