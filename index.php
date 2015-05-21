@@ -92,8 +92,11 @@
 							        	<button type="button" class="btn btn-default" data-dismiss="modal">Annullér</button>
 							        	<button type="button" class="btn btn-primary">Log ind</button>
 							      	</div>
+				
 							    </div>
+				
 							</div>
+				
 						</div>
 						
 					</div>
@@ -106,7 +109,7 @@
 
 	</div>
 
-	<form action="#" method="post">
+	<form action="#" class="customer-information" method="post">
 
 		<div class="band customer-information">
 
@@ -190,6 +193,10 @@
 			</div> <!-- end of container -->
 
 		</div> <!-- end of band customer-information -->
+
+	</form>
+	
+	<form action="#" class="product-information" method="post">
 
 		<div class="band product-information" data-show-step-no="1">
 
