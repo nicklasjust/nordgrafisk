@@ -109,22 +109,42 @@ $(document).ready(function()
 
 /* # NGInterface
 ================================================== */
-	$('div.panel-group.pending button.acceptorder-btn')
-		.on('click', function(event)
-		{	
-			var orderNumber = $(this).attr('data-order-number');
-			var orderDOM 	= $('div.panel-group.pending div.panel.panel-default[data-order-number="'+orderNumber+'"');
+	$(document).on('click', 'div.panel-group button.acceptorder-btn', function(event)
+	{	
+		var orderNumber = $(this).attr('data-order-number');
+		var orderDOM 	= $('div.panel-group div.panel.panel-default[data-order-number="'+orderNumber+'"');
 
-			orderDOM.remove();	
-			$('div.panel-group.accepted').prepend(orderDOM).hide().fadeIn(400);
+		orderDOM.remove();	
+		$('div.panel-group.accepted').prepend(orderDOM).hide().fadeIn(400);
 
-		});
+		$(this).toggleClass('acceptorder-btn finishorder-btn');
+		this.innerText = "Færdiggør ordre";
+	});
 
-	$('div.panel-group.pending button.declineorder-btn')
-		.on('click', function(event)
-		{	
-			console.log('Click!');
-		});	
+	$(document).on('click', 'div.panel-group button.declineorder-btn', function(event)
+	{	
+		var orderNumber = $(this).attr('data-order-number');
+		var orderDOM 	= $('div.panel-group div.panel.panel-default[data-order-number="'+orderNumber+'"');
+
+		orderDOM.remove();	
+		$('div.panel-group.declined').prepend(orderDOM).hide().fadeIn(400);
+		
+	});	
+
+	$(document).on('click', 'div.panel-group button.finishorder-btn', function(event)
+	{	
+		var orderNumber = $(this).attr('data-order-number');
+		var orderDOM 	= $('div.panel-group div.panel.panel-default[data-order-number="'+orderNumber+'"');
+
+		orderDOM.remove();	
+		$('div.panel-group.finished').prepend(orderDOM).hide().fadeIn(400);
+
+		$('div.panel-group.finished button.declineorder-btn').remove();
+
+		//$(this).toggleClass('finishorder-btn acceptorder-btn');
+		this.innerText = "Genoptag ordre";
+
+	});	
 
 
 /* # FILE UPLOAD
