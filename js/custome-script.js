@@ -61,6 +61,9 @@ $(document).ready(function()
 		event.preventDefault();
 		
 		console.log('submit');
+		
+		var newRow = jQuery('<a class="list-group-item"><span class="badge">2</span> Plakat </a>');
+    	jQuery('div.list-group.cart').append(newRow);
 	});
 
 	$('div.band.product-information div.step-2 select[name="size"]')

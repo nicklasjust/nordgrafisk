@@ -429,33 +429,10 @@
 
 										<div class="panel-body">
 											
-											<div class="list-group">
-
-												<a class="list-group-item">
-													<span class="badge">2</span>
-													Plakat
-												</a>
-												<a class="list-group-item">
-													<span class="badge">250</span>
-													Visitkort
-												</a>
-												<a class="list-group-item">
-													<span class="badge">1</span>
-													Roll-up
-												</a>
-												<a class="list-group-item">
-													<span class="badge">14</span>
-													Lorem ipsum
-												</a>
-												<a class="list-group-item">
-													<span class="badge">3</span>
-													Nam congue 
-												</a>
-												<a class="list-group-item">
-													<span class="badge">43</span>
-													Cras justo odio
-												</a>
-											
+											<div class="list-group cart">
+												
+												<!-- Stuff tilføjes -->
+																							
 											</div>
 
 										</div>
