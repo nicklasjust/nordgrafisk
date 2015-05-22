@@ -20,7 +20,11 @@
 	$customer_country = 'Danmark';
 	$customer_mailaddress = 'nicklas_just2@hotmail.com';
 	$customer_ean = '1234567891231';
+	$customer_cvr = '20514507';
 	$customer_phone_number = '28125239';
+
+	$delivery_date = '';
+	$delivery_time = '';
 
 	$create_customer = $client->Debtor_Create(array(
 		'number' => $next_customer_number,
@@ -63,24 +67,85 @@
 		'value' => $customer_ean
 		));
 
+	$client->Debtor_SetCINumber(array(
+		'debtorHandle' => $debtor_handle,
+		'value' => $customer_cvr
+		));
+
 	$client->Debtor_SetTelephoneAndFaxNumber(array(
 		'debtorHandle' => $debtor_handle,
 		'value' => $customer_phone_number
 		));
 
-	$inserted_data = array(
-		'name' => $customer_name,
-		'vat_zone' => $vat_zone,
-		'address' => $customer_address,
-		'city' => $customer_city,
-		'postalcode' => $customer_postal_code,
-		'country' => $customer_country,
-		'mailaddress' => $customer_mailaddress,
-		'ean' => $customer_ean,
-		'phone_number' => $customer_phone_number
-		);
+	// Her er ordreoprettelsen
 
-	echo json_encode($inserted_data);
+	$orderHandle = $client->Order_Create(array(
+			'debtorHandle' => array(
+				'Number' => $next_customer_number
+				)
+		))->Order_CreateResult;
+
+	$client->Order_SetDeliveryDate(array(
+			'orderHandle' 	=> $orderHandle,
+			'value' 		=> '2002-05-30T09:30:10+06:00'
+		));
+
+	$client->Order_SetDeliveryAddress(array(
+			'orderHandle' 	=> $orderHandle,
+			'value' 		=> $customer_address
+		));
+
+	$client->Order_SetDeliveryCity(array(
+			'orderHandle'	=> $orderHandle,
+			'value'			=> $customer_city
+		));
+
+	$client->Order_SetDeliveryCountry(array(
+			'orderHandle'	=> $orderHandle,
+			'value'			=> $customer_country
+		));
+
+	$orderLineHandle = $client->OrderLine_Create(array(
+			'orderHandle' => $orderHandle
+		))->OrderLine_CreateResult;
+
+	$client->OrderLine_SetProduct(array(
+			'orderLineHandle' 	=> $orderLineHandle,
+			'valueHandle' 		=> array(
+				'Number' => '1'
+				)
+		));
+
+	$client->OrderLine_SetDescription(array(
+			'orderLineHandle' 	=> $orderLineHandle,
+			'value' 			=> 'Bananas'
+		));
+
+
+
+
+
+
+
+	// Her er arrayet der kommer ud til ajax.
+
+	// $inserted_data = array(
+	// 	'name' => $customer_name,
+	// 	'vat_zone' => $vat_zone,
+	// 	'address' => $customer_address,
+	// 	'city' => $customer_city,
+	// 	'postalcode' => $customer_postal_code,
+	// 	'country' => $customer_country,
+	// 	'mailaddress' => $customer_mailaddress,
+	// 	'ean' => $customer_ean,
+	// 	'phone_number' => $customer_phone_number
+	// 	);
+
+	// echo json_encode($inserted_data);
+
+
+
+
 
 	// $Delivery_Location = array(
 	// 	'Id' => 1

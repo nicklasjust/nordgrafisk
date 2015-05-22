@@ -10,24 +10,7 @@
 		)
 	);
 
-	$debtors = $client->Debtor_GetAll()->Debtor_GetAllResult->DebtorHandle;
 
-	echo "<pre>";
-	print_r($debtors);
-	echo "</pre>";
-
-	echo "<pre>";
-	print_r(incrementDebtorNumber($debtors));
-	echo "</pre>";
-
-	function getNewDebtorNumber($debtors)
-	{	
-		$debtorCount = sizeOf($debtors);
-		$lastDebtor = $debtors[$debtorCount-1];
-		return $lastDebtor->Number+1;
-	}
-
-/*
 	$debtorNumber = '1';
 
 	// $orderHandle = $client->Order_Create(array(
@@ -41,7 +24,7 @@
 	// echo "</pre>";
 
 	$orderHandle = array(
-			'Id' => '47'
+			'Id' => 4
 		);
 
 	$client->Order_SetDeliveryDate(array(
@@ -64,17 +47,17 @@
 			'value'			=> 'Lolland'
 		));
 
-	// $orderLineHandle = $client->OrderLine_Create(array(
-	// 		'orderHandle' => $orderHandle
-	// 	))->OrderLine_CreateResult;
+	$orderLineHandle = $client->OrderLine_Create(array(
+			'orderHandle' => $orderHandle
+		))->OrderLine_CreateResult;
 
 	// echo "<pre>";
 	// print_r($orderLineHandle);
 	// echo "</pre>";
 
 	$orderLineHandle = array(
-			'Id' => '47',
-			'Number' => '1'
+			'Id' => 4,
+			'Number' => 2
 		);
 
 	$client->OrderLine_SetProduct(array(
@@ -88,5 +71,5 @@
 			'orderLineHandle' 	=> $orderLineHandle,
 			'value' 			=> 'Bananas'
 		));
-*/
+
 ?>
