@@ -127,32 +127,32 @@
 
 						<div class= "form-group">
 							<label class="sr-only" for="inputNavn">Navn</label>
-							<input type="text" class="form-control" id="inputName" placeholder="Navn">
+							<input type="text" name="name" class="form-control" id="inputName" placeholder="Navn">
 						</div>
 
 						<div class="form-group">
 							<label class="sr-only" for="inputAdresse">Adresse</label>
-							<input type="text" class="form-control" id="inputAdresse" placeholder="Adresse">
+							<input type="text" name="address" class="form-control" id="inputAdresse" placeholder="Adresse">
 						</div>
 
 						<div class="form-group">
 							<label class="sr-only" for="inputBy">By</label>
-							<input type="text" class="form-control" id="inputBy" placeholder="By">
+							<input type="text" name="city" class="form-control" id="inputBy" placeholder="By">
 						</div>
 
 						<div class="form-group">
 							<label class="sr-only" for="inputPostnummer">Postnr.</label>
-							<input type="text" class="form-control" id="inputPostnummer" placeholder="Postnummer">
+							<input type="text" name="zip" class="form-control" id="inputPostnummer" placeholder="Postnummer">
 						</div>
 
 						<div class="form-group">
 							<label class="sr-only" for="exampleInputTelephone">Telefonnr.</label>
-							<input type="tel" class="form-control" id="exampleInputTelephone" placeholder="Telefonnummer">
+							<input type="tel" name="phone" class="form-control" id="exampleInputTelephone" placeholder="Telefonnummer">
 						</div>
 
 						<div class="form-group">
 							<label class="sr-only" for="inputEmail1">Email address</label>
-							<input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+							<input type="email" name="email" class="form-control" id="inputEmail1" placeholder="Email">
 						</div>
 
 					</div> <!-- end of col 6 -->
@@ -163,27 +163,27 @@
 
 						<div class="form-group">
 							<label class="sr-only" for="inputAdresse">Adresse</label>
-							<input type="text" class="form-control" id="inputFakAdresse" placeholder="Adresse">
+							<input type="text" name="invoiceAddress" class="form-control" id="inputFakAdresse" placeholder="Adresse">
 						</div>
 
 						<div class="form-group">
 							<label class="sr-only" for="inputBy">By</label>
-							<input type="text" class="form-control" id="inputFakBy" placeholder="By">
+							<input type="text" name="invoiceCity" class="form-control" id="inputFakBy" placeholder="By">
 						</div>
 
 						<div class="form-group">
 							<label class="sr-only" for="inputPostnummer">Postnr.</label>
-							<input type="text" class="form-control" id="inputFakPostnummer" placeholder="Postnummer">
+							<input type="text" name="invoiceZip" class="form-control" id="inputFakPostnummer" placeholder="Postnummer">
 						</div>
 
 						<div class="form-group">
 							<label class="sr-only" for="inputCVR">Postnr.</label>
-							<input type="text" class="form-control" id="inputCVR" placeholder="CVR-nummer">
+							<input type="text" name="cvr" class="form-control" id="inputCVR" placeholder="CVR-nummer">
 						</div>
 
 						<div class="form-group">
 							<label class="sr-only" for="inputEAN">Postnr.</label>
-							<input type="text" class="form-control" id="inputEAN" placeholder="EAN-nummer">
+							<input type="text" name="ean" class="form-control" id="inputEAN" placeholder="EAN-nummer">
 						</div>
 
 					</div> <!-- end of col 6 -->
@@ -439,24 +439,27 @@
 
 									</div>
 									
-									<div class="col-md-7">
-										
-										Leveringsdato: <input type="date" class="form-control">
-										
-									</div>
+									<form action="" class="submit-order" method="post">
 
-									<div class="col-md-5">
+										<div class="col-md-7">
+											
+											Leveringsdato: <input type="date" name="deliveryDate" class="form-control">
+											
+										</div>
+
+										<div class="col-md-5">
+											
+											Tidspunkt: <input type="time" name="deliveryTime" class="form-control">
+											
+										</div>
+
+										<br>
 										
-										Tidspunkt: <input type="time" class="form-control">
-										
-									</div>
+										<button class="btn btn-default custom-btn pull-left" type="submit">Anmod om tilbud</button>
 
-									<br>
-									
-									<button class="btn btn-default custom-btn pull-left" type="submit">Anmod om tilbud</button>
+										<button class="btn btn-primary custom-btn pull-right submit-order" type="submit">Send Ordre</button>
 
-									<button class="btn btn-primary custom-btn pull-right submit-order" type="submit">Send Ordre</button>
-
+									</form>
 
 								</div>
 
