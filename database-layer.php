@@ -9,46 +9,89 @@ $orderInfo 		= $_POST['orderInfo'];
 $orderlines 	= $_POST['orderlines'];
 
 // echo "<pre>";
-// print_r($customerInfo);
+// print_r($orderlines);
 // echo "</pre>";
 
-// try{
+// exit;
+
+try{
 
 	$db->beginTransaction();
 		
-		$db->insert('debtor', 
+		$debtor = $db->select(
+			"SELECT id
+			 FROM debtors
+			 WHERE email = :email",
+			array(
+				'email' => $customerInfo['email']
+				));
+
+		if(empty($debtor))
+		{
+			$db->insert('debtors', 
+					array(
+						'name' 		=> $customerInfo['name'],
+						'city' 		=> $customerInfo['city'],
+						'zip_code' 	=> $customerInfo['zip'],
+						'phone' 	=> $customerInfo['phone'],
+						'email' 	=> $customerInfo['email'],
+						'ean' 		=> $customerInfo['ean']
+						)
+					);
+
+			$debtorId = $db->lastInsertId();
+		}
+		else
+		{
+			$debtorId = $debtor[0]['id'];
+		}
+
+		$deliveryDate = null;
+
+		if(!empty($orderInfo['deliveryDate']))
+		{
+			$deliveryDate = (new DateTime($orderInfo['deliveryDate'].' '.$orderInfo['deliveryTime']))->format('Y-m-d H:i:s');
+		}
+
+		$db->insert('orders',
 				array(
-					'name' 		=> $customerInfo['name'],
-					'city' 		=> $customerInfo['city'],
-					'zip_code' 	=> $customerInfo['zip'],
-					'phone' 	=> $customerInfo['phone'],
-					'email' 	=> $customerInfo['email'],
-					'ean' 		=> $customerInfo['ean']
-					)
-				);
-
-		$debtorId = $db->lastInsertId();
-
-		$deliveryData = new DateTime($orderInfo['deliveryDate'].' '.$orderInfo['deliveryTime']);
-
-		$db->insert('order', 
-				array(
-					'debtor_id' 		=> 44,
-					// 'delivery_address' 	=> 'lol'
-					// 'delivery_date' 	=> $deliveryData,
-					// 'deliver_address' 	=> (!empty($customerInfo['invoiceAddress']) ? $customerInfo['invoiceAddress'] : $customerInfo['address']),
-					// 'delivery_city' 	=> (!empty($customerInfo['invoiceCity']) ? $customerInfo['invoiceCity'] : $customerInfo['city']),
-					// 'delivery_zip' 		=> (!empty($customerInfo['invoiceZip']) ? $customerInfo['invoiceZip'] : $customerInfo['zip'])
-					)
-				);
+					'debtor_id' 		=> $debtorId,
+					'delivery_address' 	=> (!empty($customerInfo['invoiceAddress']) ? $customerInfo['invoiceAddress'] : $customerInfo['address']),
+					'delivery_date' 	=> $deliveryDate,
+					'delivery_city' 	=> (!empty($customerInfo['invoiceCity']) ? $customerInfo['invoiceCity'] : $customerInfo['city']),
+					'delivery_zip' 		=> (!empty($customerInfo['invoiceZip']) ? $customerInfo['invoiceZip'] : $customerInfo['zip'])
+				)
+			);
 
 		$orderId = $db->lastInsertId();
+
+		$products = array(
+			'Poster',
+			'Roll-up',
+			'Andet'
+			);
+
+		$db->insert('orderlines',
+				array(
+					'order_id' 		=> $orderId,
+					'product_no' 	=> array_search($orderlines[0]['product'], $products)+1,
+					'description' 	=> implode('\n', $orderlines[0])
+				)
+			);
 		
 	$db->commit();
 
-// }
-// catch(Exception $e)
-// {
-	// $db->rollBack();
-	// echo $e->getMessage();
-// }
+	echo json_encode(array(
+		'success' => true
+		));
+
+}
+catch(Exception $e)
+{
+	$db->rollBack();
+
+	echo json_encode(array(
+		'success' 	=> false,
+		'msg' 		=>  $e->getMessage()
+		));
+}
