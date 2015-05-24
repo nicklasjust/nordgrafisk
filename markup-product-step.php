@@ -13,7 +13,7 @@
 
 		<div class="row">
 			
-			<div class="product col col-md-2">
+			<div class="product col col-md-3">
 
 				<input type="radio" id="product-poster" name="product" value="Poster"/>
 
@@ -26,7 +26,7 @@
 
 			</div>
 				
-			<div class="product col col-md-2">
+			<div class="product col col-md-3">
 
 				<label for="product-roll-up">
 
@@ -38,7 +38,7 @@
 
 			</div>
 				
-			<div class="product col col-md-2">
+			<div class="product col col-md-3">
 
 				<label for="product-1">
 
@@ -50,7 +50,7 @@
 
 			</div>
 
-			<div class="product col col-md-2">
+			<div class="product col col-md-3">
 
 				<label for="product-2">
 
@@ -58,39 +58,15 @@
 
 				</label>
 
-				<input type="radio" id="product-2" name="product" value="andet"/>
+				<input type="radio" id="product-2" name="product" value="Andet"/>
 
 			</div>
 				
-			<div class="product col col-md-2">
-
-				<label for="product-3">
-
-					<img src="images/1.png" alt="Andet" class="img-rounded">
-
-				</label>
-
-				<input type="radio" id="product-3" name="product" value="andet"/>
-
-			</div>
-				
-			<div class="product col col-md-2">
-
-				<label for="product-4">
-
-					<img src="images/1.png" alt="Andet" class="img-rounded">
-
-				</label>
-
-				<input type="radio" id="product-4" name="product" value="andet"/>
-
-			</div>
-
 		</div>
 		
 		<div class="row">
 				
-			<div class="product col col-md-2">
+			<div class="product col col-md-3">
 
 				<label for="product-5">
 				
@@ -98,11 +74,11 @@
 				
 				</label>
 
-				<input type="radio" id="product-5" name="product" value="andet"/>
+				<input type="radio" id="product-5" name="product" value="Andet"/>
 
 			</div>
 				
-			<div class="product col col-md-2">
+			<div class="product col col-md-3">
 
 				<label for="product-6">
 				
@@ -110,11 +86,11 @@
 				
 				</label>
 
-				<input type="radio" id="product-6" name="product" value="andet"/>
+				<input type="radio" id="product-6" name="product" value="Andet"/>
 
 			</div>
 				
-			<div class="product col col-md-2">
+			<div class="product col col-md-3">
 
 				<label for="product-7">
 				
@@ -122,23 +98,11 @@
 				
 				</label>
 
-				<input type="radio" id="product-7" name="product" value="andet"/>
+				<input type="radio" id="product-7" name="product" value="Andet"/>
 
 			</div>
 				
-			<div class="product col col-md-2">
-
-				<label for="product-8">
-				
-					<img src="images/1.png" alt="Andet" class="img-rounded">
-				
-				</label>
-
-				<input type="radio" id="product-8" name="product" value="andet"/>
-
-			</div>
-				
-			<div class="product col col-md-2">
+			<div class="product col col-md-3">
 
 				<label for="product-9">
 				
@@ -146,19 +110,7 @@
 				
 				</label>
 
-				<input type="radio" id="product-9" name="product" value="andet"/>
-
-			</div>
-				
-			<div class="product col col-md-2">
-
-				<label for="product-10">
-				
-					<img src="images/1.png" alt="Andet" class="img-rounded">
-				
-				</label>
-
-				<input type="radio" id="product-10" name="product" value="andet"/>
+				<input type="radio" id="product-9" name="product" value="Andet"/>
 
 			</div>
 		

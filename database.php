@@ -44,7 +44,7 @@ class Database
 
 		if(!$sth->execute())
 		{
-			throw new Exception('570');
+			throw new Exception($sth->errorInfo()[2]);
 		}
 
 		return $sth->fetchAll($fetchMode);
@@ -103,7 +103,7 @@ class Database
 
 		if(!$sth->execute())
 		{
-			throw new Exception('585');
+			throw new Exception($sth->errorInfo()[2]);
 		}
 	}
 
@@ -123,7 +123,7 @@ class Database
 		
 		if(!$sth->execute())
 		{
-			//throw new Exception('580');
+			throw new Exception($sth->errorInfo()[2]);
 		}
 	}
 
@@ -161,7 +161,7 @@ class Database
 		
 		if(!$sth->execute())
 		{
-			throw new Exception('590');
+			throw new Exception($sth->errorInfo()[2]);
 		}
 
 		return true;
@@ -186,7 +186,7 @@ class Database
 		
 		if(!$sth->execute())
 		{
-			throw new Exception('600');
+			throw new Exception($sth->errorInfo()[2]);
 		}
 
 		return true;

@@ -20,7 +20,7 @@ $(document).ready(function()
 ================================================== */
 	
 	var cookie = new Cookie();
-	// cookie.unset('nordgrafisk-orderlines');
+	cookie.unset('nordgrafisk-orderlines');
 
 	if(cookie.isset('nordgrafisk-customer-info'))
 	{
@@ -52,7 +52,7 @@ $(document).ready(function()
 
 		if(customerInfo.name != '')
 		{
-			cookie.set('nordgrafisk-customer-info', JSON.stringify(customerInfo), 86400);
+			cookie.set('nordgrafisk-customer-info', JSON.stringify(customerInfo), 8640);
 		}
 		else
 		{
@@ -162,9 +162,7 @@ $(document).ready(function()
 
 		orderlinesArray.push(orderLine);
 
-		cookie.set('nordgrafisk-orderlines', JSON.stringify(orderlinesArray), 86400);
-
-		console.log(cookie.get('nordgrafisk-orderlines'));
+		cookie.set('nordgrafisk-orderlines', JSON.stringify(orderlinesArray), 8640);
 
 		createNewOrderlineRow(orderLine.product, 1)
 		
@@ -208,8 +206,6 @@ $(document).ready(function()
 			.on('change', function()
 			{	
 				var value = $(this).val();
-
-				console.log(value);
 
 				if(value == "Andet")
 				{
@@ -266,10 +262,6 @@ $(document).ready(function()
 					size = Math.round(size * 1024);
 					sizeNotation = 'KB';
 				}
-
-				console.log(size + sizeNotation);
-				console.log(type[1]);
-				console.log(files[i]);
 
 				var progressBar = $('<div />', {
 								'class' : 'progress-bar progress-bar-striped active',
@@ -586,21 +578,18 @@ $(document).ready(function()
 					'orderlines' 	: JSON.parse(orderlines)
 				};
 
-				// console.log(orderData);
-
-				// return;
-
 				$.ajax({
 					url: 'database-layer.php',
 					type: 'POST',
 					data: orderData,
 					cache: false,
-					// processData: false,
 					dataType: 'json',
 					success: function(data, textStatus, jqXHR)
 					{
 						console.log(data);
-						
+						cookie.unset('nordgrafisk-customer-info');
+						cookie.unset('nordgrafisk-orderlines');
+						location.reload();
 					},
 					error: function(jqXHR, textStatus, errorThrown)
 					{
@@ -630,40 +619,46 @@ $(document).ready(function()
 /* # NGInterface
 ================================================== */
 
-	$(document).on('click', 'div.panel-group button.acceptorder-btn', function(event)
-	{	
-		var orderNumber = $(this).attr('data-order-number');
-		var orderDOM 	= $('div.panel-group div.panel.panel-default[data-order-number="'+orderNumber+'"');
+	$(document).on('click',
+		'div.panel-group button.acceptorder-btn',
+		function(event)
+		{	
+			var orderNumber = $(this).attr('data-order-number');
+			var orderDOM 	= $('div.panel-group div.panel.panel-default[data-order-number="'+orderNumber+'"');
 
-		orderDOM.remove();	
-		$('div.panel-group.accepted').prepend(orderDOM).hide().fadeIn(400);
+			orderDOM.remove();	
+			$('div.panel-group.accepted').prepend(orderDOM).hide().fadeIn(400);
 
-		$(this).toggleClass('acceptorder-btn finishorder-btn');
-		this.innerText = "Færdiggør ordre";
+			$(this).toggleClass('acceptorder-btn finishorder-btn');
+			this.innerText = "Færdiggør ordre";
 	});
 
-	$(document).on('click', 'div.panel-group button.declineorder-btn', function(event)
-	{	
-		var orderNumber = $(this).attr('data-order-number');
-		var orderDOM 	= $('div.panel-group div.panel.panel-default[data-order-number="'+orderNumber+'"');
+	$(document).on('click', 
+		'div.panel-group button.declineorder-btn',
+		function(event)
+		{	
+			var orderNumber = $(this).attr('data-order-number');
+			var orderDOM 	= $('div.panel-group div.panel.panel-default[data-order-number="'+orderNumber+'"');
 
-		orderDOM.remove();	
-		$('div.panel-group.declined').prepend(orderDOM).hide().fadeIn(400);
-		
+			orderDOM.remove();	
+			$('div.panel-group.declined').prepend(orderDOM).hide().fadeIn(400);
+			
 	});	
 
-	$(document).on('click', 'div.panel-group button.finishorder-btn', function(event)
-	{	
-		var orderNumber = $(this).attr('data-order-number');
-		var orderDOM 	= $('div.panel-group div.panel.panel-default[data-order-number="'+orderNumber+'"');
+	$(document).on('click',
+		'div.panel-group button.finishorder-btn',
+		function(event)
+		{	
+			var orderNumber = $(this).attr('data-order-number');
+			var orderDOM 	= $('div.panel-group div.panel.panel-default[data-order-number="'+orderNumber+'"');
 
-		orderDOM.remove();	
-		$('div.panel-group.finished').prepend(orderDOM).hide().fadeIn(400);
+			orderDOM.remove();	
+			$('div.panel-group.finished').prepend(orderDOM).hide().fadeIn(400);
 
-		$('div.panel-group.finished button.declineorder-btn').remove();
+			$('div.panel-group.finished button.declineorder-btn').remove();
 
-		//$(this).toggleClass('finishorder-btn acceptorder-btn');
-		this.innerText = "Genoptag ordre";
+			//$(this).toggleClass('finishorder-btn acceptorder-btn');
+			this.innerText = "Genoptag ordre";
 
 	});	
 
