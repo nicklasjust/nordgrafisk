@@ -71,13 +71,40 @@ try{
 			'Andet'
 			);
 
-		$db->insert('orderlines',
-				array(
-					'order_id' 		=> $orderId,
-					'product_no' 	=> array_search($orderlines[0]['product'], $products)+1,
-					'description' 	=> implode('\n', $orderlines[0])
-				)
-			);
+		foreach ($orderlines as $orderline)
+		{
+			$db->insert('orderlines',
+					array(
+						'order_id' 		=> $orderId,
+						'product_no' 	=> array_search($orderline['product'], $products)+1,
+						'description' 	=> $orderline['product']
+					)
+				);
+
+			if(!empty($orderline['file-upload-id']))
+			{	
+				$orderlineId = $db->lastInsertId();
+				
+				foreach ($orderline['file-upload-id'] as $fileId)
+				{
+					$db->update('files',
+						array(
+							'attached' 	=> true
+						),
+						array(
+							array('id', '=', $fileId)
+						)
+					);
+
+					$db->insert('file_orderline_rel',
+						array(
+							'file_id' 		=> $fileId,
+							'orderline_id' 	=> $orderlineId,
+						)
+					);
+				}
+			}
+		}
 		
 	$db->commit();
 

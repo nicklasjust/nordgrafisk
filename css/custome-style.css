@@ -118,6 +118,10 @@
 		margin: 0 auto;
 	}
 
+	div.band.product-information footer button.disabled{
+		opacity: 0.3;
+	}
+/*
 	div.band.product-information[data-show-step-no="1"] footer button[data-flow-action="back"]{
 		opacity: 0;
 		z-index: -1;
@@ -126,7 +130,7 @@
 	div.band.product-information[data-show-step-no="4"] footer button[data-flow-action="next"]{
 		opacity: 0;
 		z-index: -1;
-	}
+	}*/
 
 	/* # - type
 	================================================== */
@@ -135,12 +139,13 @@
 		display: none;
 	}
 	div.produktTab div.products div.product img{
+		cursor: pointer;
 		max-width: 100%;
 		border-radius: 6px;
 	}
 
 	.selected {
-		border: solid 2px blue;
+		background-color: #337ab7;
 	}
 
 	/* # - format

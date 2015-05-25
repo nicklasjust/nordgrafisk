@@ -1,4 +1,7 @@
 <?php
+
+	require_once('database.php');
+
 	if(empty($_FILES))
 	{
 		echo json_encode(array(
@@ -20,8 +23,10 @@
 		private $appInfo,
 				$accessToken, 
 				$dbxClient,
+				$db,
 				$accountInfo,
 				$files,
+				$fileId,
 				$firstChunk,
 				$endOfChunk,
 				$uploadId,
@@ -31,8 +36,9 @@
 
 		function __construct()
 		{
-			$this->accessToken = 'JpN9jyfsOmIAAAAAAAASMi_bfnJ9dPBbPNuhmAt2T6D9uG1nEpFMfepFtz_Ygi63';
-			$this->dbxClient = new dbx\Client($this->accessToken, "NordGrafiskUpload/1.0");
+			$this->accessToken 	= 'JpN9jyfsOmIAAAAAAAASMi_bfnJ9dPBbPNuhmAt2T6D9uG1nEpFMfepFtz_Ygi63';
+			$this->dbxClient 	= new dbx\Client($this->accessToken, "NordGrafiskUpload/1.0");
+			$this->db 			= null;
 		}
 
 		public function uploadFiles($files)
@@ -46,6 +52,7 @@
 			$this->uploadId 	= $_POST['uploadId'];
 			$this->totalChunks 	= $_POST['totalChunks'];
 			$this->chunkIndex 	= $_POST['chunkIndex'];
+			$this->fileId 		= $_POST['fileId'];
 
 			foreach ($this->files as $file)
 			{
@@ -70,6 +77,29 @@
 			$result 	= null;
 			$where 		= null;
 			$success 	= true;
+					
+			if($this->fileId == 'null')
+			{
+				$this->db = Database::getInstance('mysql', 'localhost', 'nordgrafisk', 'root', '');
+				
+				try{
+					$filePath = "/".$this->customerId."/tlf.: ".$this->phone." - ".$fileName;
+
+					$this->db->insert('files', array(
+						'path' => $filePath
+						));
+
+					$this->fileId = $this->db->lastInsertId();
+				}
+				catch(Exception $e)
+				{
+					echo json_encode(array(
+						'success' 	=> false,
+						'msg' 		=>  $e->getMessage()
+					));
+					exit;
+				}
+			}
 
 			if($this->chunkIndex == 0) //If the chunk is the first, start DB chunk upload
 			{
@@ -81,14 +111,14 @@
 
 				if($this->chunkIndex+1 == $this->totalChunks) //If the chunk is also the last, finish DB chunk upload
 				{
-					$result = $this->dbxClient->chunkedUploadFinish( $this->uploadId, "/".$this->customerId."/tlf.: ".$this->phone." - ".$fileName, dbx\WriteMode::add());
+					$result = $this->dbxClient->chunkedUploadFinish( $this->uploadId, '/'.$this->customerId.'/tlf '.$this->phone.' - '.$fileName, dbx\WriteMode::add());
 					$where = '2';
 				}
 			}
 			else if($this->chunkIndex+1 == $this->totalChunks) //If the chunk is the last, finish DB chunk upload
 			{
 				$result = $this->dbxClient->chunkedUploadContinue( $this->uploadId, $this->offsetByte , $stringContent);
-				$result = $this->dbxClient->chunkedUploadFinish( $this->uploadId, "/".$this->customerId."/tlf.: ".$this->phone." - ".$fileName, dbx\WriteMode::add());
+				$result = $this->dbxClient->chunkedUploadFinish( $this->uploadId, '/'.$this->customerId.'/tlf '.$this->phone.' - '.$fileName, dbx\WriteMode::add());
 				$where = '3';
 			}
 			else // If the chunk is niether the first or last, continue upload
@@ -117,6 +147,7 @@
 				'success' 		=> $success,
 				'where' 		=> $where,
 				'result' 		=> $result,
+				'fileId' 		=> $this->fileId,
 				'uploadId' 		=> $this->uploadId,
 				'chunkIndex'	=> $this->chunkIndex,
 				'recovery' 		=> $this->recoveryAttempts

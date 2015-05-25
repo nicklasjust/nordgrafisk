@@ -60,7 +60,7 @@ $(document).ready(function()
 
 			$('div.modal.alert-box-modal').modal('show')
 				.find('div.modal-body')
-				.append(
+				.html(
 					$('<h4/>').html('Du skal udfylde kundeinformationen.')
 				);
 		}
@@ -71,7 +71,28 @@ $(document).ready(function()
 
 	function setVisibleStep(stepNumber)
 	{
+		if(typeof $('input[name="product"]:checked').val() == 'undefined')
+		{
+			$('div.modal.alert-box-modal').modal('show')
+				.find('div.modal-body')
+				.html(
+					$('<h4/>').html('Du skal vælge en produkttype for at komme videre.')
+				);
+			return;
+		}
+
 		var productInfomationFlow = $('div.band.product-information');
+		var numberOfSteps 	= productInfomationFlow.find('div.steps div.step').length;
+
+		$('div.band.product-information footer button').removeClass('disabled');
+		if(stepNumber == 1)
+		{
+			$('div.band.product-information footer button[data-flow-action="back"]').addClass('disabled');
+		}
+		else if(stepNumber == numberOfSteps)
+		{
+			$('div.band.product-information footer button[data-flow-action="next"]').addClass('disabled');
+		}
 
 		productInfomationFlow.attr('data-show-step-no', stepNumber);
 		productInfomationFlow.find('header.flow-overview div a').removeClass('focus');
@@ -128,15 +149,6 @@ $(document).ready(function()
 			}
 		});
 
-	$('div.band.product-information header.flow-overview div a')
-		.on('click', function(event)
-		{	
-			event.preventDefault();
-			
-			var stepNumber = parseInt($(this).parent().index());
-			setVisibleStep(stepNumber);
-		});
-
 	$('form.product-information').on('submit', function(event)
 	{
 		event.preventDefault();
@@ -148,7 +160,7 @@ $(document).ready(function()
 		{
 			$('div.modal.alert-box-modal').modal('show')
 				.find('div.modal-body')
-				.append(
+				.html(
 					$('<h4/>').html('Du skal vælge en produkttype for at tilføje til kurven.')
 				);
 			return;
@@ -164,7 +176,7 @@ $(document).ready(function()
 
 		cookie.set('nordgrafisk-orderlines', JSON.stringify(orderlinesArray), 8640);
 
-		createNewOrderlineRow(orderLine.product, 1)
+		createNewOrderlineRow(orderLine.product, 1);
 		
 	});
 
@@ -360,6 +372,7 @@ $(document).ready(function()
 
 			this.progressBar 	= progressBar;
 
+			this.fileId 		= null;
 			this.uploadId 		= null;
 			this.totalChunks 	= null;
 			this.chunksUploaded = 0;
@@ -407,7 +420,18 @@ $(document).ready(function()
 						console.log(data);
 						//console.log('Uploaded chunk(' + data.chunkIndex + ') no.: '+this_.chunksUploaded+'/'+this_.totalChunks);
 
-						this_.uploadId = data.uploadId;
+						// $('input[name="file-upload-id"]').val(data.fileId);
+
+						this_.progressBar.parent().parent().append(
+							$('<input />', {
+								'type' : 'hidden',
+								'name' : 'file-upload-id',
+								'value' : data.fileId
+							})
+						);
+
+						this_.fileId 	= data.fileId;
+						this_.uploadId 	= data.uploadId;
 						this_.uploadChunkGroup(1, this_.groupSize);
 					}
 					else	
@@ -490,7 +514,7 @@ $(document).ready(function()
 				this.progressBar.find('span').html(progress + '% Complete');
 			}
 
-			this.uploadChunk = function(fileId, cIndex, successCallback, errorCallback)
+			this.uploadChunk = function(cIndex, successCallback, errorCallback)
 			{
 				var cIndex 				= parseInt(cIndex);
 				var dataArraySliceStart = cIndex * this.chunkSize;
@@ -507,12 +531,12 @@ $(document).ready(function()
 				
 				formData.append('customerId',	$('input[name="email"]').val());
 				formData.append('phone',		$('input[name="phone"]').val());
+				formData.append('fileId', 		this.fileId);
 				formData.append('uploadId', 	this.uploadId);
 				formData.append('offsetByte', 	dataArraySliceStart);
 				formData.append('chunkOrder', 	chunkOrder);
 				formData.append('totalChunks', 	this.totalChunks);
 				formData.append('chunkIndex', 	cIndex);
-				formData.append('fileId',	 	fileId);
 
 				var this_ = this; // assign this FileChunkUploader obj to a variable reachable inside the scope of ajax callbacks
 
@@ -579,6 +603,10 @@ $(document).ready(function()
 					'orderlines' 	: JSON.parse(orderlines)
 				};
 
+				console.log(orderData);
+
+				// return;
+
 				$.ajax({
 					url: 'register-order-script.php',
 					type: 'POST',
@@ -587,10 +615,10 @@ $(document).ready(function()
 					dataType: 'json',
 					success: function(data, textStatus, jqXHR)
 					{
-						// console.log(data);
+						console.log(data);
 						// cookie.unset('nordgrafisk-customer-info');
 						// cookie.unset('nordgrafisk-orderlines');
-						location.reload();
+						// location.reload();
 					},
 					error: function(jqXHR, textStatus, errorThrown)
 					{
@@ -602,12 +630,12 @@ $(document).ready(function()
 			{
 				$('div.modal.alert-box-modal').modal('show')
 				.find('div.modal-body')
-				.append(
+				.html(
 					$('<h4/>').html('Du skal tilføje produkter til kurven, før du kan sende ordren.')
 				).after(
 					$('<div />',{
 						'class' : 'modal-body'
-					}).append(
+					}).html(
 						$('<p />').html('Hvis du ikke ved, hvad du præcis vil have, er du altid velkommen til at udfylde kontaktformularen, der findes lige over kurven.')
 					)	
 				);
@@ -627,11 +655,33 @@ $(document).ready(function()
 			var orderNumber = $(this).attr('data-order-number');
 			var orderDOM 	= $('div.panel-group div.panel.panel-default[data-order-number="'+orderNumber+'"');
 
-			orderDOM.remove();	
+			var panelGroup 	= $(this).closest('div.panel-group');
+			var orderLeftCount = panelGroup.children().length;
+
+			orderDOM.remove();
+			$('div.panel-group.accepted').find('div.well.no-orders').remove();
 			$('div.panel-group.accepted').prepend(orderDOM).hide().fadeIn(400);
 
 			$(this).toggleClass('acceptorder-btn finishorder-btn');
 			this.innerText = "Færdiggør ordre";
+
+			console.log(orderLeftCount);
+
+			if(orderLeftCount == 1)
+			{
+				panelGroup.html(
+					$('<div />', {
+						'class' : 'well well-sm no-orders'
+					}).html('Der er ingen afviste ordrer')
+				);
+			}
+
+			var data = {
+				'orderId' : orderNumber,
+				'status' : 2
+			};
+
+			changeOrderStatus(data);
 	});
 
 	$(document).on('click', 
@@ -641,9 +691,28 @@ $(document).ready(function()
 			var orderNumber = $(this).attr('data-order-number');
 			var orderDOM 	= $('div.panel-group div.panel.panel-default[data-order-number="'+orderNumber+'"');
 
-			orderDOM.remove();	
+			var panelGroup 	= $(this).closest('div.panel-group');
+			var orderLeftCount = panelGroup.children().length;
+
+			orderDOM.remove();
+			$('div.panel-group.declined').find('div.well.no-orders').remove();
 			$('div.panel-group.declined').prepend(orderDOM).hide().fadeIn(400);
 			
+			if(orderLeftCount == 1)
+			{
+				panelGroup.html(
+					$('<div />', {
+						'class' : 'well well-sm no-orders'
+					}).html('Der er ingen ubehandlede  ordrer')
+				);
+			}
+
+			var data = {
+				'orderId' : orderNumber,
+				'status' : 4
+			};
+
+			changeOrderStatus(data);
 	});	
 
 	$(document).on('click',
@@ -653,15 +722,56 @@ $(document).ready(function()
 			var orderNumber = $(this).attr('data-order-number');
 			var orderDOM 	= $('div.panel-group div.panel.panel-default[data-order-number="'+orderNumber+'"');
 
-			orderDOM.remove();	
+			var panelGroup 	= $(this).closest('div.panel-group');
+			var orderLeftCount = panelGroup.children().length;
+
+			orderDOM.remove();
+			$('div.panel-group.finished').find('div.well.no-orders').remove();
 			$('div.panel-group.finished').prepend(orderDOM).hide().fadeIn(400);
 
 			$('div.panel-group.finished button.declineorder-btn').remove();
+		
+			$(this).html("Genoptag ordre");
 
-			//$(this).toggleClass('finishorder-btn acceptorder-btn');
-			this.innerText = "Genoptag ordre";
+			if(orderLeftCount == 1)
+			{
+				panelGroup.html(
+					$('<div />', {
+						'class' : 'well well-sm no-orders'
+					}).html('Der er ingen godkendte ordrer')
+				);
+			}
 
-	});	
+			var data = {
+				'orderId' : orderNumber,
+				'status' : 3
+			};
+
+			changeOrderStatus(data);
+	});
+
+	function changeOrderStatus(data)
+	{
+		$.ajax({
+			url: 'change-order-status-script.php',
+			type: 'POST',
+			data: data,
+			cache: false,
+			dataType: 'json',
+			success: function(data, textStatus, jqXHR)
+			{
+				console.log(jqXHR.responseText);
+				console.log(data);
+				console.log(textStatus);
+			},
+			error: function(jqXHR, textStatus, errorThrown)
+			{
+				console.log(jqXHR.responseText);
+				console.log(textStatus);
+				console.log(errorThrown);
+			}
+		});
+	}
 
 /* # MISC
 ================================================== */

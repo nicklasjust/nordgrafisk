@@ -36,8 +36,6 @@
 
 	<br>
 
-	<input type="hidden" name="file-upload-id" class="fileUploadId">
-
 	<div class="file-upload-preview">
 
 

@@ -38,7 +38,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-poster" value="1">
+								<input type="radio" name="material" value="1">
 								Materiale 1
 						
 							</label>
@@ -49,7 +49,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-poster" value="2">
+								<input type="radio" name="material" value="2">
 								Materiale 2
 						
 							</label>
@@ -60,7 +60,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-poster" value="3">
+								<input type="radio" name="material" value="3">
 								Materiale 3
 						
 							</label>
@@ -75,7 +75,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-poster" value="4">
+								<input type="radio" name="material" value="4">
 								Materiale 4
 						
 							</label>
@@ -86,7 +86,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-poster" value="5">
+								<input type="radio" name="material" value="5">
 								Materiale 5
 						
 							</label>
@@ -97,7 +97,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-poster" value="6">
+								<input type="radio" name="material" value="6">
 								Materiale 6
 						
 							</label>
@@ -112,7 +112,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-poster" value="7">
+								<input type="radio" name="material" value="7">
 								Materiale 7
 						
 							</label>
@@ -123,7 +123,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-poster" value="8">
+								<input type="radio" name="material" value="8">
 								Materiale 8
 						
 							</label>
@@ -142,7 +142,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-banner" value="1">
+								<input type="radio" name="material" value="1">
 								Materiale 1
 						
 							</label>
@@ -153,7 +153,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-banner" value="2">
+								<input type="radio" name="material" value="2">
 								Materiale 2
 						
 							</label>
@@ -164,7 +164,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-banner" value="3">
+								<input type="radio" name="material" value="3">
 								Materiale 3
 						
 							</label>
@@ -179,7 +179,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-banner" value="4">
+								<input type="radio" name="material" value="4">
 								Materiale 4
 						
 							</label>
@@ -190,7 +190,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-banner" value="5">
+								<input type="radio" name="material" value="5">
 								Materiale 5
 						
 							</label>
@@ -201,7 +201,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-banner" value="6">
+								<input type="radio" name="material" value="6">
 								Materiale 6
 						
 							</label>
@@ -216,7 +216,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-banner" value="7">
+								<input type="radio" name="material" value="7">
 								Materiale 7
 						
 							</label>
@@ -227,7 +227,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-banner" value="8">
+								<input type="radio" name="material" value="8">
 								Materiale 8
 						
 							</label>
@@ -246,7 +246,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-roll-up" value="1">
+								<input type="radio" name="material" value="1">
 								Materiale 1
 						
 							</label>
@@ -257,7 +257,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-roll-up" value="2">
+								<input type="radio" name="material" value="2">
 								Materiale 2
 						
 							</label>
@@ -268,7 +268,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-roll-up" value="3">
+								<input type="radio" name="material" value="3">
 								Materiale 3
 						
 							</label>
@@ -283,7 +283,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-roll-up" value="4">
+								<input type="radio" name="material" value="4">
 								Materiale 4
 						
 							</label>
@@ -294,7 +294,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-roll-up" value="5">
+								<input type="radio" name="material" value="5">
 								Materiale 5
 						
 							</label>
@@ -305,7 +305,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-roll-up" value="6">
+								<input type="radio" name="material" value="6">
 								Materiale 6
 						
 							</label>
@@ -320,7 +320,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-roll-up" value="7">
+								<input type="radio" name="material" value="7">
 								Materiale 7
 						
 							</label>
@@ -331,7 +331,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-roll-up" value="8">
+								<input type="radio" name="material" value="8">
 								Materiale 8
 						
 							</label>
@@ -379,7 +379,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-poster" value="1">
+								<input type="radio" name="material" value="1">
 								Materiale 1
 						
 							</label>
@@ -390,7 +390,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-poster" value="2">
+								<input type="radio" name="material" value="2">
 								Materiale 2
 						
 							</label>
@@ -401,7 +401,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-poster" value="3">
+								<input type="radio" name="material" value="3">
 								Materiale 3
 						
 							</label>
@@ -416,7 +416,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-poster" value="4">
+								<input type="radio" name="material" value="4">
 								Materiale 4
 						
 							</label>
@@ -427,7 +427,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-poster" value="5">
+								<input type="radio" name="material" value="5">
 								Materiale 5
 						
 							</label>
@@ -438,7 +438,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-poster" value="6">
+								<input type="radio" name="material" value="6">
 								Materiale 6
 						
 							</label>
@@ -453,7 +453,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-poster" value="7">
+								<input type="radio" name="material" value="7">
 								Materiale 7
 						
 							</label>
@@ -464,7 +464,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-poster" value="8">
+								<input type="radio" name="material" value="8">
 								Materiale 8
 						
 							</label>
@@ -483,7 +483,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-banner" value="1">
+								<input type="radio" name="material" value="1">
 								Materiale 1
 						
 							</label>
@@ -494,7 +494,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-banner" value="2">
+								<input type="radio" name="material" value="2">
 								Materiale 2
 						
 							</label>
@@ -505,7 +505,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-banner" value="3">
+								<input type="radio" name="material" value="3">
 								Materiale 3
 						
 							</label>
@@ -520,7 +520,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-banner" value="4">
+								<input type="radio" name="material" value="4">
 								Materiale 4
 						
 							</label>
@@ -531,7 +531,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-banner" value="5">
+								<input type="radio" name="material" value="5">
 								Materiale 5
 						
 							</label>
@@ -542,7 +542,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-banner" value="6">
+								<input type="radio" name="material" value="6">
 								Materiale 6
 						
 							</label>
@@ -557,7 +557,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-banner" value="7">
+								<input type="radio" name="material" value="7">
 								Materiale 7
 						
 							</label>
@@ -568,7 +568,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-banner" value="8">
+								<input type="radio" name="material" value="8">
 								Materiale 8
 						
 							</label>
@@ -588,7 +588,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-roll-up" value="1">
+								<input type="radio" name="material" value="1">
 								Materiale 1
 						
 							</label>
@@ -599,7 +599,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-roll-up" value="2">
+								<input type="radio" name="material" value="2">
 								Materiale 2
 						
 							</label>
@@ -610,7 +610,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-roll-up" value="3">
+								<input type="radio" name="material" value="3">
 								Materiale 3
 						
 							</label>
@@ -625,7 +625,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-roll-up" value="4">
+								<input type="radio" name="material" value="4">
 								Materiale 4
 						
 							</label>
@@ -636,7 +636,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-roll-up" value="5">
+								<input type="radio" name="material" value="5">
 								Materiale 5
 						
 							</label>
@@ -647,7 +647,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-roll-up" value="5">
+								<input type="radio" name="material" value="5">
 								Materiale 6
 						
 							</label>
@@ -662,7 +662,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-roll-up" value="7">
+								<input type="radio" name="material" value="7">
 								Materiale 7
 						
 							</label>
@@ -673,7 +673,7 @@
 
 							<label>
 			
-								<input type="radio" name="material-roll-up" value="8">
+								<input type="radio" name="material" value="8">
 								Materiale 8
 						
 							</label>

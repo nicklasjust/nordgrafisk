@@ -13,29 +13,30 @@
 			
 					<h4>Størrelse:</h4>
 
-					<select name="size-poster" class="form-control">
+					<select name="size" class="form-control">
 				
-						<option>A0</option>
-						<option>A1</option>
-					 	<option>A2</option>
-					 	<option>A3</option>
-						<option>A4</option>
-						<option>A5</option>
-						<option>B0</option>
-						<option>B1</option>
-					 	<option>B2</option>
-					 	<option>B3</option>
-						<option>B4</option>
-						<option>B5</option>
-						<option>Andet</option>
+						<option value="">Vælge størrelse:</option>
+						<option value="A0">A0</option>
+						<option value="A1">A1</option>
+					 	<option value="A2">A2</option>
+					 	<option value="A3">A3</option>
+						<option value="A4">A4</option>
+						<option value="A5">A5</option>
+						<option value="B0">B0</option>
+						<option value="B1">B1</option>
+					 	<option value="B2">B2</option>
+					 	<option value="B3">B3</option>
+						<option value="B4">B4</option>
+						<option value="B5">B5</option>
+						<option value="Andet">Andet</option>
 					
 					</select>
 
 					<div class="other">
 
-						<input type="text" class="form-control" placeholder="Længde">
+						<input type="text" name="size-h" class="form-control" placeholder="Længde">
 						X
-						<input type="text" class="form-control" placeholder="Bredde">
+						<input type="text" name="size-w" class="form-control" placeholder="Bredde">
 						mm 
 
 					</div>
@@ -52,12 +53,13 @@
 			
 				<h4>Type:</h4>
 
-					<select name="type-poster" class="form-control">
+					<select name="type" class="form-control">
 				
-						<option>Farve</option>
-						<option>Farve m. gloss</option>
-						<option>Sort/Hvid</option>
-					 	<option>Sort/Hvid m. gloss</option>
+						<option value="">Vælg type</option>
+						<option value="Farve">Farve</option>
+						<option value="Farve m. gloss">Farve m. gloss</option>
+						<option value="Sort/Hvid">Sort/Hvid</option>
+					 	<option value="Sort/Hvid m. gloss">Sort/Hvid m. gloss</option>
 					
 					</select>
 
@@ -73,19 +75,20 @@
 			
 					<h4>Størrelse:</h4>
 
-					<select name="size-roll-up" class="form-control">
+					<select name="size" class="form-control">
 				
-						<option>80 x 220</option>
-						<option>85 x 250</option>
-						<option>Andet</option>
+						<option value="">Vælg størrelse:</option>
+						<option value="80 x 220">80 x 220</option>
+						<option value="85 x 250">85 x 250</option>
+						<option value="Andet">Andet</option>
 					
 					</select>
 
 					<div class="other">
 
-						<input type="text" class="form-control" placeholder="Længde">
+						<input type="text" name="size-h" class="form-control" placeholder="Længde">
 						X
-						<input type="text" class="form-control" placeholder="Bredde">
+						<input type="text" name="size-w" class="form-control" placeholder="Bredde">
 						mm 
 
 					</div>
@@ -102,11 +105,12 @@
 			
 				<h4>Type:</h4>
 
-					<select name="type-roll-up" class="form-control">
+					<select name="type" class="form-control">
 				
-						<option>PVC m. block</option>
-						<option>ECO Tex Polyester</option>
-						<option>PVC</option>
+						<option value="">Vælg type</option>
+						<option value="PVC m. block">PVC m. block</option>
+						<option value="ECO Tex Polyester">ECO Tex Polyester</option>
+						<option value="PVC">PVC</option>
 					
 					</select>
 
@@ -122,29 +126,30 @@
 			
 					<h4>Størrelse:</h4>
 
-					<select name="size-banner" class="form-control">
+					<select name="size" class="form-control">
 				
-						<option>A0</option>
-						<option>A1</option>
-					 	<option>A2</option>
-					 	<option>A3</option>
-						<option>A4</option>
-						<option>A5</option>
-						<option>B0</option>
-						<option>B1</option>
-					 	<option>B2</option>
-					 	<option>B3</option>
-						<option>B4</option>
-						<option>B5</option>
-						<option>Andet</option>
+						<option value="">Vælge størrelse:</option>
+						<option value="A0">A0</option>
+						<option value="A1">A1</option>
+					 	<option value="A2">A2</option>
+					 	<option value="A3">A3</option>
+						<option value="A4">A4</option>
+						<option value="A5">A5</option>
+						<option value="B0">B0</option>
+						<option value="B1">B1</option>
+					 	<option value="B2">B2</option>
+					 	<option value="B3">B3</option>
+						<option value="B4">B4</option>
+						<option value="B5">B5</option>
+						<option value="Andet">Andet</option>
 					
 					</select>
 
 					<div class="other">
 
-						<input type="text" class="form-control" placeholder="Længde">
+						<input type="text" name="size-h" class="form-control" placeholder="Længde">
 						X
-						<input type="text" class="form-control" placeholder="Bredde">
+						<input type="text" name="size-w" class="form-control" placeholder="Bredde">
 						mm 
 
 					</div>
@@ -161,11 +166,12 @@
 			
 				<h4>Type:</h4>
 
-					<select name="type-banner" class="form-control">
+					<select name="type" class="form-control">
 				
-						<option>Polyester 210g stofbanner</option>
-						<option>PVC 440g presenning</option>
-						<option>Mesh 420g stilladsbanner</option>
+						<option value="">Vælg type:</option>
+						<option value="Polyester 210g stofbanner">Polyester 210g stofbanner</option>
+						<option value="PVC 440g presenning">PVC 440g presenning</option>
+						<option value="Mesh 420g stilladsbanner">Mesh 420g stilladsbanner</option>
 					
 					</select>
 
