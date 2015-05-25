@@ -15,7 +15,9 @@
 	  			<h4 class="panel-title">
 
 			        <a data-toggle="collapse" data-parent="#accordion" href="#order-9434" aria-expanded="true" aria-controls="order-number-9434">
+					
 						<div class="row">	
+					
 							<div class="col-md-3">
 								#9434
 							</div> 

@@ -352,7 +352,7 @@ $(document).ready(function()
 
 		function FileChunkUploader(file, progressBar)
 		{
-			this.chunkSize 		= 1900000;
+			this.chunkSize 		= 1000000;
 
 			this.fileReader 	= new FileReader();
 			this.file 			= file;
@@ -419,10 +419,9 @@ $(document).ready(function()
 
 			this.uploadChunkGroup = function(groupIndex, groupSize)
 			{
-
 				var groupTail 	= groupIndex;
 				var groupHead 	= groupIndex+groupSize;
-				var this_ = this;
+				var this_ 		= this;
 
 				groupHead = (groupHead > this.totalChunks-1) ? this.totalChunks-1 : groupHead;
 
@@ -491,7 +490,7 @@ $(document).ready(function()
 				this.progressBar.find('span').html(progress + '% Complete');
 			}
 
-			this.uploadChunk = function(cIndex, successCallback, errorCallback)
+			this.uploadChunk = function(fileId, cIndex, successCallback, errorCallback)
 			{
 				var cIndex 				= parseInt(cIndex);
 				var dataArraySliceStart = cIndex * this.chunkSize;
@@ -506,11 +505,14 @@ $(document).ready(function()
 
 				formData.append('fileChunk', 	blob, this.file.name);
 				
+				formData.append('customerId',	$('input[name="email"]').val());
+				formData.append('phone',		$('input[name="phone"]').val());
 				formData.append('uploadId', 	this.uploadId);
 				formData.append('offsetByte', 	dataArraySliceStart);
 				formData.append('chunkOrder', 	chunkOrder);
 				formData.append('totalChunks', 	this.totalChunks);
 				formData.append('chunkIndex', 	cIndex);
+				formData.append('fileId',	 	fileId);
 
 				var this_ = this; // assign this FileChunkUploader obj to a variable reachable inside the scope of ajax callbacks
 
@@ -535,7 +537,6 @@ $(document).ready(function()
 							console.log(data);
 							console.log(textStatus);
 						}
-						
 					},
 					error: function(jqXHR, textStatus, errorThrown)
 					{
@@ -579,16 +580,16 @@ $(document).ready(function()
 				};
 
 				$.ajax({
-					url: 'database-layer.php',
+					url: 'register-order-script.php',
 					type: 'POST',
 					data: orderData,
 					cache: false,
 					dataType: 'json',
 					success: function(data, textStatus, jqXHR)
 					{
-						console.log(data);
-						cookie.unset('nordgrafisk-customer-info');
-						cookie.unset('nordgrafisk-orderlines');
+						// console.log(data);
+						// cookie.unset('nordgrafisk-customer-info');
+						// cookie.unset('nordgrafisk-orderlines');
 						location.reload();
 					},
 					error: function(jqXHR, textStatus, errorThrown)

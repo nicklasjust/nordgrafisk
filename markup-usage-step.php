@@ -692,4 +692,4 @@
 
 </div>
 
-<textarea class="form-control" id="kommentar" rows="4" placeholder="Skriv eventuelle kommentarer til brug her.."></textarea>
+<textarea class="form-control" id="kommentar" name="usage-comments" rows="4" placeholder="Skriv eventuelle kommentarer til brug her.."></textarea>

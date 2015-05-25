@@ -175,4 +175,4 @@
 
 	</div>
 
-<textarea class="form-control" rows="10" placeholder="Skriv kommentarer til format her."></textarea>
+<textarea class="form-control" name="format-comments" rows="10" placeholder="Skriv kommentarer til format her."></textarea>

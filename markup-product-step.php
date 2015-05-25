@@ -116,6 +116,59 @@
 		
 		</div>
 
+		<div class="row">
+				
+			<div class="product col col-md-3">
+
+				<label for="product-10">
+				
+					<img src="images/1.png" alt="Andet" class="img-rounded">
+				
+				</label>
+
+				<input type="radio" id="product-10" name="product" value="Andet"/>
+
+			</div>
+				
+			<div class="product col col-md-3">
+
+				<label for="product-11">
+				
+					<img src="images/1.png" alt="Andet" class="img-rounded">
+				
+				</label>
+
+				<input type="radio" id="product-11" name="product" value="Andet"/>
+
+			</div>
+				
+			<div class="product col col-md-3">
+
+				<label for="product-12">
+				
+					<img src="images/1.png" alt="Andet" class="img-rounded">
+				
+				</label>
+
+				<input type="radio" id="product-12" name="product" value="Andet"/>
+
+			</div>
+				
+			<div class="product col col-md-3">
+
+				<label for="product-13">
+				
+					<img src="images/1.png" alt="Andet" class="img-rounded">
+				
+				</label>
+
+				<input type="radio" id="product-13" name="product" value="Andet"/>
+
+			</div>
+		
+		</div>
+
+
 	</div>
 
 </div>
