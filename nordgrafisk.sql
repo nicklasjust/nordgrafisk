@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Vært: 127.0.0.1
--- Genereringstid: 26. 05 2015 kl. 19:54:15
+-- Genereringstid: 26. 05 2015 kl. 20:01:40
 -- Serverversion: 5.6.20
 -- PHP-version: 5.5.15
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `nordgrafisk`
 --
+CREATE DATABASE IF NOT EXISTS `nordgrafisk` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `nordgrafisk`;
 
 -- --------------------------------------------------------
 
@@ -26,6 +28,7 @@ SET time_zone = "+00:00";
 -- Struktur-dump for tabellen `debtors`
 --
 
+DROP TABLE IF EXISTS `debtors`;
 CREATE TABLE IF NOT EXISTS `debtors` (
 `id` int(100) NOT NULL,
   `name` varchar(200) CHARACTER SET utf8 NOT NULL,
@@ -44,6 +47,7 @@ CREATE TABLE IF NOT EXISTS `debtors` (
 -- Struktur-dump for tabellen `files`
 --
 
+DROP TABLE IF EXISTS `files`;
 CREATE TABLE IF NOT EXISTS `files` (
 `id` int(200) NOT NULL,
   `path` varchar(300) NOT NULL,
@@ -66,6 +70,7 @@ INSERT INTO `files` (`id`, `path`, `attached`) VALUES
 -- Struktur-dump for tabellen `file_orderline_rel`
 --
 
+DROP TABLE IF EXISTS `file_orderline_rel`;
 CREATE TABLE IF NOT EXISTS `file_orderline_rel` (
 `id` int(200) NOT NULL,
   `orderline_id` int(200) NOT NULL,
@@ -78,6 +83,7 @@ CREATE TABLE IF NOT EXISTS `file_orderline_rel` (
 -- Struktur-dump for tabellen `orderlines`
 --
 
+DROP TABLE IF EXISTS `orderlines`;
 CREATE TABLE IF NOT EXISTS `orderlines` (
 `id` int(200) NOT NULL,
   `order_id` int(100) NOT NULL,
@@ -96,6 +102,7 @@ CREATE TABLE IF NOT EXISTS `orderlines` (
 -- Struktur-dump for tabellen `orders`
 --
 
+DROP TABLE IF EXISTS `orders`;
 CREATE TABLE IF NOT EXISTS `orders` (
 `id` int(100) NOT NULL,
   `status` int(100) NOT NULL DEFAULT '1',

@@ -20,7 +20,7 @@ $(document).ready(function()
 ================================================== */
 	
 	var cookie = new Cookie();
-	var submitProductInfo = false;
+	var customerInfoIsSet = false;
 	// cookie.unset('nordgrafisk-orderlines');
 	// cookie.unset('nordgrafisk-customer-info');
 
@@ -69,18 +69,18 @@ $(document).ready(function()
 		&& customerInfo.phone != ''
 		&& customerInfo.email != '')
 		{
-			submitProductInfo = true;
+			customerInfoIsSet = true;
 			cookie.set('nordgrafisk-customer-info', JSON.stringify(customerInfo), 8640);
 		}
 		else
 		{
-			submitProductInfo = false;
+			customerInfoIsSet = false;
 			cookie.unset('nordgrafisk-customer-info');
 
 			var modal = $('div.modal.alert-box-modal');
 			
 			modal.find('h4.modal-title')
-			.html('Du skal udfylde kundeinformationen.');
+			.html('Du skal udfylde den primære kundeinformation');
 
 			modal.find('div.modal-body').hide();
 
@@ -180,7 +180,7 @@ $(document).ready(function()
 
 		$('form.customer-information').submit();
 
-		if(submitProductInfo)
+		if(customerInfoIsSet)
 		{
 			var orderLine = $(this).serializeObject();
 			var orderlinesArray = [];
@@ -198,6 +198,43 @@ $(document).ready(function()
 				return;
 			}
 
+
+			if(typeof orderLine['file-upload-id'] != 'undefined')
+			{
+				var fileId = orderLine['file-upload-id'];
+				var filesUploaded = true;
+
+				if(orderLine['file-upload-id'] instanceof Array)
+				{	
+					for (i = 0; i < fileId.length; i++)
+					{ 
+						if(orderLine['file-upload-id'][i] == 'false')
+						{
+							filesUploaded = false;
+						}
+					}
+				}
+				else
+				{
+					filesUploaded = (orderLine['file-upload-id'] == 'false') ? false : true;
+				}
+
+				if(!filesUploaded)
+				{
+					var modal = $('div.modal.alert-box-modal');
+					
+					modal.find('h4.modal-title')
+					.html('Du har tilføjet filer uden af uploade.');
+
+					modal.find('div.modal-body').show().html(
+						$('<p />').html('Du skal uploade filerne, før du kan tilføje produktet til kurven.')
+						);
+
+					modal.modal('show');
+					return;
+				}
+			}
+
 			if(cookie.isset('nordgrafisk-orderlines'))
 			{
 				var orderlinesArrayString 	= cookie.get('nordgrafisk-orderlines');
@@ -212,6 +249,29 @@ $(document).ready(function()
 			location.reload();
 		}
 	});
+
+	function filesUploaded(fileId)
+	{
+		if(fileId instanceof Array)
+		{
+			for (i = 0; i < fileId.length; i++)
+			{ 
+				if(!orderLine['file-upload-id'][i])
+				{
+					return false;
+				}
+			}
+		}	
+		else
+		{
+			if(!fileId)
+			{
+				return false;
+			}
+		}
+
+		return true;
+	}
 
 
 	function createNewOrderlineRow(produktName, count)
@@ -359,7 +419,12 @@ $(document).ready(function()
 											'alt' : 'upload-spinner'
 										})
 									).append('&nbsp;Forbereder upload')
-								)
+								).append(
+									$('<input />', {
+										'type' : 'hidden',
+										'name' : 'file-upload-id',
+										'value' : false
+									}))
 							)
 						);
 
@@ -375,29 +440,35 @@ $(document).ready(function()
 		$('button.start-file-upload').on('click', function(event)
 		{
 			event.preventDefault();
-			var files = $('input#file-picker')[0].files;
+			
+			$('form.customer-information').submit();
 
-			for (var i = files.length - 1; i >= 0; i--)
+			if(customerInfoIsSet)
 			{
-				var typeFound = $.inArray((files[i].type.split('/'))[1], allowedFileTypes) > -1;
+				var files = $('input#file-picker')[0].files;
 
-				if(!typeFound)
+				for (var i = files.length - 1; i >= 0; i--)
 				{
-					$('div.file-upload-preview').append(
-						$('<h4 />').html('Du kan kun uploade filer af typen: ' + allowedFileTypes.join(', '))
-					);
-					return;
-				}
+					var typeFound = $.inArray((files[i].type.split('/'))[1], allowedFileTypes) > -1;
 
-				var file 			= files[i];
-				var chunkUploader 	= new FileChunkUploader(file, progressBars[i]);
-				chunkUploader.startUpload();
-			};
+					if(!typeFound)
+					{
+						$('div.file-upload-preview').append(
+							$('<h4 />').html('Du kan kun uploade filer af typen: ' + allowedFileTypes.join(', '))
+						);
+						return;
+					}
+
+					var file 			= files[i];
+					var chunkUploader 	= new FileChunkUploader(file, progressBars[i]);
+					chunkUploader.startUpload();
+				};
+			}
 		});
 
 		function FileChunkUploader(file, progressBar)
 		{
-			this.chunkSize 		= 1000000;
+			this.chunkSize 		= 500000;
 
 			this.fileReader 	= new FileReader();
 			this.file 			= file;
@@ -438,9 +509,9 @@ $(document).ready(function()
 				
 				this.progressBar.parent().parent().addClass('processing');
 
-				// console.log('parallel group upload started');
-				// console.log('chunk size: '+this_.chunkSize);
-				// console.log('group size: '+this_.groupSize);
+				console.log('parallel group upload started');
+				console.log('chunk size: '+this_.chunkSize);
+				console.log('group size: '+this_.groupSize);
 
 				this.uploadChunk(0, function(data, textStatus, jqXHR)
 				{
@@ -449,19 +520,13 @@ $(document).ready(function()
 						this_.chunksUploaded++;
 						this_.updatePrograssBar(this_.chunksUploaded, this_.chunkSize, this_.dataArray.length);
 
-						// console.log('total chunks: ' + this_.totalChunks);
-						// console.log(data);
-						//console.log('Uploaded chunk(' + data.chunkIndex + ') no.: '+this_.chunksUploaded+'/'+this_.totalChunks);
+						console.log('total chunks: ' + this_.totalChunks);
+						console.log(data);
+						console.log('Uploaded chunk(' + data.chunkIndex + ') no.: '+this_.chunksUploaded+'/'+this_.totalChunks);
 
-						// $('input[name="file-upload-id"]').val(data.fileId);
+						$('input[name="file-upload-id"]').val(data.fileId);
 
-						this_.progressBar.parent().parent().append(
-							$('<input />', {
-								'type' : 'hidden',
-								'name' : 'file-upload-id',
-								'value' : data.fileId
-							})
-						);
+						// this_.progressBar.parent().parent().find('input[name="file-upload-id"]').val(data.fileId);
 
 						this_.fileId 	= data.fileId;
 						this_.uploadId 	= data.uploadId;
@@ -469,7 +534,7 @@ $(document).ready(function()
 					}
 					else	
 					{
-						// console.log(data);
+						console.log(data);
 					}
 				});
 			}
@@ -491,7 +556,7 @@ $(document).ready(function()
 						this_.chunksUploaded++;
 
 						this_.updatePrograssBar(this_.chunksUploaded, this_.chunkSize, this_.dataArray.length);
-						// console.log(data);
+						console.log(data);
 
 						if(cIndex == groupHead-1 && this_.chunksUploaded < this_.totalChunks-1)
 						{
@@ -505,7 +570,7 @@ $(document).ready(function()
 					}
 					else
 					{
-						// console.log(data);
+						console.log(data);
 					}
 				}
 
@@ -697,7 +762,7 @@ $(document).ready(function()
 			$('div.panel-group.accepted').prepend(orderDOM).hide().fadeIn(400);
 
 			$(this).toggleClass('acceptorder-btn finishorder-btn');
-			this.innerText = "Færdiggør ordre";
+			$(this).html("Færdiggør ordre");
 
 			if(orderLeftCount == 1)
 			{

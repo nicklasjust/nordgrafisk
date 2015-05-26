@@ -1,7 +1,5 @@
 <?php
 
-	require_once('database.php');
-
 	if(empty($_FILES))
 	{
 		echo json_encode(array(
@@ -78,14 +76,16 @@
 			$result 	= null;
 			$where 		= null;
 			$success 	= true;
-					
+			
+			$this->filePath = "/".$this->customerId."/tlf ".$this->phone." - ".$fileName;
+			
 			if($this->fileId == 'null')
 			{
+				require_once('database.php');
+
 				$this->db = Database::getInstance('mysql', $config['db-host'], $config['db-name'], $config['db-user'], $config['db-pass']);
 				
 				try{
-					$this->filePath = "/".$this->customerId."/tlf ".$this->phone." - ".$fileName;
-
 					$this->db->insert('files', array(
 						'path' => $this->filePath
 						));
