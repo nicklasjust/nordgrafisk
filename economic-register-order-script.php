@@ -79,10 +79,10 @@ try
 			'value' => $order[0]['email']
 			));
 
-		// $eco->Debtor_SetEan(array(
-		// 	'debtorHandle' => $debtorHandle,
-		// 	'value' => $order[0]['ean']
-		// 	));
+		$eco->Debtor_SetEan(array(
+			'debtorHandle' => $debtorHandle,
+			'value' => $order[0]['ean']
+			));
 
 		$eco->Debtor_SetTelephoneAndFaxNumber(array(
 			'debtorHandle' => $debtorHandle,
@@ -124,13 +124,13 @@ try
 			)
 		)->Order_CreateResult;
 
-		if(strtotime($order[0]['delivery_date']))
-		{
-			$eco->Order_SetDeliveryDate(array(
-				'orderHandle' 	=> $orderHandle,
-				'value' 		=> $order[0]['delivery_date']
-			));
-		}
+		// if(strtotime($order[0]['delivery_date']))
+		// {
+		// 	$eco->Order_SetDeliveryDate(array(
+		// 		'orderHandle' 	=> $orderHandle,
+		// 		'value' 		=> (new DateTime($order[0]['delivery_date']))->format('Y-m-d H:i:s')
+		// 	));
+		// }
 
 		$eco->Order_SetDeliveryAddress(array(
 				'orderHandle' 	=> $orderHandle,
@@ -218,7 +218,7 @@ try
 	
 	echo json_encode(array(
 		'success' 	=> true,
-		'Register order in E-conomic'
+		'action'	=> 'Register order in E-conomic'
 		));
 }
 catch(Exception $e)

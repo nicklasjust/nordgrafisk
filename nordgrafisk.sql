@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Vært: 127.0.0.1
--- Genereringstid: 26. 05 2015 kl. 20:01:40
+-- Genereringstid: 26. 05 2015 kl. 23:31:29
 -- Serverversion: 5.6.20
 -- PHP-version: 5.5.15
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `nordgrafisk`
 --
-CREATE DATABASE IF NOT EXISTS `nordgrafisk` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `nordgrafisk`;
 
 -- --------------------------------------------------------
 
@@ -28,7 +26,6 @@ USE `nordgrafisk`;
 -- Struktur-dump for tabellen `debtors`
 --
 
-DROP TABLE IF EXISTS `debtors`;
 CREATE TABLE IF NOT EXISTS `debtors` (
 `id` int(100) NOT NULL,
   `name` varchar(200) CHARACTER SET utf8 NOT NULL,
@@ -39,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `debtors` (
   `email` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
   `ean` varchar(200) COLLATE utf8_danish_ci DEFAULT NULL,
   `eco_reg` tinyint(1) DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_danish_ci AUTO_INCREMENT=163 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_danish_ci AUTO_INCREMENT=164 ;
 
 -- --------------------------------------------------------
 
@@ -47,22 +44,11 @@ CREATE TABLE IF NOT EXISTS `debtors` (
 -- Struktur-dump for tabellen `files`
 --
 
-DROP TABLE IF EXISTS `files`;
 CREATE TABLE IF NOT EXISTS `files` (
 `id` int(200) NOT NULL,
   `path` varchar(300) NOT NULL,
   `attached` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=57 ;
-
---
--- Data dump for tabellen `files`
---
-
-INSERT INTO `files` (`id`, `path`, `attached`) VALUES
-(53, '/tobiasharbo@gmail.com/tlf 25469500 - forside.png', 1),
-(54, '/tobiasharbo@gmail.com/tlf 25469500 - forside.png', 1),
-(55, '/tobiasharbo@gmail.com/tlf 25469500 - kontakt.png', 0),
-(56, '/tobiasharbo@gmail.com/tlf 25469500 - forside.png', 0);
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=72 ;
 
 -- --------------------------------------------------------
 
@@ -70,12 +56,11 @@ INSERT INTO `files` (`id`, `path`, `attached`) VALUES
 -- Struktur-dump for tabellen `file_orderline_rel`
 --
 
-DROP TABLE IF EXISTS `file_orderline_rel`;
 CREATE TABLE IF NOT EXISTS `file_orderline_rel` (
 `id` int(200) NOT NULL,
   `orderline_id` int(200) NOT NULL,
   `file_id` int(200) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 -- --------------------------------------------------------
 
@@ -83,7 +68,6 @@ CREATE TABLE IF NOT EXISTS `file_orderline_rel` (
 -- Struktur-dump for tabellen `orderlines`
 --
 
-DROP TABLE IF EXISTS `orderlines`;
 CREATE TABLE IF NOT EXISTS `orderlines` (
 `id` int(200) NOT NULL,
   `order_id` int(100) NOT NULL,
@@ -94,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `orderlines` (
   `material` varchar(200) DEFAULT NULL,
   `type` varchar(200) DEFAULT NULL,
   `size` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=120 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=122 ;
 
 -- --------------------------------------------------------
 
@@ -102,7 +86,6 @@ CREATE TABLE IF NOT EXISTS `orderlines` (
 -- Struktur-dump for tabellen `orders`
 --
 
-DROP TABLE IF EXISTS `orders`;
 CREATE TABLE IF NOT EXISTS `orders` (
 `id` int(100) NOT NULL,
   `status` int(100) NOT NULL DEFAULT '1',
@@ -112,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `delivery_city` varchar(200) NOT NULL,
   `delivery_zip` varchar(200) NOT NULL,
   `eco_reg` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=162 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=163 ;
 
 --
 -- Begrænsninger for dumpede tabeller
@@ -156,27 +139,27 @@ ALTER TABLE `orders`
 -- Tilføj AUTO_INCREMENT i tabel `debtors`
 --
 ALTER TABLE `debtors`
-MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=163;
+MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=164;
 --
 -- Tilføj AUTO_INCREMENT i tabel `files`
 --
 ALTER TABLE `files`
-MODIFY `id` int(200) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=57;
+MODIFY `id` int(200) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=72;
 --
 -- Tilføj AUTO_INCREMENT i tabel `file_orderline_rel`
 --
 ALTER TABLE `file_orderline_rel`
-MODIFY `id` int(200) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+MODIFY `id` int(200) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- Tilføj AUTO_INCREMENT i tabel `orderlines`
 --
 ALTER TABLE `orderlines`
-MODIFY `id` int(200) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=120;
+MODIFY `id` int(200) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=122;
 --
 -- Tilføj AUTO_INCREMENT i tabel `orders`
 --
 ALTER TABLE `orders`
-MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=162;
+MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=163;
 --
 -- Begrænsninger for dumpede tabeller
 --
