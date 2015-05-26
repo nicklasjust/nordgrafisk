@@ -280,33 +280,6 @@
 
 						<footer>
 
-							<!-- <div class="col-md-4">
-
-								<button type="button" class="btn btn-default pull-left" data-flow-action="back">
-									<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-									Tilbage
-								</button>
-
-							</div>
-
-							<div class="col-md-4">
-
-								<button type="submit" class="btn btn-default" data-flow-action="add-to-cart">
-									Tilføj til kurv
-									<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-								</button>
-							
-							</div>
-							
-							<div class="col-md-4">
-
-								<button type="button" class="btn btn-primary pull-right" data-flow-action="next">
-									Næste
-									<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-								</button>
-
-							</div> -->
-							
 							<div class="col-md-6">
 
 								<div class="btn-group" role="group">
@@ -316,7 +289,7 @@
 										Tilbage
 									</button>
 
-									<button type="button" class="btn btn-default" data-flow-action="next">
+									<button type="button" class="btn btn-primary" data-flow-action="next">
 										Næste
 										<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 									</button>
@@ -328,7 +301,7 @@
 
 							<div class="col-md-6">
 
-							<button type="submit" class="btn btn-primary pull-right" data-flow-action="add-to-cart">
+							<button type="submit" class="btn btn-default pull-right" data-flow-action="add-to-cart">
 									Tilføj til kurv
 									<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
 								</button>
