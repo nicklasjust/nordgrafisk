@@ -1,7 +1,8 @@
 <?php
 require('database.php');
 
-$db = Database::getInstance('mysql', 'localhost', 'nordgrafisk', 'root', '');
+$db = Database::getInstance('mysql', $config['db-host'], $config['db-name'], $config['db-user'], $config['db-pass']);
+
 try{
 
 	$status 	= $_POST['status'];
@@ -17,7 +18,8 @@ try{
 		);
 
 	echo json_encode(array(
-		'success' => true
+		'success' => true,
+		'action' => 'Change status of order'
 		));
 }
 catch(Exception $e)

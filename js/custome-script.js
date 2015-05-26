@@ -20,7 +20,9 @@ $(document).ready(function()
 ================================================== */
 	
 	var cookie = new Cookie();
-	cookie.unset('nordgrafisk-orderlines');
+	var submitProductInfo = false;
+	// cookie.unset('nordgrafisk-orderlines');
+	// cookie.unset('nordgrafisk-customer-info');
 
 	if(cookie.isset('nordgrafisk-customer-info'))
 	{
@@ -38,10 +40,20 @@ $(document).ready(function()
 		var orderlinesString 	=  cookie.get('nordgrafisk-orderlines');
 		var orderlinesInfo 		= JSON.parse(orderlinesString);
 
+		var numOfElements 		= orderlinesInfo.length;
+
+		var numOfElementsLabel  = (numOfElements == 1) ? numOfElements + ' element' : numOfElements + 'elementer';
+
+		$('section.shopping-cart span.num-of-elements').html(numOfElementsLabel);
+
 		$.each(orderlinesInfo, function()
 		{
 			createNewOrderlineRow(this.product, 1);
 		});
+	}
+	else
+	{
+		$('section.shopping-cart span.num-of-elements').html('0 elementer');		
 	}
 
 	$('form.customer-information').on('submit', function(event)
@@ -50,19 +62,29 @@ $(document).ready(function()
 
 		var customerInfo = $(this).serializeObject();
 
-		if(customerInfo.name != '')
+		if(customerInfo.name != ''
+		&& customerInfo.address != ''
+		&& customerInfo.city != ''
+		&& customerInfo.zip != ''
+		&& customerInfo.phone != ''
+		&& customerInfo.email != '')
 		{
+			submitProductInfo = true;
 			cookie.set('nordgrafisk-customer-info', JSON.stringify(customerInfo), 8640);
 		}
 		else
 		{
+			submitProductInfo = false;
 			cookie.unset('nordgrafisk-customer-info');
 
-			$('div.modal.alert-box-modal').modal('show')
-				.find('div.modal-body')
-				.html(
-					$('<h4/>').html('Du skal udfylde kundeinformationen.')
-				);
+			var modal = $('div.modal.alert-box-modal');
+			
+			modal.find('h4.modal-title')
+			.html('Du skal udfylde kundeinformationen.');
+
+			modal.find('div.modal-body').hide();
+
+			modal.modal('show');
 		}
 	});
 
@@ -73,11 +95,14 @@ $(document).ready(function()
 	{
 		if(typeof $('input[name="product"]:checked').val() == 'undefined')
 		{
-			$('div.modal.alert-box-modal').modal('show')
-				.find('div.modal-body')
-				.html(
-					$('<h4/>').html('Du skal vælge en produkttype for at komme videre.')
-				);
+			var modal = $('div.modal.alert-box-modal');
+			
+			modal.find('h4.modal-title')
+			.html('Du skal vælge en produkttype for at komme videre.');
+
+			modal.find('div.modal-body').hide();
+
+			modal.modal('show');
 			return;
 		}
 
@@ -153,31 +178,39 @@ $(document).ready(function()
 	{
 		event.preventDefault();
 
-		var orderLine = $(this).serializeObject();
-		var orderlinesArray = [];
+		$('form.customer-information').submit();
 
-		if(orderLine.product == null)
+		if(submitProductInfo)
 		{
-			$('div.modal.alert-box-modal').modal('show')
-				.find('div.modal-body')
-				.html(
-					$('<h4/>').html('Du skal vælge en produkttype for at tilføje til kurven.')
-				);
-			return;
+			var orderLine = $(this).serializeObject();
+			var orderlinesArray = [];
+
+			if(orderLine.product == null)
+			{
+				var modal = $('div.modal.alert-box-modal');
+				
+				modal.find('h4.modal-title')
+				.html('Du skal vælge en produkttype for at komme videre.');
+
+				modal.find('div.modal-body').hide();
+
+				modal.modal('show');
+				return;
+			}
+
+			if(cookie.isset('nordgrafisk-orderlines'))
+			{
+				var orderlinesArrayString 	= cookie.get('nordgrafisk-orderlines');
+				orderlinesArray 			= JSON.parse(orderlinesArrayString);
+			}
+
+			orderlinesArray.push(orderLine);
+
+			cookie.set('nordgrafisk-orderlines', JSON.stringify(orderlinesArray), 8640);
+
+			createNewOrderlineRow(orderLine.product, 1);
+			location.reload();
 		}
-
-		if(cookie.isset('nordgrafisk-orderlines'))
-		{
-			var orderlinesArrayString 	= cookie.get('nordgrafisk-orderlines');
-			orderlinesArray 			= JSON.parse(orderlinesArrayString);
-		}
-
-		orderlinesArray.push(orderLine);
-
-		cookie.set('nordgrafisk-orderlines', JSON.stringify(orderlinesArray), 8640);
-
-		createNewOrderlineRow(orderLine.product, 1);
-		
 	});
 
 
@@ -405,9 +438,9 @@ $(document).ready(function()
 				
 				this.progressBar.parent().parent().addClass('processing');
 
-				console.log('parallel group upload started');
-				console.log('chunk size: '+this_.chunkSize);
-				console.log('group size: '+this_.groupSize);
+				// console.log('parallel group upload started');
+				// console.log('chunk size: '+this_.chunkSize);
+				// console.log('group size: '+this_.groupSize);
 
 				this.uploadChunk(0, function(data, textStatus, jqXHR)
 				{
@@ -416,8 +449,8 @@ $(document).ready(function()
 						this_.chunksUploaded++;
 						this_.updatePrograssBar(this_.chunksUploaded, this_.chunkSize, this_.dataArray.length);
 
-						console.log('total chunks: ' + this_.totalChunks);
-						console.log(data);
+						// console.log('total chunks: ' + this_.totalChunks);
+						// console.log(data);
 						//console.log('Uploaded chunk(' + data.chunkIndex + ') no.: '+this_.chunksUploaded+'/'+this_.totalChunks);
 
 						// $('input[name="file-upload-id"]').val(data.fileId);
@@ -436,7 +469,7 @@ $(document).ready(function()
 					}
 					else	
 					{
-						console.log(data);
+						// console.log(data);
 					}
 				});
 			}
@@ -458,7 +491,7 @@ $(document).ready(function()
 						this_.chunksUploaded++;
 
 						this_.updatePrograssBar(this_.chunksUploaded, this_.chunkSize, this_.dataArray.length);
-						console.log(data);
+						// console.log(data);
 
 						if(cIndex == groupHead-1 && this_.chunksUploaded < this_.totalChunks-1)
 						{
@@ -472,7 +505,7 @@ $(document).ready(function()
 					}
 					else
 					{
-						console.log(data);
+						// console.log(data);
 					}
 				}
 
@@ -540,7 +573,7 @@ $(document).ready(function()
 
 				var this_ = this; // assign this FileChunkUploader obj to a variable reachable inside the scope of ajax callbacks
 
-				console.log('trying to upload chunk(' + cIndex + ')');
+				console.log('trying to upload chunk ' + (cIndex+1) + ' of ' + this_.totalChunks);
 
 				$.ajax({
 					url: 'upload-script.php',
@@ -557,9 +590,9 @@ $(document).ready(function()
 						}
 						else
 						{
-							console.log(jqXHR.responseText);
-							console.log(data);
-							console.log(textStatus);
+							// console.log(jqXHR.responseText);
+							// console.log(data);
+							// console.log(textStatus);
 						}
 					},
 					error: function(jqXHR, textStatus, errorThrown)
@@ -603,8 +636,7 @@ $(document).ready(function()
 					'orderlines' 	: JSON.parse(orderlines)
 				};
 
-				console.log(orderData);
-
+				// console.log(orderData);
 				// return;
 
 				$.ajax({
@@ -615,30 +647,32 @@ $(document).ready(function()
 					dataType: 'json',
 					success: function(data, textStatus, jqXHR)
 					{
-						console.log(data);
-						// cookie.unset('nordgrafisk-customer-info');
-						// cookie.unset('nordgrafisk-orderlines');
-						// location.reload();
+						// console.log(data);
+						cookie.unset('nordgrafisk-customer-info');
+						cookie.unset('nordgrafisk-orderlines');
+						location.reload();
 					},
 					error: function(jqXHR, textStatus, errorThrown)
 					{
 						console.log(jqXHR.responseText);
+						console.log(textStatus);
+						console.log(errorThrown);
 					}
 				});
 			}
 			else
 			{
-				$('div.modal.alert-box-modal').modal('show')
-				.find('div.modal-body')
+				var modal = $('div.modal.alert-box-modal');
+				
+				modal.find('div.modal-header h4')
+				.html('Du skal tilføje produkter til kurven, før du kan sende ordren.');
+
+				modal.find('div.modal-body').show()
 				.html(
-					$('<h4/>').html('Du skal tilføje produkter til kurven, før du kan sende ordren.')
-				).after(
-					$('<div />',{
-						'class' : 'modal-body'
-					}).html(
-						$('<p />').html('Hvis du ikke ved, hvad du præcis vil have, er du altid velkommen til at udfylde kontaktformularen, der findes lige over kurven.')
-					)	
+					$('<p />').html('Hvis du ikke ved, hvad du præcis vil have, er du altid velkommen til at udfylde kontaktformularen, der findes lige over kurven.')
 				);
+
+				modal.modal('show');
 			}
 		
 		}
@@ -665,14 +699,12 @@ $(document).ready(function()
 			$(this).toggleClass('acceptorder-btn finishorder-btn');
 			this.innerText = "Færdiggør ordre";
 
-			console.log(orderLeftCount);
-
 			if(orderLeftCount == 1)
 			{
 				panelGroup.html(
 					$('<div />', {
 						'class' : 'well well-sm no-orders'
-					}).html('Der er ingen afviste ordrer')
+					}).html('Der er ingen ubehandlede ordrer')
 				);
 			}
 
@@ -682,6 +714,32 @@ $(document).ready(function()
 			};
 
 			changeOrderStatus(data);
+
+			data = {
+				'orderId' : orderNumber
+			};
+
+			$.ajax({
+				url: 'economic-register-order-script.php',
+				type: 'POST',
+				data: data,
+				cache: false,
+				dataType: 'json',
+				success: function(data, textStatus, jqXHR)
+				{
+					// console.log(jqXHR.responseText);
+					console.log(data);
+					// console.log(textStatus);
+				},
+				error: function(jqXHR, textStatus, errorThrown)
+				{
+					console.log(jqXHR.responseText);
+					console.log(textStatus);
+					console.log(errorThrown);
+				}
+			});
+
+
 	});
 
 	$(document).on('click', 
@@ -760,9 +818,9 @@ $(document).ready(function()
 			dataType: 'json',
 			success: function(data, textStatus, jqXHR)
 			{
-				console.log(jqXHR.responseText);
+				// console.log(jqXHR.responseText);
 				console.log(data);
-				console.log(textStatus);
+				// console.log(textStatus);
 			},
 			error: function(jqXHR, textStatus, errorThrown)
 			{

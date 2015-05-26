@@ -3,7 +3,7 @@
 	require('header.php');
 	require('database.php');
 
-	$db = Database::getInstance('mysql', 'localhost', 'nordgrafisk', 'root', '');
+	$db = Database::getInstance('mysql', $config['db-host'], $config['db-name'], $config['db-user'], $config['db-pass']);
 
 	$orders = $db->select(
 		"SELECT orders.id,
@@ -34,7 +34,12 @@
 		$orderlines = $db->select(
 			"SELECT id,
 					order_id,
-					description
+					product,
+					formatComments,
+					usageComments,
+					material,
+					type,
+					size
 			 FROM orderlines
 			 WHERE order_id = :order_id",
 			 array(
@@ -73,7 +78,7 @@
 	$orderColorLabels = [
 		'pending',
 		'accepted',
-		'færdiggjorte',
+		'finished',
 		'declined'
 	];
 
@@ -104,12 +109,7 @@
 
 	<?php endif; ?>
 
-
-
-
 	<?php foreach ($orders as $order): ?>
-
-
 
 		<div class="panel panel-default" data-order-number="<?php echo $order['id'] ?>">
 
@@ -138,7 +138,7 @@
 							</div>
 
 							<div class="col-md-2">
-								<?php echo (strtotime($order['delivery_date'])) ? 'No date set.': ''; ?> 
+								<?php echo (strtotime($order['delivery_date'])) ? (new DateTime($order['delivery_date']))->format('d-m-Y H:i') : ''; ?> 
 							</div>
 
 							<div class="col-md-1">
@@ -164,7 +164,7 @@
 							<h2>Ordre <?php echo $order['id'] ?></h2>
 							
 						 	<h3>Leveringstidspunkt</h3>
-						 		<p><?php echo (strtotime($order['delivery_date'])) ? 'No date set.': 'Dato er ikke fastsat'; ?></p>
+						 		<p><?php echo (strtotime($order['delivery_date'])) ? (new DateTime($order['delivery_date']))->format('d-m-Y H:i') : 'Dato er ikke fastsat'; ?></p>
 						 	<h3>Fakturering</h3>
 						 		<p><?php echo $order['debtor_name'] ?><br>
 						 			<?php echo $order['delivery_address'] ?><br>
@@ -183,20 +183,20 @@
 							<div class="well">
 								
 								<h3>Produkt</h3>
-									<p><?php echo $orderline['description'] ?></p>
+									<p><?php echo $orderline['product']; ?></p>
+
 								<h3>Format</h3>
-									<p>A2<br>
-									Type: Tosidet print</p>
+									<p>Størrelse: <?php echo (!empty($orderline['size'])) ? $orderline['size'] : 'Ikke angivet'; ?><br>
+									Type: <?php echo (!empty($orderline['type'])) ? $orderline['type'] : 'Ikke angivet'; ?></p>
+
 								<h3>Brug</h3>
 									<p>Indendørs<br>
-									Materiale: Skumpap</p>
-								<h3>Beskæring</h3>
-									<p>Beskæringskant: Ja<br>
-									Skæremærker: Nej</p>
+									Materiale: <?php echo (!empty($orderline['material'])) ? 'materiale '.$orderline['material'] : 'Ikke angivet'; ?></p>
+
 								<h3>Filer</h3>
 									<?php $fileCount = sizeof($orderline['files']) ?>
-									<p><?php echo $fileCount; ?> <?php echo ($fileCount == 1) ? 'fil' : 'filer'; ?> uploadet til:</p>
-									
+
+									<p><?php echo $fileCount; ?> <?php echo ($fileCount == 1) ? 'fil' : 'filer'; ?> uploadet</p>
 
 									<?php foreach ($orderline['files'] as $file): ?>
 										
@@ -250,22 +250,26 @@
 
 					<div class="row">
 
-						<button type="button" data-order-number="<?php echo $order['id'] ?>" class="btn btn-default btn-lg pull-right declineorder-btn">
-  							Afvis ordre
-						</button>
+						<button type="button" data-order-number="<?php echo $order['id'] ?>" class="btn btn-default btn-lg pull-right finishorder-btn">Genoptag ordre</button>
 
-						<button type="button" data-order-number="<?php echo $order['id'] ?>" class="btn btn-default btn-lg pull-right acceptorder-btn">
-	  						Godkend ordre
-						</button>
-
-						<a class="btn btn-default btn-lg pull-right contactcustomer-btn" target="_black" href="mailto:<?php echo $order['debtor_email'] ?> " role="button">
+						<a class="btn btn-default btn-lg pull-right contactcustomer-btn" target="_black" href="mailto:<?php echo $order['debtor_email']?> " role="button">
 							Kontakt kunde
 						</a>
 						
 					</div>
 
 				<?php elseif($order['status'] == 4): ?>
-				
+					
+					<div class="row">
+
+						<button type="button" data-order-number="<?php echo $order['id'] ?>" class="btn btn-default btn-lg pull-right finishorder-btn">Færdiggør ordre</button>
+
+						<a class="btn btn-default btn-lg pull-right contactcustomer-btn" target="_black" href="mailto:<?php echo $order['debtor_email'] ?>" role="button">
+							Kontakt kunde
+						</a>
+						
+					</div>
+
 				<?php endif; ?>
 
 	  			</div>

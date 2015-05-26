@@ -6,7 +6,7 @@
 	{
 		echo json_encode(array(
 			'success' 	=> false,
-			'error' 	=> 'No file has been uploaded'
+			'error' 	=> 'No files has been uploaded'
 		));
 		die;
 	}
@@ -27,6 +27,7 @@
 				$accountInfo,
 				$files,
 				$fileId,
+				$filePath,
 				$firstChunk,
 				$endOfChunk,
 				$uploadId,
@@ -80,13 +81,13 @@
 					
 			if($this->fileId == 'null')
 			{
-				$this->db = Database::getInstance('mysql', 'localhost', 'nordgrafisk', 'root', '');
+				$this->db = Database::getInstance('mysql', $config['db-host'], $config['db-name'], $config['db-user'], $config['db-pass']);
 				
 				try{
-					$filePath = "/".$this->customerId."/tlf.: ".$this->phone." - ".$fileName;
+					$this->filePath = "/".$this->customerId."/tlf ".$this->phone." - ".$fileName;
 
 					$this->db->insert('files', array(
-						'path' => $filePath
+						'path' => $this->filePath
 						));
 
 					$this->fileId = $this->db->lastInsertId();
@@ -111,14 +112,14 @@
 
 				if($this->chunkIndex+1 == $this->totalChunks) //If the chunk is also the last, finish DB chunk upload
 				{
-					$result = $this->dbxClient->chunkedUploadFinish( $this->uploadId, '/'.$this->customerId.'/tlf '.$this->phone.' - '.$fileName, dbx\WriteMode::add());
+					$result = $this->dbxClient->chunkedUploadFinish( $this->uploadId, $this->filePath, dbx\WriteMode::add());
 					$where = '2';
 				}
 			}
 			else if($this->chunkIndex+1 == $this->totalChunks) //If the chunk is the last, finish DB chunk upload
 			{
 				$result = $this->dbxClient->chunkedUploadContinue( $this->uploadId, $this->offsetByte , $stringContent);
-				$result = $this->dbxClient->chunkedUploadFinish( $this->uploadId, '/'.$this->customerId.'/tlf '.$this->phone.' - '.$fileName, dbx\WriteMode::add());
+				$result = $this->dbxClient->chunkedUploadFinish( $this->uploadId, $this->filePath, dbx\WriteMode::add());
 				$where = '3';
 			}
 			else // If the chunk is niether the first or last, continue upload

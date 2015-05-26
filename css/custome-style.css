@@ -379,6 +379,10 @@
 		background-color: #f2dede;
 	}
 
+	div.panel-group.finished div.panel-default > div.panel-heading{
+		background-color: #d9edf7;
+	}
+
 	.declineorder-btn{
 	margin-top: 10px;
 	margin-right: 10px; 

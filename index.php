@@ -445,7 +445,7 @@
 											<a data-toggle="collapse" data-parent="#accordion" href="#shopping-cart" aria-expanded="true" aria-controls="shopping-cart">
 
 												<span class="glyphicon glyphicon-shopping-cart"></span>
-												<span class="pull-right">6 elementer i kurven</span>
+												<span class="pull-right"><span class="num-of-elements">6 elementer</span> i kurven</span>
 
 											</a>
 
