@@ -23,6 +23,7 @@ $(document).ready(function()
 	var customerInfoIsSet = false;
 	// cookie.unset('nordgrafisk-orderlines');
 	// cookie.unset('nordgrafisk-customer-info');
+	// cookie.unset('nordgrafisk-order-info');
 
 	if(cookie.isset('nordgrafisk-customer-info'))
 	{
@@ -54,6 +55,17 @@ $(document).ready(function()
 	else
 	{
 		$('section.shopping-cart span.num-of-elements').html('0 elementer');		
+	}
+
+	if(cookie.isset('nordgrafisk-order-info'))
+	{
+		var orderInfoString =  cookie.get('nordgrafisk-order-info');
+		var orderInfo 		= JSON.parse(orderInfoString);
+
+		$.each(orderInfo, function(key, value)
+		{
+			$('form.submit-order').find('input[name="'+ key +'"]').val(value);
+		});
 	}
 
 	$('form.customer-information').on('submit', function(event)
@@ -180,6 +192,13 @@ $(document).ready(function()
 
 		$('form.customer-information').submit();
 
+		var orderInfo = $('form.submit-order').serializeObject();
+		cookie.set('nordgrafisk-order-info', JSON.stringify(orderInfo), 8640);
+
+		// console.log(cookie.get('nordgrafisk-order-info'));
+
+		// return;
+
 		if(customerInfoIsSet)
 		{
 			var orderLine = $(this).serializeObject();
@@ -197,7 +216,6 @@ $(document).ready(function()
 				modal.modal('show');
 				return;
 			}
-
 
 			if(typeof orderLine['file-upload-id'] != 'undefined')
 			{
@@ -468,7 +486,7 @@ $(document).ready(function()
 
 		function FileChunkUploader(file, progressBar)
 		{
-			this.chunkSize 		= 500000;
+			this.chunkSize 		= 100000;
 
 			this.fileReader 	= new FileReader();
 			this.file 			= file;
@@ -714,7 +732,9 @@ $(document).ready(function()
 					{
 						// console.log(data);
 						cookie.unset('nordgrafisk-customer-info');
+						cookie.unset('nordgrafisk-order-info')
 						cookie.unset('nordgrafisk-orderlines');
+
 						location.reload();
 					},
 					error: function(jqXHR, textStatus, errorThrown)

@@ -191,7 +191,7 @@
 
 								<h3>Brug</h3>
 									<p>Indendørs<br>
-									Materiale: <?php echo (!empty($orderline['material'])) ? 'materiale '.$orderline['material'] : 'Ikke angivet'; ?></p>
+									Materiale: <?php echo (!empty($orderline['material'])) ? $orderline['material'] : 'Ikke angivet'; ?></p>
 
 								<h3>Filer</h3>
 									<?php $fileCount = sizeof($orderline['files']) ?>
