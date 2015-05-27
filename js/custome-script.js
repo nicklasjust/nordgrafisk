@@ -730,12 +730,22 @@ $(document).ready(function()
 					dataType: 'json',
 					success: function(data, textStatus, jqXHR)
 					{
-						// console.log(data);
+						var modal = $('div.modal.alert-box-modal');
+					
+						modal.find('h4.modal-title')
+						.html('Tak for din bestilling!');
+
+						modal.find('div.modal-body').show().html(
+							$('<p />').html('Jeg vender tilbage til dig hurtigst muligt.')
+							);
+
+						modal.find('div.modal-content button[data-dismiss="modal"]').addClass('reload-page');
+
+						modal.modal('show');
+						
 						cookie.unset('nordgrafisk-customer-info');
 						cookie.unset('nordgrafisk-order-info')
 						cookie.unset('nordgrafisk-orderlines');
-
-						location.reload();
 					},
 					error: function(jqXHR, textStatus, errorThrown)
 					{
@@ -919,6 +929,13 @@ $(document).ready(function()
 /* # MISC
 ================================================== */
 	
+	$(document).on('click',
+		'.reload-page',
+		function(event)
+		{	
+			location.reload();
+		});
+
 	function Cookie() // cookie handler class
 	{
 		this.set = function(name, value, seconds)
