@@ -15,7 +15,7 @@
 
 					<select name="size" class="form-control">
 				
-						<option value="">Vælge størrelse:</option>
+						<option value="">Vælg størrelse:</option>
 						<option value="A0">A0</option>
 						<option value="A1">A1</option>
 					 	<option value="A2">A2</option>
@@ -128,7 +128,7 @@
 
 					<select name="size" class="form-control">
 				
-						<option value="">Vælge størrelse:</option>
+						<option value="">Vælg størrelse:</option>
 						<option value="A0">A0</option>
 						<option value="A1">A1</option>
 					 	<option value="A2">A2</option>

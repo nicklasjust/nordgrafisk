@@ -32,14 +32,14 @@
 
 				<div class="row product ind poster"> <!-- step 3 - Brug - Poster - Ind-->
 				
-					<div class="col-md-4">
+					<div class="col-md-6">
 						
 						<p>
 
 							<label>
 			
-								<input type="radio" name="material" value="1">
-								Materiale 1
+								<input type="radio" name="material" value="170g silk-papir">
+								170g silk-papir
 						
 							</label>
 
@@ -49,8 +49,8 @@
 
 							<label>
 			
-								<input type="radio" name="material" value="2">
-								Materiale 2
+								<input type="radio" name="material" value="130g silk-papir">
+								130g silk-papir
 						
 							</label>
 
@@ -60,45 +60,8 @@
 
 							<label>
 			
-								<input type="radio" name="material" value="3">
-								Materiale 3
-						
-							</label>
-
-						</p>
-
-					</div>
-					
-					<div class="col-md-4">
-						
-						<p>
-
-							<label>
-			
-								<input type="radio" name="material" value="4">
-								Materiale 4
-						
-							</label>
-
-						</p>
-
-						<p>
-
-							<label>
-			
-								<input type="radio" name="material" value="5">
-								Materiale 5
-						
-							</label>
-
-						</p>
-
-						<p>
-
-							<label>
-			
-								<input type="radio" name="material" value="6">
-								Materiale 6
+								<input type="radio" name="material" value="170g satin-papir">
+								170g satin-papir
 						
 							</label>
 
@@ -106,25 +69,14 @@
 
 					</div>
 					
-					<div class="col-md-4">
+					<div class="col-md-6">
 						
 						<p>
 
 							<label>
 			
-								<input type="radio" name="material" value="7">
-								Materiale 7
-						
-							</label>
-
-						</p>
-
-						<p>
-
-							<label>
-			
-								<input type="radio" name="material" value="8">
-								Materiale 8
+								<input type="radio" name="material" value="130g satin-papir">
+								130g satin-papir
 						
 							</label>
 
@@ -372,109 +324,37 @@
 				<h4>Anbefalede materialer:</h4>
 
 				<div class="row product ud poster"> <!-- step 3 - Brug - Poster - Ud-->
-				
-					<div class="col-md-4">
+							
+					<div class="col-md-6">
 						
 						<p>
 
 							<label>
 			
-								<input type="radio" name="material" value="1">
-								Materiale 1
+								<input type="radio" name="material" value="400g vinyl">
+								400g vinyl
 						
 							</label>
 
 						</p>
 
 						<p>
-
-							<label>
-			
-								<input type="radio" name="material" value="2">
-								Materiale 2
-						
-							</label>
-
-						</p>
-
-						<p>
-
-							<label>
-			
-								<input type="radio" name="material" value="3">
-								Materiale 3
-						
-							</label>
-
-						</p>
 
 					</div>
 					
-					<div class="col-md-4">
-						
-						<p>
-
+					<div class="col-md-6">
 							<label>
 			
-								<input type="radio" name="material" value="4">
-								Materiale 4
+								<input type="radio" name="material" value="350g vinyl">
+								350g vinyl
 						
 							</label>
 
 						</p>
-
-						<p>
-
-							<label>
-			
-								<input type="radio" name="material" value="5">
-								Materiale 5
-						
-							</label>
-
-						</p>
-
-						<p>
-
-							<label>
-			
-								<input type="radio" name="material" value="6">
-								Materiale 6
-						
-							</label>
-
-						</p>
-
-					</div>
-					
-					<div class="col-md-4">
-						
-						<p>
-
-							<label>
-			
-								<input type="radio" name="material" value="7">
-								Materiale 7
-						
-							</label>
-
-						</p>
-
-						<p>
-
-							<label>
-			
-								<input type="radio" name="material" value="8">
-								Materiale 8
-						
-							</label>
-
-						</p>
-
 					</div>
 				
 				</div>
-				
+
 				<div class="row product ud banner"> <!-- step 3 - Brug - Banner - Ud-->
 				
 					<div class="col-md-4">
