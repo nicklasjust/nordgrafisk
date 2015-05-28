@@ -361,7 +361,7 @@
 												<div class="row">
 														
 														<h4>Henrik Fogh Andersen</h4>
-														<p>something@whatever.fart</p>
+														<p>henrik@nord-grafisk.dk</p>
 														<p>Telefon: 88888888</p>
 														
 												</div>
